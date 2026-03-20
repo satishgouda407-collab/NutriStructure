@@ -16,7 +16,6 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="canonical" href="https://the5pillarprotocol.com/pillar-6.html">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="premium-upgrade.css">
     <style>
         :root {
             --primary: #10b981;
@@ -604,6 +603,13 @@
         .footer-links a:hover { color: var(--gut-purple-light); }
         .footer-bottom { border-top: 1px solid #334155; padding-top: 30px; text-align: center; font-size: 0.85rem; }
 
+
+        /* Scroll Reveal Animation */
+        .scroll-reveal, .scroll-reveal-left, .scroll-reveal-right {
+            opacity: 1;
+            transform: none;
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
         @media (max-width: 768px) {
             .hero { padding: 60px 0 50px; }
             .hero h1 { font-size: 2rem; }
@@ -917,9 +923,30 @@
     gtag('config', 'G-E486X8NQSZ');
 </script>
 
-<script src="premium-effects.js"></script>
-<script src="badges.js"></script>
 <script>
+    // Scroll Reveal Animation
+    document.addEventListener('DOMContentLoaded', function() {
+        const revealElements = document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right');
+
+        const revealOnScroll = function() {
+            revealElements.forEach(function(element) {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                if (elementTop < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        // Initial check
+        revealOnScroll();
+
+        // Check on scroll
+        window.addEventListener('scroll', revealOnScroll);
+    });
+
     // Track Pillar 6 visit for gamification
     if (typeof trackPillarVisit === 'function') {
         trackPillarVisit('gut-brain');

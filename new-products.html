@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover additional premium weight loss supplements and solutions. New products to support your 5-Pillar Protocol journey.">
+    <meta name="keywords" content="weight loss supplements, fat burning products, metabolism support, new products, premium supplements">
+    <title>New Products | Additional Solutions for Your Transformation</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --primary-light: #34d399;
+            --secondary: #0f172a;
+            --accent: #f59e0b;        
+            --accent-light: #fbbf24;
+            --danger: #ef4444;
+            --success: #22c55e;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gradient-primary: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            --gradient-hero: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%);
+            --shadow-soft: 0 10px 40px rgba(0,0,0,0.1);
+            --shadow-glow: 0 0 30px rgba(16, 185, 129, 0.3);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; color: #334155; line-height: 1.6; background: #ffffff; scroll-behavior: smooth; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+        @keyframes slideInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+
+        /* Navigation */
+        nav { background: rgba(255,255,255,0.98); padding: 15px 0; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 999; box-shadow: 0 4px 20px rgba(0,0,0,0.08); backdrop-filter: blur(10px); }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.5rem; color: var(--secondary); text-decoration: none; }
+        .logo-icon { width: 45px; height: 45px; background: var(--gradient-hero); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; box-shadow: 0 4px 15px rgba(16,185,129,0.4); }
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-links a { text-decoration: none; color: #64748b; font-weight: 600; font-size: 0.95rem; transition: all 0.3s ease; }
+        .nav-links a:hover { color: var(--primary); }
+        .nav-links a.active { color: var(--primary); }
+        .btn-nav { background: var(--gradient-primary); color: white !important; padding: 12px 25px; border-radius: 50px; box-shadow: 0 4px 15px rgba(16,185,129,0.4); }
+
+        /* Sticky CTA Button - Mobile */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 15px 20px;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+            z-index: 1000;
+            display: none;
+            text-align: center;
+        }
+        .sticky-cta .btn-sticky {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--gradient-primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(16,185,129,0.4);
+            animation: pulse 2s infinite;
+        }
+
+        /* Hero Section */
+        .hero { 
+            padding: 80px 0 60px; 
+            text-align: center; 
+            background: linear-gradient(180deg, #ecfdf5 0%, #ffffff 100%); 
+            position: relative; 
+            overflow: hidden; 
+        }
+        .hero::before { 
+            content: ''; 
+            position: absolute; 
+            top: -50%; 
+            right: -10%; 
+            width: 600px; 
+            height: 600px; 
+            background: radial-gradient(circle, rgba(16,185,129,0.15) 0%, transparent 70%); 
+            border-radius: 50%; 
+            animation: float 6s ease-in-out infinite; 
+        }
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent) 0%, #d97706 100%);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+        .hero h1 { 
+            font-size: 2.8rem; 
+            color: var(--secondary); 
+            line-height: 1.1; 
+            margin-bottom: 20px; 
+            font-weight: 800; 
+            max-width: 800px; 
+            margin-left: auto; 
+            margin-right: auto; 
+            position: relative;
+            z-index: 1;
+        }
+        .hero h1 span { 
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero p {
+            color: #64748b;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Products Section */
+        .products-section {
+            padding: 80px 0;
+            background: white;
+        }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 { font-size: 2.5rem; color: var(--secondary); margin-bottom: 15px; font-weight: 800; }
+        .section-header p { color: #64748b; font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .product-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            border: 2px solid #e2e8f0;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 50px rgba(16,185,129,0.2);
+        }
+        .product-card.featured {
+            border-color: var(--accent);
+            position: relative;
+        }
+        .product-card.featured::before {
+            content: '🔥 HOT';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--accent);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            z-index: 10;
+        }
+        
+        .product-image {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+        }
+        .product-card:nth-child(1) .product-image { background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); }
+        .product-card:nth-child(2) .product-image { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); }
+        .product-card:nth-child(3) .product-image { background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%); }
+        .product-card:nth-child(4) .product-image { background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); }
+        .product-card:nth-child(5) .product-image { background: linear-gradient(135deg, #fff7ed 0%, #fed7aa 100%); }
+        .product-card:nth-child(6) .product-image { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); }
+        
+        .product-content {
+            padding: 30px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-content h3 {
+            color: var(--secondary);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        .product-tagline {
+            color: var(--primary-dark);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .product-content > p {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+        
+        .product-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        .product-features li {
+            padding: 8px 0;
+            color: #475569;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .product-features li:last-child { border-bottom: none; }
+        .product-features li::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: 700;
+        }
+        
+        .product-price-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8fafc;
+            border-radius: 12px;
+        }
+        .price-display {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+        }
+        .current-price {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        .original-price {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            text-decoration: line-through;
+        }
+        .guarantee-tag {
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+        
+        .btn-product {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            background: var(--gradient-primary);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-product:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16,185,129,0.4);
+        }
+        .product-card.featured .btn-product {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        }
+        .product-card.featured .btn-product:hover {
+            box-shadow: 0 8px 25px rgba(245,158,11,0.4);
+        }
+
+        /* Comparison Section */
+        .comparison-section {
+            padding: 80px 0;
+            background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+        }
+        .comparison-table {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            border: 2px solid #e2e8f0;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .comparison-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            background: var(--secondary);
+            color: white;
+            padding: 20px;
+            font-weight: 700;
+        }
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+            align-items: center;
+        }
+        .comparison-row:last-child { border-bottom: none; }
+        .comparison-row:nth-child(even) { background: #f8fafc; }
+        .feature-name {
+            font-weight: 600;
+            color: var(--secondary);
+        }
+        .check { color: var(--success); font-size: 1.3rem; text-align: center; }
+        .cross { color: #ef4444; font-size: 1.3rem; text-align: center; }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            text-align: center;
+            color: white;
+        }
+        .cta-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+        .cta-section p {
+            opacity: 0.95;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        .btn-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 40px;
+            background: white;
+            color: var(--primary-dark);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 60px 0 30px;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-brand .logo {
+            margin-bottom: 20px;
+            color: white;
+        }
+        .footer-brand p {
+            opacity: 0.8;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .footer-social a:hover {
+            background: var(--primary);
+        }
+        .footer-column h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        .footer-column ul {
+            list-style: none;
+        }
+        .footer-column li {
+            margin-bottom: 12px;
+        }
+        .footer-column a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+        .footer-column a:hover {
+            color: var(--primary-light);
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            text-align: center;
+        }
+        .footer-bottom p {
+            opacity: 0.6;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+        }
+        .footer-disclaimer {
+            opacity: 0.5;
+            font-size: 0.75rem;
+            max-width: 800px;
+            margin: 20px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding: 60px 0 40px; }
+            .hero h1 { font-size: 2rem; }
+            .section-header h2 { font-size: 1.8rem; }
+            .products-grid { grid-template-columns: 1fr; }
+            .product-card { margin: 0 10px; }
+            .comparison-header,
+            .comparison-row { grid-template-columns: 1.5fr 1fr 1fr 1fr; font-size: 0.85rem; }
+            .footer-content { grid-template-columns: 1fr; text-align: center; }
+            .footer-social { justify-content: center; }
+            .nav-links { display: none; }
+            .sticky-cta { display: block; }
+            body { padding-bottom: 80px; }
+        }
+    </style>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E486X8NQSZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-E486X8NQSZ');
+    </script>
+</head>
+<body>
+
+<nav>
+    <div class="container nav-content">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">5</div>
+            <span>The 5-Pillar Protocol</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="systems.html">Systems</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="customer-transformations.html">Results</a>
+            <a href="new-products.html" class="active">New Products</a>
+            <a href="recommended-stack.html" class="btn-nav">Get Started</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Sticky CTA for Mobile -->
+<div class="sticky-cta">
+    <a href="recommended-stack.html" class="btn-sticky">View Recommended Stack →</a>
+</div>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-badge">🆕 NEW ADDITIONS</div>
+        <h1>Discover <span>New Solutions</span> For Your Journey</h1>
+        <p>Explore our latest premium supplements and tools designed to accelerate your transformation and support every pillar of your success.</p>
+    </div>
+</section>
+
+<!-- Products Section -->
+<section class="products-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Latest Premium Products</h2>
+            <p>Hand-picked solutions to complement your 5-Pillar Protocol journey.</p>
+        </div>
+        
+        <div class="products-grid">
+            <!-- AquaSculpt -->
+            <div class="product-card featured">
+                <div class="product-image">💧</div>
+                <div class="product-content">
+                    <h3>AquaSculpt</h3>
+                    <div class="product-tagline">Hydration-Powered Fat Loss</div>
+                    <p>Revolutionary water-based formula that supports fat metabolism through optimal cellular hydration. Enhances the body's natural fat-burning processes.</p>
+                    <ul class="product-features">
+                        <li>Supports cellular hydration</li>
+                        <li>Enhances metabolic function</li>
+                        <li>Promotes natural detoxification</li>
+                        <li>180-day money-back guarantee</li>
+                    </ul>
+                    <div class="product-price-row">
+                        <div class="price-display">
+                            <span class="current-price">$69</span>
+                            <span class="original-price">$99</span>
+                        </div>
+                        <span class="guarantee-tag">🔒 180-Day Guarantee</span>
+                    </div>
+                    <a href="https://aquadvancedsciencelabs.com/aquasculpt.php?aff_id=1316" class="btn-product" target="_blank">
+                        Get AquaSculpt →
+                    </a>
+                </div>
+            </div>
+            
+            <!-- LivPure -->
+            <div class="product-card">
+                <div class="product-image">🌿</div>
+                <div class="product-content">
+                    <h3>LivPure</h3>
+                    <div class="product-tagline">Liver Support & Fat Burning</div>
+                    <p>Advanced liver support formula that helps optimize your body's natural detoxification and fat-burning capabilities. A healthy liver is key to weight loss.</p>
+                    <ul class="product-features">
+                        <li>Supports liver health</li>
+                        <li>Promotes natural detoxification</li>
+                        <li>Enhances metabolic function</li>
+                        <li>60-day money-back guarantee</li>
+                    </ul>
+                    <div class="product-price-row">
+                        <div class="price-display">
+                            <span class="current-price">$69</span>
+                        </div>
+                        <span class="guarantee-tag">🔒 60-Day Guarantee</span>
+                    </div>
+                    <a href="https://hop.clickbank.net/?affiliate=honeybunny4k&vendor=livpure&pid=2&tid=general" class="btn-product" target="_blank">
+                        Get LivPure →
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Renew -->
+            <div class="product-card">
+                <div class="product-image">✨</div>
+                <div class="product-content">
+                    <h3>Renew</h3>
+                    <div class="product-tagline">Deep Sleep & Metabolism</div>
+                    <p>Nighttime formula that supports deep, restorative sleep while your body burns fat. Quality sleep is essential for hormonal balance and weight loss.</p>
+                    <ul class="product-features">
+                        <li>Supports deep sleep cycles</li>
+                        <li>Nighttime fat burning support</li>
+                        <li>Promotes morning energy</li>
+                        <li>60-day money-back guarantee</li>
+                    </ul>
+                    <div class="product-price-row">
+                        <div class="price-display">
+                            <span class="current-price">$69</span>
+                        </div>
+                        <span class="guarantee-tag">🔒 60-Day Guarantee</span>
+                    </div>
+                    <a href="https://hop.clickbank.net/?affiliate=honeybunny4k&vendor=renew&tid=general" class="btn-product" target="_blank">
+                        Get Renew →
+                    </a>
+                </div>
+            </div>
+            
+            <!-- LeanBiome -->
+            <div class="product-card">
+                <div class="product-image">🦠</div>
+                <div class="product-content">
+                    <h3>LeanBiome</h3>
+                    <div class="product-tagline">Gut Health & Weight Management</div>
+                    <p>Advanced probiotic formula that supports a healthy gut microbiome. Research shows gut bacteria play a crucial role in metabolism and weight management.</p>
+                    <ul class="product-features">
+                        <li>9 probiotic strains</li>
+                        <li>Supports gut health</li>
+                        <li>Promotes healthy metabolism</li>
+                        <li>180-day money-back guarantee</li>
+                    </ul>
+                    <div class="product-price-row">
+                        <div class="price-display">
+                            <span class="current-price">$59</span>
+                        </div>
+                        <span class="guarantee-tag">🔒 180-Day Guarantee</span>
+                    </div>
+                    <a href="https://hop.clickbank.net/?affiliate=honeybunny4k&vendor=leanbiome&tid=general" class="btn-product" target="_blank">
+                        Get LeanBiome →
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Alpilean -->
+            <div class="product-card">
+                <div class="product-image">🏔️</div>
+                <div class="product-content">
+                    <h3>Alpilean</h3>
+                    <div class="product-tagline">Alpine Ice Hack Formula</div>
+                    <p>Unique formula based on research about inner body temperature and weight loss. Contains 6 alpine nutrients and plants for optimal results.</p>
+                    <ul class="product-features">
+                        <li>6 alpine superfoods</li>
+                        <li>Supports inner body temperature</li>
+                        <li>Promotes healthy metabolism</li>
+                        <li>60-day money-back guarantee</li>
+                    </ul>
+                    <div class="product-price-row">
+                        <div class="price-display">
+                            <span class="current-price">$59</span>
+                        </div>
+                        <span class="guarantee-tag">🔒 60-Day Guarantee</span>
+                    </div>
+                    <a href="https://hop.clickbank.net/?affiliate=honeybunny4k&vendor=alpilean&tid=general" class="btn-product" target="_blank">
+                        Get Alpilean →
+                    </a>
+                </div>
+            </div>
+            
+            <!-- ProDentim -->
+            <div class="product-card">
+                <div class="product-image">🦷</div>
+                <div class="product-content">
+                    <h3>ProDentim</h3>
+                    <div class="product-tagline">Oral Health & Overall Wellness</div>
+                    <p>Advanced oral probiotic that supports dental health and overall wellness. Emerging research links oral health to metabolism and systemic health.</p>
+                    <ul class="product-features">
+                        <li>3.5 billion probiotics</li>
+                        <li>Supports oral health</li>
+                        <li>Promotes fresh breath</li>
+                        <li>60-day money-back guarantee</li>
+                    </ul>
+                    <div class="product-price-row">
+                        <div class="price-display">
+                            <span class="current-price">$69</span>
+                        </div>
+                        <span class="guarantee-tag">🔒 60-Day Guarantee</span>
+                    </div>
+                    <a href="https://hop.clickbank.net/?affiliate=honeybunny4k&vendor=prodentim&tid=general" class="btn-product" target="_blank">
+                        Get ProDentim →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Comparison Section -->
+<section class="comparison-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Find Your Perfect Match</h2>
+            <p>Compare our new products to find the one that best supports your specific needs.</p>
+        </div>
+        
+        <div class="comparison-table">
+            <div class="comparison-header">
+                <div>Product</div>
+                <div>Metabolism</div>
+                <div>Energy</div>
+                <div>Sleep</div>
+            </div>
+            <div class="comparison-row">
+                <div class="feature-name">AquaSculpt</div>
+                <div class="check">✓</div>
+                <div class="check">✓</div>
+                <div class="cross">✗</div>
+            </div>
+            <div class="comparison-row">
+                <div class="feature-name">LivPure</div>
+                <div class="check">✓</div>
+                <div class="check">✓</div>
+                <div class="cross">✗</div>
+            </div>
+            <div class="comparison-row">
+                <div class="feature-name">Renew</div>
+                <div class="check">✓</div>
+                <div class="cross">✗</div>
+                <div class="check">✓</div>
+            </div>
+            <div class="comparison-row">
+                <div class="feature-name">LeanBiome</div>
+                <div class="check">✓</div>
+                <div class="check">✓</div>
+                <div class="cross">✗</div>
+            </div>
+            <div class="comparison-row">
+                <div class="feature-name">Alpilean</div>
+                <div class="check">✓</div>
+                <div class="check">✓</div>
+                <div class="cross">✗</div>
+            </div>
+            <div class="comparison-row">
+                <div class="feature-name">ProDentim</div>
+                <div class="cross">✗</div>
+                <div class="cross">✗</div>
+                <div class="cross">✗</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container">
+        <h2>Not Sure Which One To Choose?</h2>
+        <p>Take our quick quiz to discover which product is perfect for your specific goals and body type.</p>
+        <a href="metabolic-quiz.html" class="btn-cta">Take The Quiz →</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">5</div>
+                    <span>The 5-Pillar Protocol</span>
+                </a>
+                <p>A science-informed approach to weight management that works WITH your biology, not against it.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="YouTube">▶</a>
+                    <a href="#" aria-label="Pinterest">P</a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="citrus-burn.html">Citrus Burn</a></li>
+                    <li><a href="mitolyn.html">Mitolyn</a></li>
+                    <li><a href="java-burn.html">Java Burn</a></li>
+                    <li><a href="new-products.html">New Products</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="systems.html">Systems</a></li>
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="customer-transformations.html">Results</a></li>
+                    <li><a href="recommended-stack.html">My Stack</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 The 5-Pillar Protocol. All rights reserved.</p>
+            <p class="footer-disclaimer">
+                <strong>Affiliate Disclosure:</strong> This website contains affiliate links. We may receive a commission if you purchase through our links at no additional cost to you. 
+                <strong>Medical Disclaimer:</strong> The information on this website is for educational purposes only and is not intended as medical advice.
+            </p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
