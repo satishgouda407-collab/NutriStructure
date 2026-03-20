@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SlimCrystal is a glass water bottle with natural crystals. Learn how crystal-infused water may support hydration goals and wellness routines.">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <title>SlimCrystal™ | Crystal-Infused Water Bottle</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Brevo Form Font Dependencies -->
+    <style>
+        @font-face {
+            font-display: block;
+            font-family: Roboto;
+            src: url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/25c678feafdc175a70922a116c9be3e7.woff) format("woff")
+        }
+        @font-face {
+            font-display: fallback;
+            font-family: Roboto;
+            font-weight: 600;
+            src: url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/71501f0d8d5aa95960f6475d5487d4c2.woff) format("woff")
+        }
+        @font-face {
+            font-display: fallback;
+            font-family: Roboto;
+            font-weight: 700;
+            src: url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff) format("woff")
+        }
+    </style>
+    <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: #333; line-height: 1.6; background: #fff; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        nav { background: #fff; padding: 15px 0; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: 700; font-size: 1.5rem; color: #1E88E5; text-decoration: none; }
+        .nav-links a { margin-left: 20px; text-decoration: none; color: #555; font-weight: 500; font-size: 0.9rem; }
+        .nav-links a:hover { color: #1E88E5; }
+        .hero { padding: 60px 0 40px; text-align: center; background: linear-gradient(135deg, #E3F2FD 0%, #fff 100%); }
+        .hero h1 { font-size: 2.2rem; color: #0D47A1; margin-bottom: 15px; font-weight: 700; }
+        .hero h1 span { color: #1E88E5; }
+        .hero-subtitle { font-size: 1.1rem; color: #666; max-width: 600px; margin: 0 auto 30px; }
+        .explanation { padding: 50px 0; background: #fff; }
+        .explanation h2 { text-align: center; font-size: 1.8rem; margin-bottom: 30px; }
+        .mechanism-box { background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); padding: 30px; border-radius: 12px; max-width: 800px; margin: 0 auto; }
+        .mechanism-box h3 { color: #0D47A1; margin-bottom: 15px; }
+        .mechanism-box p { color: #444; margin-bottom: 15px; }
+        .mechanism-box ul { margin-left: 20px; color: #555; }
+        .mechanism-box li { margin-bottom: 8px; }
+        .crystals { padding: 50px 0; background: #f8f9fa; }
+        .crystals h2 { text-align: center; font-size: 1.8rem; margin-bottom: 30px; }
+        .crystal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .crystal-card { background: #fff; padding: 20px; border-radius: 10px; text-align: center; }
+        .crystal-icon { font-size: 2rem; margin-bottom: 10px; }
+        .crystal-card h3 { font-size: 1rem; margin-bottom: 5px; }
+        .crystal-card p { font-size: 0.85rem; color: #666; }
+        .who-benefit { padding: 50px 0; background: #fff; }
+        .who-benefit h2 { text-align: center; font-size: 1.8rem; margin-bottom: 30px; }
+        .benefit-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 800px; margin: 0 auto; }
+        .benefit-card { background: #f8f9fa; padding: 25px; border-radius: 10px; border-left: 4px solid #1E88E5; }
+        .benefit-card h3 { font-size: 1.1rem; margin-bottom: 8px; }
+        .benefit-card p { font-size: 0.9rem; color: #555; }
+        .expectations { padding: 50px 0; background: #f8f9fa; }
+        .expectations h2 { text-align: center; font-size: 1.8rem; margin-bottom: 30px; }
+        .expect-box { background: #fff; padding: 30px; border-radius: 12px; max-width: 800px; margin: 0 auto; border: 2px solid #E3F2FD; }
+        .expect-box h3 { color: #0D47A1; margin-bottom: 15px; }
+        .expect-box ul { margin-left: 20px; color: #555; }
+        .expect-box li { margin-bottom: 10px; }
+        .expect-box .realistic { background: #E8F5E9; padding: 15px; border-radius: 8px; margin-top: 20px; border-left: 4px solid #4CAF50; }
+        .expect-box .unrealistic { background: #FFEBEE; padding: 15px; border-radius: 8px; margin-top: 15px; border-left: 4px solid #F44336; }
+
+        /* Email Capture Section Styles */
+        .email-capture-section { 
+            padding: 60px 0; 
+            background: linear-gradient(135deg, #0D47A1 0%, #1565C0 100%); 
+            color: #fff; 
+            text-align: center; 
+        }
+        .email-capture-section h2 { 
+            font-size: 2rem; 
+            margin-bottom: 15px; 
+            color: #fff;
+        }
+        .email-capture-section .subtitle { 
+            max-width: 600px; 
+            margin: 0 auto 30px; 
+            opacity: 0.9; 
+            font-size: 1.1rem;
+        }
+        .email-capture-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.05);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .benefits-list {
+            text-align: left;
+            margin: 20px 0 30px 0;
+            padding: 20px;
+            background: rgba(30,136,229,0.2);
+            border-radius: 12px;
+            border-left: 4px solid #1E88E5;
+        }
+        .benefits-list h4 {
+            color: #1E88E5;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        .benefits-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        .benefits-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #e0e0e0;
+        }
+        .benefits-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #1E88E5;
+            font-weight: bold;
+        }
+
+        /* Brevo Form Customization */
+        #sib-container {
+            background: transparent !important;
+            border: none !important;
+            max-width: 100% !important;
+        }
+        #sib-form {
+            text-align: left;
+        }
+        .sib-form-block {
+            padding: 0 !important;
+        }
+        .entry__label {
+            color: #fff !important;
+            font-family: 'Inter', sans-serif !important;
+            font-weight: 600 !important;
+            margin-bottom: 10px !important;
+            display: block;
+        }
+        .entry__field {
+            background: rgba(255,255,255,0.1) !important;
+            border: 1px solid rgba(255,255,255,0.2) !important;
+            border-radius: 8px !important;
+            padding: 5px !important;
+        }
+        .entry__field input {
+            background: transparent !important;
+            border: none !important;
+            color: #fff !important;
+            font-family: 'Inter', sans-serif !important;
+            font-size: 16px !important;
+            padding: 12px !important;
+            width: 100% !important;
+        }
+        .entry__field input::placeholder {
+            color: rgba(255,255,255,0.5) !important;
+        }
+        .sib-form-block__button {
+            background: #1E88E5 !important;
+            color: #fff !important;
+            border: none !important;
+            padding: 15px 40px !important;
+            font-family: 'Inter', sans-serif !important;
+            font-weight: 600 !important;
+            font-size: 1.1rem !important;
+            border-radius: 50px !important;
+            cursor: pointer !important;
+            width: 100% !important;
+            margin-top: 20px !important;
+            transition: all 0.3s !important;
+        }
+        .sib-form-block__button:hover {
+            background: #1565C0 !important;
+            transform: translateY(-2px) !important;
+        }
+        .sib-form-message-panel {
+            border-radius: 8px !important;
+            margin-bottom: 20px !important;
+        }
+        #success-message {
+            background: rgba(19, 206, 102, 0.2) !important;
+            border-color: #13ce66 !important;
+        }
+        #success-message .sib-form-message-panel__inner-text {
+            color: #13ce66 !important;
+        }
+        #error-message {
+            background: rgba(255, 73, 73, 0.2) !important;
+            border-color: #ff4949 !important;
+        }
+        #error-message .sib-form-message-panel__inner-text {
+            color: #ff6b6b !important;
+        }
+        .entry__error--primary {
+            background: rgba(255, 73, 73, 0.1) !important;
+            color: #ff6b6b !important;
+            border-radius: 6px !important;
+            padding: 10px !important;
+            margin-top: 10px !important;
+        }
+        .entry__specification {
+            color: rgba(255,255,255,0.6) !important;
+            font-size: 0.85rem !important;
+            margin-top: 8px !important;
+        }
+        .privacy-note {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.6);
+            margin-top: 20px;
+            text-align: center;
+        }
+        .privacy-note a {
+            color: #1E88E5;
+            text-decoration: underline;
+        }
+        .sib-optin {
+            margin: 15px 0 !important;
+        }
+        .sib-optin label {
+            color: rgba(255,255,255,0.8) !important;
+            font-size: 14px !important;
+        }
+        .checkbox {
+            border-color: rgba(255,255,255,0.3) !important;
+        }
+        .sib-form__declaration {
+            background: rgba(255,255,255,0.05) !important;
+            padding: 15px !important;
+            border-radius: 8px !important;
+            margin-top: 15px !important;
+        }
+        .sib-form__declaration p {
+            color: rgba(255,255,255,0.7) !important;
+            font-size: 12px !important;
+        }
+        .sib-form__declaration a {
+            color: #1E88E5 !important;
+        }
+
+        .cta-section { padding: 50px 0; background: #f8f9fa; color: #333; text-align: center; }
+        .cta-section h2 { font-size: 1.8rem; margin-bottom: 15px; color: #0D47A1; }
+        .cta-section p { max-width: 600px; margin: 0 auto 25px; color: #666; }
+        .btn-main { display: inline-block; padding: 15px 40px; background: #1E88E5; color: #fff; text-decoration: none; border-radius: 50px; font-weight: 600; transition: all 0.3s; }
+        .btn-main:hover { background: #1565C0; transform: translateY(-2px); }
+        .disclaimer { padding: 30px 0; background: #f3f4f6; }
+        .disclaimer-box { background: #fff; padding: 25px; border-radius: 8px; border: 1px solid #e5e7eb; font-size: 0.85rem; color: #6b7280; }
+        .disclaimer-box strong { color: #374151; display: block; margin-bottom: 10px; }
+        footer { background: #0D47A1; color: #BBDEFB; padding: 40px 0 20px; font-size: 0.9rem; }
+        .footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; }
+        .footer-links a { display: block; color: #BBDEFB; text-decoration: none; margin-bottom: 8px; }
+        .footer-links a:hover { color: #fff; }
+        .footer-bottom { border-top: 1px solid #1565C0; margin-top: 30px; padding-top: 20px; text-align: center; font-size: 0.8rem; }
+        @media (max-width: 768px) {
+            .crystal-grid, .benefit-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 1.8rem; }
+            .email-capture-container { padding: 25px; }
+        }
+    </style>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-E486X8NQSZ');
+    </script>
+</head>
+<body>
+
+<nav>
+    <div class="container nav-content">
+        <a href="index.html" class="logo">SlimCrystal™</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="systems.html">Systems</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="#expectations">Expectations</a>
+            <a href="my-weight-loss-journey.html">My Story</a>
+        </div>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="container">
+        <h1>Crystal-Infused Water Bottle <span>For Hydration Support</span></h1>
+        <p class="hero-subtitle">Slim Crystal is designed to make hydration more intentional — and consistency matters when it comes to weight management.</p>
+    </div>
+</section>
+
+<section class="explanation">
+    <div class="container">
+        <h2>Understanding Crystal-Infused Water</h2>
+        <div class="mechanism-box">
+            <h3>💧 The Hydration Support Angle</h3>
+            <p>Hydration plays a role in energy, digestion, and appetite control.</p>
+            <p>Slim Crystal is built around the idea that when hydration becomes a consistent habit, healthy choices become easier. SlimCrystal is designed to make drinking water more intentional and enjoyable. The presence of natural crystals in the bottle may serve as a visual reminder to stay hydrated throughout the day.</p>
+            <p><strong>How it works:</strong></p>
+            <ul>
+                <li><strong>Visual cue:</strong> The crystals serve as a beautiful reminder to drink water regularly</li>
+                <li><strong>Ritual formation:</strong> The preparation process encourages mindful hydration habits</li>
+                <li><strong>Water quality:</strong> Glass bottle avoids plastic chemicals; crystals remain separate from water</li>
+                <li><strong>Sustainability:</strong> Reusable bottle reduces single-use plastic consumption</li>
+            </ul>
+            <p style="margin-top: 15px; font-style: italic;">Note: While some believe crystals influence water structure, scientific evidence is limited. Benefits primarily come from improved hydration habits.</p>
+        </div>
+    </div>
+</section>
+
+<section class="crystals">
+    <div class="container">
+        <h2>Natural Crystals Included</h2>
+        <div class="crystal-grid">
+            <div class="crystal-card">
+                <div class="crystal-icon">💎</div>
+                <h3>Clear Quartz</h3>
+                <p>One of the most abundant minerals on Earth, traditionally associated with clarity</p>
+            </div>
+            <div class="crystal-card">
+                <div class="crystal-icon">🟣</div>
+                <h3>Amethyst</h3>
+                <p>A variety of quartz, historically valued for its purple coloration</p>
+            </div>
+            <div class="crystal-card">
+                <div class="crystal-icon">🔴</div>
+                <h3>Red Jasper</h3>
+                <p>An opaque variety of chalcedony, known for its deep red color</p>
+            </div>
+            <div class="crystal-card">
+                <div class="crystal-icon">🟡</div>
+                <h3>Citrine</h3>
+                <p>A variety of quartz with a yellow to orange color range</p>
+            </div>
+            <div class="crystal-card">
+                <div class="crystal-icon">🟠</div>
+                <h3>Carnelian</h3>
+                <p>A brownish-red mineral commonly used as a semi-precious gemstone</p>
+            </div>
+            <div class="crystal-card">
+                <div class="crystal-icon">🔵</div>
+                <h3>Sodalite</h3>
+                <p>A rich blue mineral widely used as an ornamental gemstone</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="who-benefit">
+    <div class="container">
+        <h2>Who May Benefit</h2>
+        <div class="benefit-grid">
+            <div class="benefit-card">
+                <h3>💧 Those Seeking Hydration Habits</h3>
+                <p>Individuals who struggle to drink enough water and need a visual reminder or ritual to stay hydrated throughout the day.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>🌱 Wellness Enthusiasts</h3>
+                <p>People interested in holistic wellness practices who appreciate natural materials and intentional routines.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>♻️ Eco-Conscious Consumers</h3>
+                <p>Those looking to reduce single-use plastic bottles by using a reusable, durable glass alternative.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>🎁 Gift Seekers</h3>
+                <p>Those looking for a unique wellness gift for friends or family interested in health and natural products.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>🌍 What This Product Really Does</h3>
+                <p>This bottle does not directly burn fat. It supports hydration — which plays a small but important role in overall wellness and appetite balance.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="expectations" id="expectations">
+    <div class="container">
+        <h2>Setting Realistic Expectations</h2>
+        <div class="expect-box">
+            <h3>⚖️ What to Realistically Expect</h3>
+            <ul>
+                <li>A beautiful, reusable water bottle that encourages regular hydration</li>
+                <li>A mindfulness tool that makes drinking water more intentional</li>
+                <li>Potential improvement in hydration habits over time</li>
+                <li>A conversation starter about wellness and sustainability</li>
+                <li>Reduction in single-use plastic consumption</li>
+            </ul>
+            <div class="realistic">
+                <strong>✓ Realistic:</strong> "This bottle helps me remember to drink more water throughout the day."
+            </div>
+            <div class="unrealistic">
+                <strong>✗ Unrealistic:</strong> "This bottle will make me lose 30 pounds without changing my diet."
+            </div>
+            <p style="margin-top: 20px; color: #666; font-size: 0.9rem;">Any weight management benefits come from improved hydration and potential replacement of sugary beverages with water—not from the crystals themselves.</p>
+        </div>
+    </div>
+</section>
+
+<!-- EMAIL CAPTURE SECTION WITH BREVO FORM -->
+<section class="email-capture-section" id="get-access">
+    <div class="container">
+        <h2>🔒 Get Exclusive Access to SlimCrystal</h2>
+        <p class="subtitle">Enter your email below to unlock the special offer and learn more about how SlimCrystal can support your hydration journey.</p>
+
+        <div class="email-capture-container">
+            <div class="benefits-list">
+                <h4>What You'll Get:</h4>
+                <ul>
+                    <li>Exclusive pricing not available elsewhere</li>
+                    <li>Free shipping on select packages</li>
+                    <li>60-day money-back guarantee information</li>
+                    <li>Bonus crystal care guide</li>
+                    <li>Access to hydration challenge community</li>
+                </ul>
+            </div>
+
+            <!-- Brevo Form Integration -->
+            <div class="sib-form" style="text-align: center;">
+                <div id="sib-form-container" class="sib-form-container">
+
+                    <!-- Error Message -->
+                    <div id="error-message" class="sib-form-message-panel" style="font-size:16px; text-align:left; font-family:'Inter', sans-serif; color:#ff6b6b; background-color:rgba(255, 73, 73, 0.1); border-radius:8px; border-color:#ff4949; max-width:100%; display: none;">
+                        <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+                            <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px;">
+                                <path fill="currentColor" d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z" />
+                            </svg>
+                            <span class="sib-form-message-panel__inner-text">
+                                Your subscription could not be saved. Please try again.
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Success Message -->
+                    <div id="success-message" class="sib-form-message-panel" style="font-size:16px; text-align:left; font-family:'Inter', sans-serif; color:#13ce66; background-color:rgba(19, 206, 102, 0.1); border-radius:8px; border-color:#13ce66; max-width:100%; display: none;">
+                        <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+                            <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px;">
+                                <path fill="currentColor" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" />
+                            </svg>
+                            <span class="sib-form-message-panel__inner-text">
+                                Success! Redirecting you to the exclusive offer...
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Form -->
+                    <div id="sib-container" class="sib-container--large sib-container--vertical" style="text-align:center; background-color:transparent; max-width:100%; border-radius:8px; border-width:0; direction:ltr">
+                        <form id="sib-form" method="POST" action="https://b03ef3a2.sibforms.com/serve/MUIFAB_qIvrf8J6oqRFyZP-DiLuAA5mpb72zgqg0wOkVUVLPAVdwKQPlZS6rP9H_xuhwUemBCS_uOp9bLoTUMvzrLI4R5ycXF_Xqt3xS97-2bxo7O8rnNsdOpYbZxiiXLFjbtjfTb9-U6VuUrxbz-iy3ou6fcAffMNvDpTpkCTtBdF9bMrdn5X4An02AB0aD4FRisD376HEWMsJagQ==" data-type="subscription">
+
+                            <div style="padding: 8px 0;">
+                                <div class="sib-input sib-form-block">
+                                    <div class="form__entry entry_block">
+                                        <div class="form__label-row">
+                                            <label class="entry__label" style="font-weight: 600; text-align:left; font-size:16px; font-family:'Inter', sans-serif; color:#fff;" for="EMAIL" data-required="*">
+                                                Enter your best email address
+                                            </label>
+                                            <div class="entry__field" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 5px;">
+                                                <input class="input" type="email" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="your@email.com" data-required="true" required style="background: transparent; border: none; color: #fff; font-family: 'Inter', sans-serif; font-size: 16px; padding: 12px; width: 100%;" />
+                                            </div>
+                                        </div>
+                                        <label class="entry__error entry__error--primary" style="font-size:14px; text-align:left; font-family:'Inter', sans-serif; color:#ff6b6b; background-color:rgba(255, 73, 73, 0.1); border-radius:6px; border-color:#ff4949; padding: 10px; margin-top: 10px; display: none;">
+                                        </label>
+                                        <label class="entry__specification" style="font-size:12px; text-align:left; font-family:'Inter', sans-serif; color:rgba(255,255,255,0.6); text-align:left; display: block; margin-top: 8px;">
+                                            We respect your privacy. Unsubscribe at any time.
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Opt-in Checkbox -->
+                            <div style="padding: 8px 0;">
+                                <div class="sib-optin sib-form-block">
+                                    <div class="form__entry entry_mcq">
+                                        <div class="form__label-row">
+                                            <div class="entry__choice">
+                                                <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                                                    <input type="checkbox" class="input_replaced" value="1" id="OPT_IN" name="OPT_IN" required style="margin-top: 3px;" />
+                                                    <span style="font-size:14px; text-align:left; font-family:'Inter', sans-serif; color:rgba(255,255,255,0.8);">
+                                                        I agree to receive your newsletters and accept the data privacy statement.
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <label class="entry__error entry__error--primary" style="font-size:14px; text-align:left; font-family:'Inter', sans-serif; color:#ff6b6b; background-color:rgba(255, 73, 73, 0.1); border-radius:6px; border-color:#ff4949; padding: 10px; margin-top: 10px; display: none;">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Brevo Declaration -->
+                            <div style="padding: 8px 0;">
+                                <div class="sib-form__declaration" style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; margin-top: 10px;">
+                                    <div style="font-size:12px; text-align:left; font-family:'Inter', sans-serif; color:rgba(255,255,255,0.6);">
+                                        <p>We use Brevo as our marketing platform. By submitting this form you agree that the personal data you provided will be transferred to Brevo for processing in accordance with <a target="_blank" href="https://www.brevo.com/en/legal/privacypolicy/" style="color: #1E88E5; text-decoration: underline;">Brevo's Privacy Policy</a>.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="padding: 8px 0;">
+                                <div class="sib-form-block" style="text-align: center;">
+                                    <button class="sib-form-block__button sib-form-block__button-with-loader" style="font-size:18px; text-align:center; font-weight:700; font-family:'Inter', sans-serif; color:#FFFFFF; background-color:#1E88E5; border-radius:50px; border-width:0px; padding: 18px 40px; width: 100%; cursor: pointer; transition: all 0.3s;" form="sib-form" type="submit">
+                                        <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512" style="width: 0; height: 0; display: none;">
+                                            <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
+                                        </svg>
+                                        YES! Send Me The Exclusive Offer →
+                                    </button>
+                                </div>
+                            </div>
+
+                            <input type="text" name="email_address_check" value="" class="input--hidden" style="display: none;">
+                            <input type="hidden" name="locale" value="en">
+
+                        </form>
+                    </div>
+
+
+<div style="text-align:center; margin-top:25px;">
+    <a href="https://nutristructure.gumroad.com/l/bzciyt" target="_blank"
+    style="
+        display:inline-block;
+        background:#ffcc00;
+        color:#000;
+        padding:16px 32px;
+        border-radius:12px;
+        font-size:18px;
+        font-weight:bold;
+        text-decoration:none;
+        box-shadow:0 6px 15px rgba(0,0,0,0.2);
+        transition:0.3s;
+    "
+    onmouseover="this.style.transform='scale(1.05)'"
+    onmouseout="this.style.transform='scale(1)'">
+        📘 Get Full Guide – 100% Off Today
+    </a>
+</div>
+
+
+
+                    <p class="privacy-note">
+                        🔒 Your information is secure. By entering your email, you agree to receive marketing communications. 
+                        <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms</a>
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="container">
+        <h2>Learn More About Hydration & Wellness</h2>
+        <p>Explore our comprehensive resources on NutriStructure and discover how proper hydration supports your overall wellness journey.</p>
+        <a href="systems.html" class="btn-main">Explore The 5-Pillar System</a>
+    </div>
+</section>
+
+<section class="disclaimer">
+    <div class="container">
+        <div class="disclaimer-box">
+            <strong>Scientific Disclaimer & FTC Compliance</strong>
+            <p><strong>No medical claims:</strong> SlimCrystal is a wellness product, not a medical device. It is not intended to diagnose, treat, cure, or prevent any disease.</p>
+            <p><strong>Limited scientific evidence:</strong> While crystals have been used in various cultural practices for centuries, there is no conclusive scientific evidence that crystals can alter water chemistry or cause weight loss. Any benefits are likely due to improved hydration habits and placebo effects.</p>
+            <p><strong>Individual results vary:</strong> Weight management requires comprehensive lifestyle changes including diet, exercise, and behavioral modifications. A water bottle alone cannot cause significant weight changes.</p>
+            <p>This website contains affiliate links. We may receive compensation for purchases made through these links. NutriStructure is an independent affiliate and not directly associated with the product manufacturers.</p>
+            <p>Testimonials, case studies, and examples found on this page are results that have been forwarded to us by users of related products, and may not reflect the typical purchaser's experience, may not apply to the average person and are not intended to represent or guarantee that anyone will achieve the same or similar results.</p>
+            <p style="margin-top: 15px;"><a href="privacy-policy.html" style="color: #6b7280;">Privacy Policy</a> | <a href="terms-of-service.html" style="color: #6b7280;">Terms of Service</a> | <a href="affiliate-disclosure.html" style="color: #6b7280;">Affiliate Disclosure</a></p>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== PRODUCT NAVIGATION BUTTONS ===== -->
+<section style="padding: 60px 0; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
+    <div class="container" style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <h3 style="font-size: 1.5rem; color: #0f172a; margin-bottom: 30px;">Explore More Options</h3>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
+            <a href="slimcrystal-review.html" style="display: inline-flex; align-items: center; gap: 10px; padding: 16px 30px; border-radius: 12px; font-weight: 700; font-size: 1rem; text-decoration: none; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; box-shadow: 0 4px 15px rgba(245,158,11,0.4); transition: all 0.3s ease;">
+                <span>⭐</span> Read Full Review
+            </a>
+            <a href="index.html#siteMap" style="display: inline-flex; align-items: center; gap: 10px; padding: 16px 30px; border-radius: 12px; font-weight: 700; font-size: 1rem; text-decoration: none; background: white; color: #0f172a; border: 2px solid #e2e8f0; transition: all 0.3s ease;">
+                <span>🛍️</span> View All Products
+            </a>
+            <a href="calculator.html" style="display: inline-flex; align-items: center; gap: 10px; padding: 16px 30px; border-radius: 12px; font-weight: 700; font-size: 1rem; text-decoration: none; background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); color: white; box-shadow: 0 4px 15px rgba(59,130,246,0.4); transition: all 0.3s ease;">
+                <span>📊</span> Calculate Metabolic Age
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div>
+                <strong style="color: #fff; display: block; margin-bottom: 10px;">NutriStructure</strong>
+                <p style="max-width: 300px; font-size: 0.85rem;">A comprehensive approach to metabolic health through Nutrition, Exercise, Mindset, Sleep, and Supplementation. Our mission is to provide educational resources for sustainable wellness.</p>
+            </div>
+            <div class="footer-links">
+                <strong style="color: #fff; display: block; margin-bottom: 10px;">Quick Links</strong>
+                <a href="index.html">Home</a>
+                <a href="systems.html">Systems</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="my-weight-loss-journey.html">My Story</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+            </div>
+            <div class="footer-links">
+                <strong style="color: #fff; display: block; margin-bottom: 10px;">Product Reviews</strong>
+                <a href="citrus-burn.html">CitrusBurn</a>
+                <a href="java-burn.html">Java Burn</a>
+                <a href="mitolyn.html">Mitolyn</a>
+                <a href="kito.html">Kito Flow</a>
+                <a href="lanta-flat-belly-shake.html">Lanta Flat Belly Shake</a>
+                <a href="slim-crystal.html">Slim Crystal</a>
+            </div>
+            <div class="footer-links">
+                <strong style="color: #fff; display: block; margin-bottom: 10px;">Resources</strong>
+                <a href="index.html#pillars">The 5 Pillars</a>
+                <a href="systems.html#nutrition">Nutrition Guide</a>
+                <a href="systems.html#exercise">Exercise Tips</a>
+                <a href="systems.html#mindset">Mindset Training</a>
+                <a href="systems.html#sleep">Sleep Optimization</a>
+                <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 NutriStructure. All Rights Reserved.</p>
+            <p style="margin-top: 10px;">This content is for educational purposes only. Results vary by individual. Always consult healthcare professionals before making changes to your health regimen.</p>
+            <p style="margin-top: 10px; font-size: 0.75rem; color: #90CAF9;">
+                IMPORTANT: The content on this website is not intended to be a substitute for professional medical advice, diagnosis, or treatment. 
+                Never disregard professional medical advice or delay in seeking it because of something you have read on this website.
+            </p>
+        </div>
+    </div>
+</footer>
+
+<!-- Brevo Form Scripts -->
+<script>
+    window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
+    window.LOCALE = 'en';
+    window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
+    window.REQUIRED_ERROR_MESSAGE = "This field cannot be left blank. ";
+    window.GENERIC_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
+
+    window.translation = {
+        common: {
+            selectedList: '{quantity} list selected',
+            selectedLists: '{quantity} lists selected',
+            selectedOption: '{quantity} selected',
+            selectedOptions: '{quantity} selected',
+        }
+    };
+
+    var AUTOHIDE = Boolean(0);
+
+    // AFFILIATE LINK - SlimCrystal
+    const AFFILIATE_LINK = 'https://22c8eoo5j889hl2ks8-96sxgib.hop.clickbank.net';
+</script>
+
+<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+
+<!-- Redirect Script -->
+<script>
+// Redirect after form submission
+    document.getElementById('sib-form').addEventListener('submit', function() {
+        setTimeout(function() {
+            window.location.href = 'https://22c8eoo5j889hl2ks8-96sxgib.hop.clickbank.net';
+        }, 2000);
+    });
+</script>
+
+<!-- Additional Tracking and Functionality -->
+<script>
+    // Track button clicks
+    document.addEventListener('DOMContentLoaded', function() {
+        // Track CTA button clicks
+        const ctaButtons = document.querySelectorAll('.btn-main');
+        ctaButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'click', {
+                        'event_category': 'cta',
+                        'event_label': button.textContent.trim()
+                    });
+                }
+            });
+        });
+
+        // Track navigation clicks
+        const navLinks = document.querySelectorAll('.nav-links a');
+        navLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'click', {
+                        'event_category': 'navigation',
+                        'event_label': link.textContent.trim()
+                    });
+                }
+            });
+        });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

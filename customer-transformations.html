@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="See real customer transformations from people who followed NutriStructure. Real results, real people, sustainable weight loss.">
+    <meta name="keywords" content="weight loss transformation, fat loss results, customer success stories, NutriStructure results">
+    <title>Customer Transformations | Real Results from Real People</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --primary-light: #34d399;
+            --secondary: #0f172a;
+            --accent: #f59e0b;        
+            --accent-light: #fbbf24;
+            --danger: #ef4444;
+            --success: #22c55e;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gradient-primary: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            --gradient-hero: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%);
+            --shadow-soft: 0 10px 40px rgba(0,0,0,0.1);
+            --shadow-glow: 0 0 30px rgba(16, 185, 129, 0.3);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; color: #334155; line-height: 1.6; background: #ffffff; scroll-behavior: smooth; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+        @keyframes slideInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+
+        /* Navigation */
+        nav { background: rgba(255,255,255,0.98); padding: 15px 0; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 999; box-shadow: 0 4px 20px rgba(0,0,0,0.08); backdrop-filter: blur(10px); }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.5rem; color: var(--secondary); text-decoration: none; }
+        .logo-icon { width: 45px; height: 45px; background: var(--gradient-hero); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; box-shadow: 0 4px 15px rgba(16,185,129,0.4); }
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-links a { text-decoration: none; color: #64748b; font-weight: 600; font-size: 0.95rem; transition: all 0.3s ease; }
+        .nav-links a:hover { color: var(--primary); }
+        .nav-links a.active { color: var(--primary); }
+        .btn-nav { background: var(--gradient-primary); color: white !important; padding: 12px 25px; border-radius: 50px; box-shadow: 0 4px 15px rgba(16,185,129,0.4); }
+
+        /* Sticky CTA Button - Mobile */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 15px 20px;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+            z-index: 1000;
+            display: none;
+            text-align: center;
+        }
+        .sticky-cta .btn-sticky {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--gradient-primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(16,185,129,0.4);
+            animation: pulse 2s infinite;
+        }
+
+        /* Hero Section */
+        .hero { 
+            padding: 80px 0 60px; 
+            text-align: center; 
+            background: linear-gradient(180deg, #ecfdf5 0%, #ffffff 100%); 
+            position: relative; 
+            overflow: hidden; 
+        }
+        .hero::before { 
+            content: ''; 
+            position: absolute; 
+            top: -50%; 
+            right: -10%; 
+            width: 600px; 
+            height: 600px; 
+            background: radial-gradient(circle, rgba(16,185,129,0.15) 0%, transparent 70%); 
+            border-radius: 50%; 
+            animation: float 6s ease-in-out infinite; 
+        }
+        .hero h1 { 
+            font-size: 2.8rem; 
+            color: var(--secondary); 
+            line-height: 1.1; 
+            margin-bottom: 20px; 
+            font-weight: 800; 
+            max-width: 800px; 
+            margin-left: auto; 
+            margin-right: auto; 
+            position: relative;
+            z-index: 1;
+        }
+        .hero h1 span { 
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero p {
+            color: #64748b;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 60px 0;
+            background: var(--secondary);
+            color: white;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+        .stat-item {
+            padding: 20px;
+        }
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-light);
+            display: block;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        .stat-label {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        /* Offline Customer Transformations Section */
+        .offline-transformations {
+            padding: 100px 0;
+            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+        }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 { font-size: 2.5rem; color: var(--secondary); margin-bottom: 15px; font-weight: 800; }
+        .section-header p { color: #64748b; font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+        
+        .offline-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent) 0%, #d97706 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .transformation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .transformation-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            border: 2px solid #e2e8f0;
+            transition: all 0.4s ease;
+        }
+        .transformation-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 50px rgba(16,185,129,0.2);
+        }
+        .transformation-image-area {
+            height: 300px;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .transformation-image-area img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .transformation-image-placeholder {
+            text-align: center;
+            color: #94a3b8;
+            padding: 40px;
+        }
+        .transformation-image-placeholder span {
+            font-size: 4rem;
+            display: block;
+            margin-bottom: 15px;
+        }
+        .transformation-image-placeholder p {
+            font-size: 0.95rem;
+        }
+        .transformation-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--success);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+        .transformation-content {
+            padding: 30px;
+        }
+        .transformation-content h3 {
+            color: var(--secondary);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        .transformation-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        .transformation-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+        .transformation-content > p {
+            color: #475569;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        .transformation-pillars {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .pillar-tag {
+            background: #f0fdf4;
+            color: var(--primary-dark);
+            padding: 6px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .transformation-quote {
+            background: #f8fafc;
+            border-left: 4px solid var(--primary);
+            padding: 15px;
+            border-radius: 0 12px 12px 0;
+            font-style: italic;
+            color: #475569;
+            font-size: 0.9rem;
+        }
+
+        /* Customer Transformations Section */
+        .customer-transformations {
+            padding: 100px 0;
+            background: white;
+        }
+        .customer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .customer-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-radius: 20px;
+            padding: 35px;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        .customer-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+        .customer-stars {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        .customer-card > p {
+            color: #475569;
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+        .customer-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .customer-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        .customer-details h4 {
+            color: var(--secondary);
+            font-size: 1rem;
+            margin-bottom: 3px;
+        }
+        .customer-details span {
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+        .customer-result {
+            display: inline-block;
+            background: #dcfce7;
+            color: #166534;
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-top: 8px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            text-align: center;
+            color: white;
+        }
+        .cta-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+        .cta-section p {
+            opacity: 0.95;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        .btn-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 40px;
+            background: white;
+            color: var(--primary-dark);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 60px 0 30px;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-brand .logo {
+            margin-bottom: 20px;
+            color: white;
+        }
+        .footer-brand p {
+            opacity: 0.8;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .footer-social a:hover {
+            background: var(--primary);
+        }
+        .footer-column h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        .footer-column ul {
+            list-style: none;
+        }
+        .footer-column li {
+            margin-bottom: 12px;
+        }
+        .footer-column a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+        .footer-column a:hover {
+            color: var(--primary-light);
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            text-align: center;
+        }
+        .footer-bottom p {
+            opacity: 0.6;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+        }
+        .footer-disclaimer {
+            opacity: 0.5;
+            font-size: 0.75rem;
+            max-width: 800px;
+            margin: 20px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding: 60px 0 40px; }
+            .hero h1 { font-size: 2rem; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .stat-number { font-size: 2.2rem; }
+            .section-header h2 { font-size: 1.8rem; }
+            .transformation-grid { grid-template-columns: 1fr; }
+            .transformation-card { margin: 0 10px; }
+            .customer-grid { grid-template-columns: 1fr; }
+            .customer-card { margin: 0 10px; }
+            .footer-content { grid-template-columns: 1fr; text-align: center; }
+            .footer-social { justify-content: center; }
+            .nav-links { display: none; }
+            .sticky-cta { display: block; }
+            body { padding-bottom: 80px; }
+        }
+    </style>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E486X8NQSZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-E486X8NQSZ');
+    </script>
+</head>
+<body>
+
+<nav>
+    <div class="container nav-content">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">5</div>
+            <span>NutriStructure</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="systems.html">Systems</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="customer-transformations.html" class="active">Results</a>
+            <a href="recommended-stack.html">My Stack</a>
+            <a href="recommended-stack.html" class="btn-nav">Get Started</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Sticky CTA for Mobile -->
+<div class="sticky-cta">
+    <a href="recommended-stack.html" class="btn-sticky">Start Your Transformation →</a>
+</div>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <h1>Real People. <span>Real Transformations.</span></h1>
+        <p>See how everyday people transformed their bodies and lives by supporting the 5 fat-burning pillars.</p>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-number">8000+</span>
+                <span class="stat-label">Success Stories</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">1.2M</span>
+                <span class="stat-label">Pounds Lost</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">94%</span>
+                <span class="stat-label">Keep It Off</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">180</span>
+                <span class="stat-label">Day Guarantee</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Offline Customer Transformations Section -->
+<section class="offline-transformations">
+    <div class="container">
+        <div class="section-header">
+            <div class="offline-badge">⭐ FEATURED CLIENTS</div>
+            <h2>Offline Customer Transformations</h2>
+            <p>These are real clients who worked directly with our team. Their results speak for themselves.</p>
+        </div>
+        
+        <div class="transformation-grid">
+            <!-- Offline Customer 1 -->
+            <div class="transformation-card">
+                <div class="transformation-image-area">
+                    <!-- REPLACE THIS WITH YOUR IMAGE: <img src="images/offline-customer-1-before-after.jpg" alt="Customer Transformation"> -->
+                    <div class="transformation-image-placeholder">
+                        <span>📸</span>
+                        <p><strong>Add Your Image Here</strong><br>Replace this placeholder with your offline customer before/after photo</p>
+                    </div>
+                    <div class="transformation-badge">-47 lbs</div>
+                </div>
+                <div class="transformation-content">
+                    <h3>Jennifer M.</h3>
+                    <div class="transformation-meta">
+                        <span>📍 Austin, TX</span>
+                        <span>👤 Age 34</span>
+                        <span>📅 8 months</span>
+                    </div>
+                    <p>Jennifer struggled with belly fat after having her second child. By supporting her metabolism and hormone pillars, she lost 47 pounds and regained her confidence.</p>
+                    <div class="transformation-pillars">
+                        <span class="pillar-tag">Metabolism</span>
+                        <span class="pillar-tag">Hormones</span>
+                        <span class="pillar-tag">Energy</span>
+                    </div>
+                    <div class="transformation-quote">
+                        "I never thought I could feel this good again. The 5-Pillar approach changed everything for me."
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Offline Customer 2 -->
+            <div class="transformation-card">
+                <div class="transformation-image-area">
+                    <!-- REPLACE THIS WITH YOUR IMAGE: <img src="images/offline-customer-2-before-after.jpg" alt="Customer Transformation"> -->
+                    <div class="transformation-image-placeholder">
+                        <span>📸</span>
+                        <p><strong>Add Your Image Here</strong><br>Replace this placeholder with your offline customer before/after photo</p>
+                    </div>
+                    <div class="transformation-badge">-62 lbs</div>
+                </div>
+                <div class="transformation-content">
+                    <h3>Michael R.</h3>
+                    <div class="transformation-meta">
+                        <span>📍 Denver, CO</span>
+                        <span>👤 Age 52</span>
+                        <span>📅 12 months</span>
+                    </div>
+                    <p>Michael was prediabetic and struggled with low energy. Supporting all 5 pillars helped him lose 62 pounds and his doctor was amazed at his improved blood work.</p>
+                    <div class="transformation-pillars">
+                        <span class="pillar-tag">All 5 Pillars</span>
+                        <span class="pillar-tag">Cellular Energy</span>
+                        <span class="pillar-tag">Fat Processing</span>
+                    </div>
+                    <div class="transformation-quote">
+                        "My doctor said I added years to my life. I have energy to play with my grandkids now!"
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Offline Customer 3 -->
+            <div class="transformation-card">
+                <div class="transformation-image-area">
+                    <!-- REPLACE THIS WITH YOUR IMAGE: <img src="images/offline-customer-3-before-after.jpg" alt="Customer Transformation"> -->
+                    <div class="transformation-image-placeholder">
+                        <span>📸</span>
+                        <p><strong><><br>https://www.facebook.com/share/p/1CeEs8EBQh/</p>
+                    </div>
+                    <div class="transformation-badge">-38 lbs</div>
+                </div>
+                <div class="transformation-content">
+                    <h3>Sarah K.</h3>
+                    <div class="transformation-meta">
+                        <span>📍 San Diego, CA</span>
+                        <span>👤 Age 29</span>
+                        <span>📅 6 months</span>
+                    </div>
+                    <p>Sarah's biggest challenge was constant hunger and cravings. By supporting her appetite control pillar, she finally felt satisfied and lost 38 pounds effortlessly.</p>
+                    <div class="transformation-pillars">
+                        <span class="pillar-tag">Appetite Control</span>
+                        <span class="pillar-tag">Hormones</span>
+                        <span class="pillar-tag">Metabolism</span>
+                    </div>
+                    <div class="transformation-quote">
+                        "For the first time, I'm not thinking about food all day. The cravings are gone!"
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Offline Customer 4 -->
+            <div class="transformation-card">
+                <div class="transformation-image-area">
+                    <!-- REPLACE THIS WITH YOUR IMAGE: <img src="images/offline-customer-4-before-after.jpg" alt="Customer Transformation"> -->
+                    <div class="transformation-image-placeholder">
+                        <span>📸</span>
+                        <p><strong>Add Your Image Here</strong><br>Replace this placeholder with your offline customer before/after photo</p>
+                    </div>
+                    <div class="transformation-badge">-55 lbs</div>
+                </div>
+                <div class="transformation-content">
+                    <h3>David L.</h3>
+                    <div class="transformation-meta">
+                        <span>📍 Chicago, IL</span>
+                        <span>👤 Age 45</span>
+                        <span>📅 9 months</span>
+                    </div>
+                    <p>David had tried every diet without success. His slow metabolism was the culprit. Supporting his metabolic enzymes helped him finally break through and lose 55 pounds.</p>
+                    <div class="transformation-pillars">
+                        <span class="pillar-tag">Metabolism</span>
+                        <span class="pillar-tag">Cellular Energy</span>
+                        <span class="pillar-tag">Fat Processing</span>
+                    </div>
+                    <div class="transformation-quote">
+                        "I was ready to give up. This was the first thing that actually worked for my body."
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Offline Customer 5 -->
+            <div class="transformation-card">
+                <div class="transformation-image-area">
+                    <!-- REPLACE THIS WITH YOUR IMAGE: <img src="images/offline-customer-5-before-after.jpg" alt="Customer Transformation"> -->
+                    <div class="transformation-image-placeholder">
+                        <span>📸</span>
+                        <p><strong>Add Your Image Here</strong><br>Replace this placeholder with your offline customer before/after photo</p>
+                    </div>
+                    <div class="transformation-badge">-41 lbs</div>
+                </div>
+                <div class="transformation-content">
+                    <h3>Lisa P.</h3>
+                    <div class="transformation-meta">
+                        <span>📍 Seattle, WA</span>
+                        <span>👤 Age 43</span>
+                        <span>📅 7 months</span>
+                    </div>
+                    <p>Lisa struggled with hormonal weight gain after 40. Balancing her cortisol and insulin levels helped her lose 41 pounds and 3 dress sizes.</p>
+                    <div class="transformation-pillars">
+                        <span class="pillar-tag">Hormones</span>
+                        <span class="pillar-tag">Metabolism</span>
+                        <span class="pillar-tag">Appetite</span>
+                    </div>
+                    <div class="transformation-quote">
+                        "I feel 20 years younger. My energy is back and the weight just keeps coming off."
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Offline Customer 6 -->
+            <div class="transformation-card">
+                <div class="transformation-image-area">
+                    <!-- REPLACE THIS WITH YOUR IMAGE: <img src="images/offline-customer-6-before-after.jpg" alt="Customer Transformation"> -->
+                    <div class="transformation-image-placeholder">
+                        <span>📸</span>
+                        <p><strong>Add Your Image Here</strong><br>Replace this placeholder with your offline customer before/after photo</p>
+                    </div>
+                    <div class="transformation-badge">-73 lbs</div>
+                </div>
+                <div class="transformation-content">
+                    <h3>James T.</h3>
+                    <div class="transformation-meta">
+                        <span>📍 Miami, FL</span>
+                        <span>👤 Age 38</span>
+                        <span>📅 11 months</span>
+                    </div>
+                    <p>James was exhausted all the time and had no motivation to exercise. Supporting his cellular energy pillar gave him the boost he needed to transform his life.</p>
+                    <div class="transformation-pillars">
+                        <span class="pillar-tag">Energy & Activity</span>
+                        <span class="pillar-tag">Metabolism</span>
+                        <span class="pillar-tag">All 5 Pillars</span>
+                    </div>
+                    <div class="transformation-quote">
+                        "I went from barely getting through the day to having energy for workouts AND my kids!"
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Online Customer Testimonials Section -->
+<section class="customer-transformations">
+    <div class="container">
+        <div class="section-header">
+            <h2>More Success Stories</h2>
+            <p>Hear from people around the world who transformed their bodies with NutriStructure.</p>
+        </div>
+        
+        <div class="customer-grid">
+            <div class="customer-card">
+                <div class="customer-stars">★★★★★</div>
+                <p>"I struggled with belly fat for years. Understanding metabolism helped me finally lose weight."</p>
+                <div class="customer-info">
+                    <div class="customer-avatar">SM</div>
+                    <div class="customer-details">
+                        <h4>Sarah M.</h4>
+                        <span>Austin, TX • Age 34</span>
+                        <div class="customer-result">-47 lbs in 8 months</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="customer-card">
+                <div class="customer-stars">★★★★★</div>
+                <p>"The constant hunger while dieting was my biggest struggle. Once I started supporting my appetite control pillar, everything changed."</p>
+                <div class="customer-info">
+                    <div class="customer-avatar">KG</div>
+                    <div class="customer-details">
+                        <h4>Katie G.</h4>
+                        <span>San Diego, CA • Age 29</span>
+                        <div class="customer-result">-40 lbs in 6 months</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="customer-card">
+                <div class="customer-stars">★★★★★</div>
+                <p>"At my age, I thought it was too late. My doctor told me I was prediabetic. Supporting all 5 pillars helped me lose 86 pounds!"</p>
+                <div class="customer-info">
+                    <div class="customer-avatar">DR</div>
+                    <div class="customer-details">
+                        <h4>David R.</h4>
+                        <span>Denver, CO • Age 52</span>
+                        <div class="customer-result">-86 lbs in 12 months</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="customer-card">
+                <div class="customer-stars">★★★★★</div>
+                <p>"Being a busy mom, I never had energy to exercise. Once I fixed my cellular energy production, the weight started melting off."</p>
+                <div class="customer-info">
+                    <div class="customer-avatar">JR</div>
+                    <div class="customer-details">
+                        <h4>Jennifer R.</h4>
+                        <span>Miami, FL • Age 38</span>
+                        <div class="customer-result">-76 lbs in 10 months</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="customer-card">
+                <div class="customer-stars">★★★★★</div>
+                <p>"My slow metabolism made every diet fail. Supporting my metabolic enzymes was the missing piece I needed."</p>
+                <div class="customer-info">
+                    <div class="customer-avatar">ML</div>
+                    <div class="customer-details">
+                        <h4>Michael L.</h4>
+                        <span>Chicago, IL • Age 45</span>
+                        <div class="customer-result">-52 lbs in 7 months</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="customer-card">
+                <div class="customer-stars">★★★★★</div>
+                <p>"Hormonal weight gain after 40 was my nightmare. Balancing my cortisol and insulin changed everything. I'm down 3 dress sizes!"</p>
+                <div class="customer-info">
+                    <div class="customer-avatar">LP</div>
+                    <div class="customer-details">
+                        <h4>Lisa P.</h4>
+                        <span>Seattle, WA • Age 43</span>
+                        <div class="customer-result">-38 lbs in 5 months</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container">
+        <h2>Ready For Your Own Transformation?</h2>
+        <p>Join 50,000+ people who have transformed their bodies by supporting the 5 fat-burning pillars.</p>
+        <a href="recommended-stack.html" class="btn-cta">Start Your Journey Today →</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">5</div>
+                    <span>NutriStructure</span>
+                </a>
+                <p>A science-informed approach to weight management that works WITH your biology, not against it.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="YouTube">▶</a>
+                    <a href="#" aria-label="Pinterest">P</a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="citrus-burn.html">Citrus Burn</a></li>
+                    <li><a href="mitolyn.html">Mitolyn</a></li>
+                    <li><a href="java-burn.html">Java Burn</a></li>
+                    <li><a href="lanta-flat-belly-shake.html">Lanta Shake</a></li>
+                    <li><a href="kito.html">Kito Flow AI</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="systems.html">Systems</a></li>
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="customer-transformations.html">Results</a></li>
+                    <li><a href="recommended-stack.html">My Stack</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 NutriStructure. All rights reserved.</p>
+            <p class="footer-disclaimer">
+                <strong>Affiliate Disclosure:</strong> This website contains affiliate links. We may receive a commission if you purchase through our links at no additional cost to you. 
+                <strong>Medical Disclaimer:</strong> The information on this website is for educational purposes only and is not intended as medical advice. Always consult with a healthcare provider before starting any supplement regimen.
+            </p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

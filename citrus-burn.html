@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Citrus Burn - Advanced metabolic support with citrus bioflavonoids. Supports natural energy, reduces cravings, and promotes healthy weight management.">
+    <title>Citrus Burn | Advanced Metabolic Support</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --accent: #f59e0b;
+            --secondary: #0f172a;
+            --success: #22c55e;
+            --gradient-primary: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            --shadow-soft: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; color: #334155; line-height: 1.6; background: #ffffff; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Navigation */
+        nav { background: rgba(255,255,255,0.98); padding: 15px 0; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 999; box-shadow: 0 4px 20px rgba(0,0,0,0.08); backdrop-filter: blur(10px); }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.5rem; color: var(--secondary); text-decoration: none; }
+        .logo-icon { width: 45px; height: 45px; background: var(--gradient-primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; }
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-links a { text-decoration: none; color: #64748b; font-weight: 600; font-size: 0.95rem; transition: all 0.3s ease; }
+        .nav-links a:hover { color: var(--primary); }
+        .btn-nav { background: var(--gradient-primary); color: white !important; padding: 12px 25px; border-radius: 50px; }
+        
+        /* Hero Section */
+        .hero { padding: 80px 0; background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%); }
+        .hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .hero-badge { display: inline-block; background: rgba(245,158,11,0.15); color: #b45309; padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; margin-bottom: 20px; }
+        .hero h1 { font-size: 3rem; color: var(--secondary); margin-bottom: 20px; line-height: 1.2; }
+        .hero h1 span { color: var(--primary); }
+        .hero > .container > div > p { font-size: 1.2rem; color: #64748b; margin-bottom: 30px; }
+        
+        .hero-benefits { list-style: none; margin-bottom: 30px; }
+        .hero-benefits li { display: flex; align-items: center; gap: 12px; padding: 10px 0; color: #475569; }
+        .hero-benefits li::before { content: '✓'; color: var(--success); font-weight: 700; }
+        
+        .hero-image { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-radius: 25px; height: 400px; display: flex; align-items: center; justify-content: center; font-size: 8rem; }
+        
+        /* Order Box */
+        .order-box { background: white; border-radius: 20px; padding: 30px; box-shadow: var(--shadow-soft); border: 2px solid #e2e8f0; margin-top: 30px; }
+        .price-row { display: flex; align-items: baseline; gap: 15px; margin-bottom: 20px; }
+        .current-price { font-size: 2.5rem; font-weight: 800; color: var(--primary); }
+        .original-price { font-size: 1.5rem; color: #94a3b8; text-decoration: line-through; }
+        .savings { background: var(--accent); color: white; padding: 5px 15px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; }
+        
+        .btn-cta { 
+            display: block; 
+            width: 100%; 
+            padding: 20px; 
+            background: var(--gradient-primary); 
+            color: white; 
+            text-align: center; 
+            text-decoration: none; 
+            border-radius: 15px; 
+            font-weight: 700; 
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            margin-bottom: 15px;
+        }
+        .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(16,185,129,0.4); }
+        
+        /* Order Bump */
+        .order-bump { 
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); 
+            border: 2px solid var(--accent); 
+            border-radius: 15px; 
+            padding: 20px; 
+            margin-top: 20px;
+        }
+        .order-bump-header { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+        .order-bump-header input { width: 22px; height: 22px; accent-color: var(--accent); }
+        .order-bump-header label { font-weight: 700; color: #92400e; font-size: 1rem; cursor: pointer; }
+        .order-bump p { color: #78350f; font-size: 0.95rem; margin: 0; }
+        .order-bump-price { display: inline-block; background: var(--accent); color: white; padding: 3px 12px; border-radius: 50px; font-weight: 700; font-size: 0.9rem; margin-left: 10px; }
+        
+        .guarantee-text { text-align: center; color: #64748b; font-size: 0.9rem; margin-top: 15px; }
+        .guarantee-text span { color: var(--success); }
+        
+        /* Trust Badges */
+        .trust-badges { display: flex; justify-content: center; gap: 30px; margin-top: 20px; flex-wrap: wrap; }
+        .trust-badge { display: flex; align-items: center; gap: 8px; color: #64748b; font-size: 0.9rem; }
+        
+        /* Features Section */
+        .features-section { padding: 80px 0; background: white; }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 { font-size: 2.2rem; color: var(--secondary); margin-bottom: 15px; }
+        .section-header p { color: #64748b; font-size: 1.1rem; }
+        
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .feature-card { background: white; border-radius: 20px; padding: 35px; box-shadow: var(--shadow-soft); border: 2px solid #e2e8f0; text-align: center; transition: all 0.3s ease; }
+        .feature-card:hover { transform: translateY(-5px); border-color: var(--primary); }
+        .feature-icon { font-size: 3rem; margin-bottom: 20px; }
+        .feature-card h3 { color: var(--secondary); margin-bottom: 15px; }
+        .feature-card p { color: #64748b; }
+        
+        /* How It Works */
+        .how-it-works { padding: 80px 0; background: #f8fafc; }
+        .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 50px; }
+        .step-card { text-align: center; }
+        .step-number { width: 60px; height: 60px; background: var(--gradient-primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; margin: 0 auto 20px; }
+        .step-card h3 { color: var(--secondary); margin-bottom: 15px; }
+        .step-card p { color: #64748b; }
+        
+        /* Ingredients */
+        .ingredients-section { padding: 80px 0; background: white; }
+        .ingredients-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin-top: 40px; }
+        .ingredient-card { background: #f8fafc; border-radius: 15px; padding: 25px; display: flex; gap: 20px; }
+        .ingredient-icon { font-size: 2.5rem; }
+        .ingredient-content h4 { color: var(--secondary); margin-bottom: 8px; }
+        .ingredient-content p { color: #64748b; font-size: 0.95rem; }
+        
+        /* Testimonials */
+        .testimonials-section { padding: 80px 0; background: #f8fafc; }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
+        .testimonial-card { background: white; border-radius: 20px; padding: 30px; box-shadow: var(--shadow-soft); }
+        .testimonial-card .stars { color: var(--accent); margin-bottom: 15px; }
+        .testimonial-card p { color: #475569; font-style: italic; margin-bottom: 20px; }
+        .testimonial-author { display: flex; align-items: center; gap: 15px; }
+        .author-avatar { width: 50px; height: 50px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; }
+        .author-info h4 { color: var(--secondary); font-size: 1rem; }
+        .author-info span { color: #64748b; font-size: 0.85rem; }
+        
+        /* FAQ Section */
+        .faq-section { padding: 80px 0; background: white; }
+        .faq-item { background: #f8fafc; border-radius: 15px; margin-bottom: 15px; overflow: hidden; }
+        .faq-question { padding: 20px 25px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .faq-question h4 { color: var(--secondary); font-size: 1.05rem; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .faq-item.active .faq-answer { max-height: 200px; }
+        .faq-answer-content { padding: 0 25px 20px; color: #64748b; }
+        
+        /* CTA Section */
+        .cta-section { padding: 80px 0; background: linear-gradient(135deg, var(--secondary) 0%, #1e293b 100%); color: white; text-align: center; }
+        .cta-section h2 { font-size: 2.2rem; margin-bottom: 20px; }
+        .cta-section p { max-width: 600px; margin: 0 auto 30px; opacity: 0.9; }
+        .btn-main { 
+            display: inline-block; 
+            padding: 20px 50px; 
+            background: var(--accent); 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: 700; 
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        .btn-main:hover { background: #d97706; transform: translateY(-3px); }
+        
+        /* Footer */
+        footer { background: var(--secondary); color: #94a3b8; padding: 60px 0 30px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        .footer-brand { font-size: 1.5rem; font-weight: 800; color: white; margin-bottom: 15px; }
+        .footer-desc { line-height: 1.8; max-width: 300px; }
+        .footer-links h4 { color: white; margin-bottom: 20px; font-size: 1.1rem; }
+        .footer-links a { display: block; color: #94a3b8; text-decoration: none; margin-bottom: 10px; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--primary); }
+        .footer-bottom { border-top: 1px solid #334155; padding-top: 30px; text-align: center; font-size: 0.85rem; }
+        
+        @media (max-width: 768px) {
+            .hero-content { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+            .hero-image { height: 250px; }
+            .features-grid { grid-template-columns: 1fr; }
+            .steps-grid { grid-template-columns: 1fr; }
+            .ingredients-grid { grid-template-columns: 1fr; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="container nav-content">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">5</div>
+            <span>NutriStructure</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="systems.html">Systems</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="customer-transformations.html">Results</a>
+            <a href="metabolic-quiz.html" class="btn-nav">Take The Quiz</a>
+        </div>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div>
+                <span class="hero-badge">⭐ BEST SELLER</span>
+                <h1>Citrus Burn: <span>Advanced Metabolic Support</span></h1>
+                <p>Support your metabolism naturally with citrus bioflavonoids. No jitters, no crashes — just sustained energy and reduced cravings.</p>
+                
+                <ul class="hero-benefits">
+                    <li>Supports metabolic enzyme function</li>
+                    <li>Natural energy without stimulants</li>
+                    <li>Helps reduce sugar cravings</li>
+                    <li>180-day money-back guarantee</li>
+                </ul>
+                
+                <div class="order-box">
+                    <div class="price-row">
+                        <span class="current-price">$69</span>
+                        <span class="original-price">$99</span>
+                        <span class="savings">SAVE 30%</span>
+                    </div>
+                    
+                    <a href="https://62389pqekbwzpi-xpnvm7w2d0c.hop.clickbank.net" class="btn-cta">Get Citrus Burn Now →</a>
+                    
+                    <!-- Order Bump -->
+                    <div class="order-bump">
+                        <div class="order-bump-header">
+                            <input type="checkbox" id="cb-bump" checked>
+                            <label for="cb-bump">YES! Add the Metabolic Grocery List <span class="order-bump-price">+$9</span></label>
+                        </div>
+                        <p>My personally curated shopping list with the exact foods that support metabolic health — includes printable PDF and meal prep guide</p>
+                    </div>
+                    
+                    <p class="guarantee-text"><span>✓</span> 180-Day Money-Back Guarantee &nbsp;|&nbsp; <span>✓</span> Free Shipping on 3+ Bottles</p>
+                    
+                    <div class="trust-badges">
+                        <span class="trust-badge">🛡️ Secure Checkout</span>
+                        <span class="trust-badge">🚚 Free Shipping</span>
+                        <span class="trust-badge">💬 24/7 Support</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-image">🍊</div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Why Choose Citrus Burn?</h2>
+            <p>A unique approach to metabolic support that works WITH your body</p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🌿</div>
+                <h3>Natural Ingredients</h3>
+                <p>Made with citrus bioflavonoids and plant-based compounds that support your body's natural metabolic processes.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>No Jitters</h3>
+                <p>Unlike harsh stimulants, Citrus Burn provides sustained energy without the crash or anxiety.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Craving Control</h3>
+                <p>Helps reduce sugar and carb cravings by supporting balanced blood sugar levels.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E486X8NQSZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-E486X8NQSZ');
+</script>
+
+<!-- How It Works -->
+<section class="how-it-works">
+    <div class="container">
+        <div class="section-header">
+            <h2>How It Works</h2>
+            <p>Simple, effective, and easy to incorporate into your daily routine</p>
+        </div>
+        
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Take Daily</h3>
+                <p>Take 2 capsules each morning with water. Consistency is key for optimal results.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>Feel The Difference</h3>
+                <p>Most people notice improved energy and reduced cravings within 2-3 weeks.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Transform</h3>
+                <p>Combined with NutriStructure, support your metabolic health for lasting results.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Ingredients -->
+<section class="ingredients-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Key Ingredients</h2>
+            <p>Each ingredient is carefully selected for its metabolic-supporting properties</p>
+        </div>
+        
+        <div class="ingredients-grid">
+            <div class="ingredient-card">
+                <span class="ingredient-icon">🍊</span>
+                <div class="ingredient-content">
+                    <h4>Citrus Bioflavonoids</h4>
+                    <p>Powerful antioxidants from citrus fruits that support metabolic enzyme function and healthy inflammation response.</p>
+                </div>
+            </div>
+            <div class="ingredient-card">
+                <span class="ingredient-icon">🌱</span>
+                <div class="ingredient-content">
+                    <h4>Green Tea Extract</h4>
+                    <p>Rich in EGCG, a compound studied for its effects on metabolism and energy expenditure.</p>
+                </div>
+            </div>
+            <div class="ingredient-card">
+                <span class="ingredient-icon">⚡</span>
+                <div class="ingredient-content">
+                    <h4>Chromium</h4>
+                    <p>An essential mineral that supports healthy blood sugar levels and reduces cravings.</p>
+                </div>
+            </div>
+            <div class="ingredient-card">
+                <span class="ingredient-icon">🧬</span>
+                <div class="ingredient-content">
+                    <h4>B-Vitamin Complex</h4>
+                    <p>Essential for energy metabolism and converting food into usable energy.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>What Our Customers Say</h2>
+            <p>Real reviews from real people who transformed their metabolic health</p>
+        </div>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"I've tried so many supplements before, but Citrus Burn is different. My energy is steady throughout the day, and I don't crave sweets anymore. Game changer!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">SM</div>
+                    <div class="author-info">
+                        <h4>Sarah M.</h4>
+                        <span>Lost 47 lbs with Citrus Burn</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"No jitters, no crashes — just clean energy. I take it every morning with my coffee and feel amazing all day. Highly recommend!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">JD</div>
+                    <div class="author-info">
+                        <h4>James D.</h4>
+                        <span>3-month user</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"Finally something that works! Combined with NutriStructure, I've lost 32 pounds and feel better than I have in years."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">KL</div>
+                    <div class="author-info">
+                        <h4>Karen L.</h4>
+                        <span>Lost 32 lbs with the Protocol</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+        
+        <div class="faq-item active">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <h4>How long does one bottle last?</h4>
+                <span>▼</span>
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    <p>Each bottle contains 60 capsules, which is a 30-day supply when taken as directed (2 capsules per day).</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <h4>Are there any side effects?</h4>
+                <span>▼</span>
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    <p>Citrus Burn is made with natural ingredients and is generally well-tolerated. However, as with any supplement, consult your healthcare provider before starting, especially if you have any medical conditions or take medications.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <h4>When will I see results?</h4>
+                <span>▼</span>
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    <p>Most people notice improved energy and reduced cravings within 2-3 weeks. For best results, we recommend using Citrus Burn consistently for at least 90 days combined with NutriStructure.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <h4>What's the refund policy?</h4>
+                <span>▼</span>
+            </div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    <p>We offer a 180-day money-back guarantee. If you're not satisfied for any reason, simply contact us for a full refund — no questions asked.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="container">
+        <h2>Ready to Support Your Metabolism?</h2>
+        <p>Join 50,000+ people who have transformed their metabolic health with Citrus Burn and NutriStructure.</p>
+        <a href="https://62389pqekbwzpi-xpnvm7w2d0c.hop.clickbank.net" class="btn-main">Get Citrus Burn Now →</a>
+        <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">180-Day Money-Back Guarantee • Free Shipping on 3+ Bottles</p>
+    </div>
+</section>
+
+<!-- ===== PRODUCT NAVIGATION BUTTONS ===== -->
+<section class="product-nav-section">
+    <style>
+        .product-nav-section {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+        .product-nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .product-nav-title {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 30px;
+        }
+        .product-nav-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        .product-nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 30px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .product-nav-btn.primary {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(245,158,11,0.4);
+        }
+        .product-nav-btn.primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(245,158,11,0.5);
+        }
+        .product-nav-btn.secondary {
+            background: white;
+            color: var(--secondary);
+            border: 2px solid #e2e8f0;
+        }
+        .product-nav-btn.secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+        .product-nav-btn.tertiary {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(59,130,246,0.4);
+        }
+        .product-nav-btn.tertiary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(59,130,246,0.5);
+        }
+        @media (max-width: 768px) {
+            .product-nav-buttons { flex-direction: column; }
+            .product-nav-btn { width: 100%; justify-content: center; }
+        }
+    </style>
+    <div class="container">
+        <div class="product-nav-container">
+            <h3 class="product-nav-title">Explore More Options</h3>
+            <div class="product-nav-buttons">
+                <a href="citrus-burn-review.html" class="product-nav-btn primary">
+                    <span>⭐</span> Read Full Review
+                </a>
+                <a href="index.html#siteMap" class="product-nav-btn secondary">
+                    <span>🛍️</span> View All Products
+                </a>
+                <a href="calculator.html" class="product-nav-btn tertiary">
+                    <span>📊</span> Calculate Metabolic Age
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">NutriStructure</div>
+                <p class="footer-desc">Your comprehensive educational resource for metabolic health and sustainable weight management.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="systems.html">Systems</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="customer-transformations.html">Results</a>
+            </div>
+            <div class="footer-links">
+                <h4>Resources</h4>
+                <a href="metabolic-quiz.html">Metabolic Quiz</a>
+                <a href="recommended-stack.html">My Stack</a>
+                <a href="faq.html">FAQ</a>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="disclaimer.html">Disclaimer</a>
+                <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NutriStructure. All Rights Reserved.</p>
+            <p style="margin-top: 10px;">Results may vary. Individual experiences are not typical.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+function toggleFaq(element) {
+    const faqItem = element.parentElement;
+    const isActive = faqItem.classList.contains('active');
+    
+    document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+    });
+    
+    if (!isActive) {
+        faqItem.classList.add('active');
+    }
+}
+</script>
+
+</body>
+</html>

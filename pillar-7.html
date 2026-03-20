@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover Mitochondrial Biohacking - The 7th Pillar of weight loss. Learn how to recharge your cells to burn fat while you sleep using cutting-edge science.">
+    <meta name="keywords" content="mitochondrial biohacking, cellular energy, fat burning while sleeping, mitochondrial health, cellular metabolism, biohacking weight loss">
+    <meta name="author" content="The 5-Pillar Protocol">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="The 7th Pillar: Mitochondrial Biohacking | Burn Fat While Sleeping">
+    <meta property="og:description" content="Recharge your cells to burn fat 24/7. The cutting-edge science of mitochondrial biohacking for effortless weight loss.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://the5pillarprotocol.com/pillar-7.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>The 7th Pillar: Mitochondrial Biohacking | Burn Fat 24/7</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="canonical" href="https://the5pillarprotocol.com/pillar-7.html">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="premium-upgrade.css">
+    <style>
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --primary-light: #34d399;
+            --secondary: #0f172a;
+            --accent: #f59e0b;
+            --accent-light: #fbbf24;
+            --danger: #ef4444;
+            --success: #22c55e;
+            --bio-cyan: #06b6d4;
+            --bio-cyan-light: #67e8f9;
+            --bio-purple: #8b5cf6;
+            --gradient-primary: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            --gradient-bio: linear-gradient(135deg, #06b6d4 0%, #0891b2 50%, #8b5cf6 100%);
+            --shadow-soft: 0 10px 40px rgba(0,0,0,0.1);
+            --shadow-glow: 0 0 40px rgba(6, 182, 212, 0.4);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            color: #334155; 
+            line-height: 1.6; 
+            background: #ffffff; 
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-15px); } }
+        @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 20px rgba(6, 182, 212, 0.4); } 50% { box-shadow: 0 0 50px rgba(6, 182, 212, 0.7); } }
+        @keyframes energy-pulse { 
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.2); opacity: 1; }
+        }
+        @keyframes mitochondria-float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(10px, -10px) rotate(5deg); }
+            50% { transform: translate(0, -15px) rotate(0deg); }
+            75% { transform: translate(-10px, -10px) rotate(-5deg); }
+        }
+        @keyframes atp-flow {
+            0% { stroke-dashoffset: 100; }
+            100% { stroke-dashoffset: 0; }
+        }
+
+        /* Navigation */
+        nav { background: rgba(255,255,255,0.98); padding: 15px 0; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 999; box-shadow: 0 4px 20px rgba(0,0,0,0.08); backdrop-filter: blur(10px); }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.5rem; color: var(--secondary); text-decoration: none; }
+        .logo-icon { width: 45px; height: 45px; background: var(--gradient-bio); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; box-shadow: 0 4px 15px rgba(6,182,212,0.4); }
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-links a { text-decoration: none; color: #64748b; font-weight: 600; font-size: 0.95rem; transition: all 0.3s ease; }
+        .nav-links a:hover { color: var(--bio-cyan); }
+        .nav-links a.active { color: var(--bio-cyan); }
+        .btn-nav { background: var(--gradient-bio); color: white !important; padding: 12px 25px; border-radius: 50px; box-shadow: 0 4px 15px rgba(6,182,212,0.4); }
+
+        /* Hero Section */
+        .hero { 
+            padding: 100px 0 80px; 
+            text-align: center; 
+            background: linear-gradient(180deg, #ecfeff 0%, #cffafe 30%, #ffffff 100%); 
+            position: relative; 
+            overflow: hidden; 
+        }
+        .hero::before { 
+            content: ''; 
+            position: absolute; 
+            top: -30%; 
+            right: -10%; 
+            width: 700px; 
+            height: 700px; 
+            background: radial-gradient(circle, rgba(6,182,212,0.2) 0%, transparent 70%); 
+            border-radius: 50%; 
+            animation: float 10s ease-in-out infinite; 
+        }
+        .hero::after { 
+            content: ''; 
+            position: absolute; 
+            bottom: -20%; 
+            left: -10%; 
+            width: 500px; 
+            height: 500px; 
+            background: radial-gradient(circle, rgba(139,92,246,0.15) 0%, transparent 70%); 
+            border-radius: 50%; 
+            animation: float 12s ease-in-out infinite reverse;
+        }
+        
+        .secret-badge { 
+            display: inline-block; 
+            background: linear-gradient(135deg, rgba(6,182,212,0.2) 0%, rgba(139,92,246,0.1) 100%); 
+            color: #0891b2; 
+            padding: 12px 30px; 
+            border-radius: 50px; 
+            font-weight: 800; 
+            font-size: 0.9rem; 
+            margin-bottom: 25px; 
+            border: 2px solid rgba(6,182,212,0.3);
+            position: relative;
+            z-index: 1;
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+        
+        .hero h1 { 
+            font-size: 3.2rem; 
+            color: var(--secondary); 
+            line-height: 1.1; 
+            margin-bottom: 25px; 
+            font-weight: 800; 
+            max-width: 900px; 
+            margin-left: auto; 
+            margin-right: auto; 
+            position: relative;
+            z-index: 1;
+        }
+        .hero h1 span { 
+            background: linear-gradient(135deg, var(--bio-cyan) 0%, var(--bio-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subheadline {
+            font-size: 1.4rem;
+            color: #475569;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 40px;
+            position: relative;
+            z-index: 1;
+            flex-wrap: wrap;
+        }
+        .hero-stat {
+            text-align: center;
+        }
+        .hero-stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--bio-cyan), var(--bio-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+        }
+        .hero-stat-label {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        /* Section Styles */
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 { font-size: 2.5rem; color: var(--secondary); margin-bottom: 15px; font-weight: 800; }
+        .section-header p { color: #64748b; font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+        /* Mitochondria Explained Section */
+        .mito-explained-section { padding: 100px 0; background: white; }
+        .mito-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .mito-visual {
+            position: relative;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .mitochondria-cell {
+            position: relative;
+            width: 350px;
+            height: 350px;
+        }
+        .cell-membrane {
+            position: absolute;
+            inset: 0;
+            border: 4px solid #cffafe;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ecfeff 0%, #cffafe 100%);
+        }
+        .mitochondria {
+            position: absolute;
+            width: 80px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--bio-cyan) 0%, var(--bio-purple) 100%);
+            border-radius: 25px;
+            animation: mitochondria-float 6s ease-in-out infinite;
+        }
+        .mitochondria:nth-child(2) { top: 20%; left: 20%; animation-delay: 0s; }
+        .mitochondria:nth-child(3) { top: 30%; right: 15%; animation-delay: 1s; }
+        .mitochondria:nth-child(4) { bottom: 25%; left: 25%; animation-delay: 2s; }
+        .mitochondria:nth-child(5) { bottom: 20%; right: 20%; animation-delay: 3s; }
+        .mitochondria:nth-child(6) { top: 50%; left: 50%; transform: translate(-50%, -50%); animation-delay: 1.5s; }
+        
+        .atp-particle {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #fbbf24;
+            border-radius: 50%;
+            animation: energy-pulse 1.5s ease-in-out infinite;
+        }
+        .atp-particle:nth-child(7) { top: 30%; left: 40%; animation-delay: 0.2s; }
+        .atp-particle:nth-child(8) { top: 50%; right: 35%; animation-delay: 0.5s; }
+        .atp-particle:nth-child(9) { bottom: 35%; left: 45%; animation-delay: 0.8s; }
+        .atp-particle:nth-child(10) { top: 40%; left: 55%; animation-delay: 1.1s; }
+
+        .mito-content h3 {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        .mito-content > p {
+            color: #475569;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .mito-fact {
+            background: linear-gradient(135deg, #ecfeff 0%, #cffafe 100%);
+            border-left: 4px solid var(--bio-cyan);
+            padding: 20px;
+            border-radius: 0 12px 12px 0;
+            margin-top: 25px;
+        }
+        .mito-fact strong {
+            color: #0891b2;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .mito-fact p {
+            margin: 0;
+            color: #0e7490;
+        }
+
+        /* Energy Crisis Section */
+        .energy-crisis-section { padding: 100px 0; background: linear-gradient(180deg, #fefce8 0%, #fef9c3 50%, #ffffff 100%); }
+        .crisis-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .crisis-content h3 {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        .crisis-content > p {
+            color: #475569;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+        .crisis-signs {
+            list-style: none;
+        }
+        .crisis-signs li {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #eab308;
+        }
+        .crisis-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #fef08a 0%, #fde047 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+        .crisis-text strong {
+            color: #854d0e;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .crisis-text span {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+        .crisis-visual {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: var(--shadow-soft);
+            text-align: center;
+        }
+        .battery-display {
+            width: 200px;
+            height: 100px;
+            border: 4px solid #e2e8f0;
+            border-radius: 20px;
+            margin: 0 auto 30px;
+            position: relative;
+            padding: 10px;
+        }
+        .battery-display::after {
+            content: '';
+            position: absolute;
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 15px;
+            height: 40px;
+            background: #e2e8f0;
+            border-radius: 0 5px 5px 0;
+        }
+        .battery-level {
+            height: 100%;
+            background: linear-gradient(90deg, #ef4444 0%, #eab308 50%, #22c55e 100%);
+            border-radius: 10px;
+            width: 30%;
+            transition: width 1s ease;
+        }
+        .battery-label {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        .battery-text {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        /* Biohacking Strategies Section */
+        .biohacking-section { padding: 100px 0; background: white; }
+        .bio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .bio-card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+            border: 2px solid #e2e8f0;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        .bio-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gradient-bio);
+        }
+        .bio-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--bio-cyan);
+            box-shadow: var(--shadow-glow);
+        }
+        .bio-emoji {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        .bio-card h4 {
+            color: var(--secondary);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        .bio-card p {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        .bio-benefits {
+            list-style: none;
+            text-align: left;
+        }
+        .bio-benefits li {
+            padding: 8px 0;
+            color: #475569;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .bio-benefits li::before {
+            content: '⚡';
+            color: var(--bio-cyan);
+        }
+
+        /* Sleep Burning Section */
+        .sleep-burning-section { padding: 100px 0; background: linear-gradient(180deg, #1e1b4b 0%, #312e81 50%, #1e1b4b 100%); color: white; position: relative; overflow: hidden; }
+        .sleep-burning-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        .sleep-burning-section .container { position: relative; z-index: 1; }
+        .sleep-burning-section .section-header h2 { color: white; }
+        .sleep-burning-section .section-header p { color: rgba(255,255,255,0.8); }
+        
+        .sleep-process {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .sleep-step {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 35px 25px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.2);
+            position: relative;
+        }
+        .sleep-step::after {
+            content: '→';
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: var(--bio-cyan);
+        }
+        .sleep-step:last-child::after { display: none; }
+        .sleep-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .sleep-step h4 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+        }
+        .sleep-step p {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        .sleep-time {
+            display: inline-block;
+            background: var(--bio-cyan);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-top: 15px;
+        }
+
+        /* Supplements Section */
+        .supplements-section { padding: 100px 0; background: white; }
+        .supplements-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .supplement-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--shadow-soft);
+            border: 2px solid #e2e8f0;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            transition: all 0.3s ease;
+        }
+        .supplement-card:hover {
+            border-color: var(--bio-cyan);
+            transform: translateY(-5px);
+        }
+        .supplement-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ecfeff 0%, #cffafe 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+        .supplement-content h4 {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+        .supplement-content p {
+            color: #64748b;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        .supplement-dose {
+            display: inline-block;
+            background: #ecfeff;
+            color: #0891b2;
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* CTA Section */
+        .cta-section { 
+            padding: 100px 0; 
+            background: linear-gradient(135deg, var(--bio-cyan) 0%, var(--bio-purple) 100%); 
+            text-align: center; 
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+            animation: cta-glow 10s ease-in-out infinite;
+        }
+        @keyframes cta-glow {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(180deg); }
+        }
+        .cta-section .container { position: relative; z-index: 1; }
+        .cta-section h2 { font-size: 2.5rem; margin-bottom: 20px; }
+        .cta-section p { max-width: 600px; margin: 0 auto 30px; opacity: 0.95; font-size: 1.1rem; }
+        .btn-cta{
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 50px;
+            background: white;
+            color: var(--bio-cyan);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        footer { background: var(--secondary); color: #94a3b8; padding: 60px 0 30px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        .footer-brand { font-size: 1.5rem; font-weight: 800; color: white; margin-bottom: 15px; }
+        .footer-desc { line-height: 1.8; max-width: 300px; }
+        .footer-links h4 { color: white; margin-bottom: 20px; font-size: 1.1rem; }
+        .footer-links a { display: block; color: #94a3b8; text-decoration: none; margin-bottom: 10px; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--bio-cyan-light); }
+        .footer-bottom { border-top: 1px solid #334155; padding-top: 30px; text-align: center; font-size: 0.85rem; }
+
+        @media (max-width: 768px) {
+            .hero { padding: 60px 0 50px; }
+            .hero h1 { font-size: 2rem; }
+            .hero-subheadline { font-size: 1.1rem; }
+            .hero-stats { gap: 30px; }
+            .mito-grid, .crisis-grid { grid-template-columns: 1fr; }
+            .bio-grid { grid-template-columns: 1fr; }
+            .sleep-process { grid-template-columns: 1fr 1fr; }
+            .sleep-step::after { display: none; }
+            .supplements-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="container nav-content">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">7</div>
+            <span>The 7-Pillar Protocol</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="pillar-6.html">Pillar 6</a>
+            <a href="pillar-7.html" class="active">Pillar 7</a>
+            <a href="systems.html">Systems</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="calculator.html" class="btn-nav">Metabolic Age Calculator</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="secret-badge">🧬 ADVANCED BIOHACKING</div>
+        <h1>Mitochondrial Biohacking:<br><span>Burn Fat While You Sleep</span></h1>
+        <p class="hero-subheadline">Your mitochondria are the power plants inside your cells. When you optimize them, your body becomes a 24/7 fat-burning machine — even while you're sleeping.</p>
+        
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <span class="hero-stat-number">37T</span>
+                <span class="hero-stat-label">Cells in Your Body</span>
+            </div>
+            <div class="hero-stat">
+                <span class="hero-stat-number">1000+</span>
+                <span class="hero-stat-label">Mitochondria Per Cell</span>
+            </div>
+            <div class="hero-stat">
+                <span class="hero-stat-number">90%</span>
+                <span class="hero-stat-label">Of Your Energy</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mitochondria Explained Section -->
+<section class="mito-explained-section">
+    <div class="container">
+        <div class="mito-grid">
+            <div class="mito-visual scroll-reveal">
+                <div class="mitochondria-cell">
+                    <div class="cell-membrane"></div>
+                    <div class="mitochondria"></div>
+                    <div class="mitochondria"></div>
+                    <div class="mitochondria"></div>
+                    <div class="mitochondria"></div>
+                    <div class="mitochondria"></div>
+                    <div class="atp-particle"></div>
+                    <div class="atp-particle"></div>
+                    <div class="atp-particle"></div>
+                    <div class="atp-particle"></div>
+                </div>
+            </div>
+            <div class="mito-content scroll-reveal-right">
+                <h3>What Are Mitochondria?</h3>
+                <p>Mitochondria are tiny organelles inside your cells that produce ATP (adenosine triphosphate) — the energy currency your body uses for everything from thinking to burning fat.</p>
+                <p>Each cell in your body contains hundreds to thousands of mitochondria. Muscle cells have the most (up to 4,000 per cell), which is why muscle burns more calories than fat.</p>
+                <p>When your mitochondria are functioning optimally, they burn fat efficiently. When they're damaged or sluggish, your metabolism slows down and fat storage increases.</p>
+                <div class="mito-fact">
+                    <strong>🔬 The Science</strong>
+                    <p>Research shows that overweight people have fewer mitochondria and those mitochondria produce less ATP. By increasing mitochondrial density and function, you can increase your metabolic rate by up to 30%.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Energy Crisis Section -->
+<section class="energy-crisis-section">
+    <div class="container">
+        <div class="crisis-grid">
+            <div class="crisis-content scroll-reveal-left">
+                <h3>The Modern Energy Crisis</h3>
+                <p>Our modern lifestyle is destroying our mitochondria. Processed foods, environmental toxins, chronic stress, and poor sleep all damage these cellular power plants.</p>
+                <p>When mitochondria become damaged, they produce less energy and more harmful free radicals. This creates a vicious cycle of fatigue, weight gain, and accelerated aging.</p>
+                
+                <ul class="crisis-signs">
+                    <li>
+                        <div class="crisis-icon">😴</div>
+                        <div class="crisis-text">
+                            <strong>Chronic Fatigue</strong>
+                            <span>Your cells can't produce enough ATP to keep you energized</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="crisis-icon">🐌</div>
+                        <div class="crisis-text">
+                            <strong>Slow Metabolism</strong>
+                            <span>Damaged mitochondria burn fewer calories at rest</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="crisis-icon">🧠</div>
+                        <div class="crisis-text">
+                            <strong>Brain Fog</strong>
+                            <span>Your brain uses 20% of your energy — it feels the deficit first</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="crisis-icon">👵</div>
+                        <div class="crisis-text">
+                            <strong>Premature Aging</strong>
+                            <span>Damaged mitochondria produce free radicals that age your cells</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="crisis-visual scroll-reveal">
+                <div class="battery-label">Your Cellular Energy Battery</div>
+                <div class="battery-display">
+                    <div class="battery-level" style="width: 35%;"></div>
+                </div>
+                <p class="battery-text">Most people's mitochondria are operating at only 30-40% capacity due to modern lifestyle factors. Imagine what would happen if you could increase this to 80-90%...</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Biohacking Strategies Section -->
+<section class="biohacking-section">
+    <div class="container">
+        <div class="section-header scroll-reveal">
+            <h2>The 3 Pillars of Mitochondrial Biohacking</h2>
+            <p>Optimize your cellular power plants with these science-backed strategies.</p>
+        </div>
+        
+        <div class="bio-grid">
+            <div class="bio-card scroll-reveal">
+                <div class="bio-emoji">🍽️</div>
+                <h4>Nutritional Biohacking</h4>
+                <p>Feed your mitochondria the nutrients they need to produce energy efficiently.</p>
+                <ul class="bio-benefits">
+                    <li>Intermittent fasting (triggers mitochondrial biogenesis)</li>
+                    <li>Ketogenic periods (mitochondria love ketones)</li>
+                    <li>Antioxidant-rich foods (protect from damage)</li>
+                    <li>Omega-3 fatty acids (build mitochondrial membranes)</li>
+                </ul>
+            </div>
+            
+            <div class="bio-card scroll-reveal">
+                <div class="bio-emoji">🏃</div>
+                <h4>Exercise Biohacking</h4>
+                <p>Strategic movement that stimulates new mitochondria growth.</p>
+                <ul class="bio-benefits">
+                    <li>HIIT training (creates mitochondrial biogenesis)</li>
+                    <li>Zone 2 cardio (builds mitochondrial density)</li>
+                    <li>Cold exposure (activates brown fat mitochondria)</li>
+                    <li>Resistance training (muscle = more mitochondria)</li>
+                </ul>
+            </div>
+            
+            <div class="bio-card scroll-reveal">
+                <div class="bio-emoji">💊</div>
+                <h4>Supplement Biohacking</h4>
+                <p>Targeted compounds that boost mitochondrial function.</p>
+                <ul class="bio-benefits">
+                    <li>CoQ10 (essential for electron transport chain)</li>
+                    <li>PQQ (stimulates new mitochondria growth)</li>
+                    <li>Alpha-lipoic acid (recycles antioxidants)</li>
+                    <li>Magnesium (required for ATP production)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sleep Burning Section -->
+<section class="sleep-burning-section">
+    <div class="container">
+        <div class="section-header scroll-reveal">
+            <h2>How to Burn Fat While Sleeping</h2>
+            <p>Your body doesn't stop burning calories when you sleep. Here's how to optimize nighttime fat burning.</p>
+        </div>
+        
+        <div class="sleep-process">
+            <div class="sleep-step scroll-reveal">
+                <div class="sleep-icon">🌅</div>
+                <h4>Early Dinner</h4>
+                <p>Finish eating 3-4 hours before bed to allow insulin to drop</p>
+                <span class="sleep-time">7:00 PM</span>
+            </div>
+            
+            <div class="sleep-step scroll-reveal">
+                <div class="sleep-icon">🌡️</div>
+                <h4>Cool Room</h4>
+                <p>Keep bedroom at 65-68°F to activate brown fat</p>
+                <span class="sleep-time">9:30 PM</span>
+            </div>
+            
+            <div class="sleep-step scroll-reveal">
+                <div class="sleep-icon">😴</div>
+                <h4>Deep Sleep</h4>
+                <p>Growth hormone peaks during deep sleep, burning fat</p>
+                <span class="sleep-time">11:00 PM</span>
+            </div>
+            
+            <div class="sleep-step scroll-reveal">
+                <div class="sleep-icon">🔥</div>
+                <h4>Fat Burning</h4>
+                <p>Body switches to fat oxidation for energy</p>
+                <span class="sleep-time">2:00 AM</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Supplements Section -->
+<section class="supplements-section">
+    <div class="container">
+        <div class="section-header scroll-reveal">
+            <h2>Mitochondrial Support Supplements</h2>
+            <p>These supplements have been shown to improve mitochondrial function and increase energy production.</p>
+        </div>
+        
+        <div class="supplements-grid">
+            <div class="supplement-card scroll-reveal">
+                <div class="supplement-icon">⚡</div>
+                <div class="supplement-content">
+                    <h4>Coenzyme Q10 (CoQ10)</h4>
+                    <p>An essential component of the electron transport chain — the final step in ATP production. Levels decline with age.</p>
+                    <span class="supplement-dose">Recommended: 100-200mg daily</span>
+                </div>
+            </div>
+            
+            <div class="supplement-card scroll-reveal">
+                <div class="supplement-icon">🧬</div>
+                <div class="supplement-content">
+                    <h4>PQQ (Pyrroloquinoline Quinone)</h4>
+                    <p>Stimulates mitochondrial biogenesis — the creation of NEW mitochondria. Also a powerful antioxidant.</p>
+                    <span class="supplement-dose">Recommended: 10-20mg daily</span>
+                </div>
+            </div>
+            
+            <div class="supplement-card scroll-reveal">
+                <div class="supplement-icon">🔄</div>
+                <div class="supplement-content">
+                    <h4>Alpha-Lipoic Acid (ALA)</h4>
+                    <p>Recycles other antioxidants and helps regenerate glutathione — the body's master antioxidant.</p>
+                    <span class="supplement-dose">Recommended: 300-600mg daily</span>
+                </div>
+            </div>
+            
+            <div class="supplement-card scroll-reveal">
+                <div class="supplement-icon">🌿</div>
+                <div class="supplement-content">
+                    <h4>Mitolyn</h4>
+                    <p>Our recommended formula containing Maqui Berry, Astaxanthin, and other mitochondrial-supporting compounds.</p>
+                    <span class="supplement-dose">Recommended: 2 capsules daily</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container">
+        <h2>Ready to Upgrade Your Cellular Power Plants?</h2>
+        <p>Calculate your metabolic age and discover how optimized your mitochondria really are.</p>
+        <a href="calculator.html" class="btn-cta">Calculate Your Metabolic Age →</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">The 7-Pillar Protocol</div>
+                <p class="footer-desc">The most advanced weight loss system that works WITH your biology, not against it.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="pillar-6.html">Pillar 6: Gut-Brain</a>
+                <a href="pillar-7.html">Pillar 7: Biohacking</a>
+                <a href="systems.html">Systems</a>
+            </div>
+            <div class="footer-links">
+                <h4>Resources</h4>
+                <a href="calculator.html">Metabolic Age Calculator</a>
+                <a href="metabolic-quiz.html">Metabolic Quiz</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="faq.html">FAQ</a>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="disclaimer.html">Disclaimer</a>
+                <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 The 7-Pillar Weight Loss Protocol. All Rights Reserved.</p>
+            <p style="margin-top: 10px;">Results may vary. Individual experiences are not typical.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E486X8NQSZ"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-E486X8NQSZ');
+</script>
+
+<script src="premium-effects.js"></script>
+<script src="badges.js"></script>
+<script>
+    // Track Pillar 7 visit for gamification
+    if (typeof trackPillarVisit === 'function') {
+        trackPillarVisit('biohacking');
+    }
+    
+    // Animate battery level on scroll
+    const batteryLevel = document.querySelector('.battery-level');
+    if (batteryLevel) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        batteryLevel.style.width = '85%';
+                    }, 500);
+                }
+            });
+        });
+        observer.observe(batteryLevel);
+    }
+</script>
+
+</body>
+</html>

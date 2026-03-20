@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Java Burn is a tasteless powder supplement designed to be added to coffee. Learn how it may support metabolism and energy as part of your morning routine.">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <title>Java Burn™ | Coffee Enhancement Supplement</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Brevo Form Font Dependencies -->
+    <style>
+        @font-face {
+            font-display: block;
+            font-family: Roboto;
+            src: url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/25c678feafdc175a70922a116c9be3e7.woff) format("woff")
+        }
+        @font-face {
+            font-display: fallback;
+            font-family: Roboto;
+            font-weight: 600;
+            src: url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/71501f0d8d5aa95960f6475d5487d4c2.woff) format("woff")
+        }
+        @font-face {
+            font-display: fallback;
+            font-family: Roboto;
+            font-weight: 700;
+            src: url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff) format("woff")
+        }
+    </style>
+    <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: #333; line-height: 1.6; background: #fff; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        nav { background: #fff; padding: 15px 0; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: 700; font-size: 1.5rem; color: #F97316; text-decoration: none; }
+        .nav-links a { margin-left: 20px; text-decoration: none; color: #555; font-weight: 500; font-size: 0.9rem; }
+        .nav-links a:hover { color: #F97316; }
+        .hero { padding: 60px 0 40px; text-align: center; background: linear-gradient(135deg, #FFF7ED 0%, #fff 100%); }
+        .hero h1 { font-size: 2.2rem; color: #1C1917; margin-bottom: 15px; font-weight: 700; }
+        .hero h1 span { color: #F97316; }
+        .hero-subtitle { font-size: 1.1rem; color: #666; max-width: 600px; margin: 0 auto 30px; }
+        .integration { padding: 50px 0; background: #fff; }
+        .integration h2 { text-align: center; font-size: 1.8rem; margin-bottom: 30px; }
+        .coffee-routine { background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); padding: 30px; border-radius: 12px; max-width: 800px; margin: 0 auto; }
+        .coffee-routine h3 { color: #92400E; margin-bottom: 15px; }
+        .coffee-routine ol { margin-left: 20px; color: #78350F; }
+        .coffee-routine li { margin-bottom: 10px; }
+        .ingredients { padding: 50px 0; background: #f8f9fa; }
+        .ingredients h2 { text-align: center; font-size: 1.8rem; margin-bottom: 30px; }
+        .ing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 800px; margin: 0 auto; }
+        .ing-card { background: #fff; padding: 25px; border-radius: 10px; border: 1px solid #e5e7eb; }
+        .ing-card h3 { color: #F97316; font-size: 1.1rem; margin-bottom: 8px; }
+        .ing-card p { font-size: 0.9rem; color: #555; }
+        .who-not { padding: 40px 0; background: #fff; }
+        .who-not h2 { text-align: center; font-size: 1.8rem; margin-bottom: 30px; }
+        .warning-box { background: #FEF2F2; border: 1px solid #EF4444; border-radius: 12px; padding: 25px; max-width: 800px; margin: 0 auto; }
+        .warning-box h3 { color: #DC2626; margin-bottom: 15px; }
+        .warning-box ul { margin-left: 20px; color: #7F1D1D; }
+        .warning-box li { margin-bottom: 10px; }
+        .faq { padding: 50px 0; background: #f8f9fa; }
+        .faq h2 { text-align: center; font-size: 1.8rem; margin-bottom: 30px; }
+        .faq-item { max-width: 800px; margin: 0 auto 15px; background: #fff; border-radius: 8px; border: 1px solid #e5e7eb; overflow: hidden; }
+        .faq-question { padding: 20px; font-weight: 600; color: #1C1917; cursor: pointer; border-bottom: 1px solid #e5e7eb; }
+        .faq-answer { padding: 20px; color: #555; font-size: 0.95rem; }
+
+        /* Email Capture Section Styles */
+        .email-capture-section { 
+            padding: 60px 0; 
+            background: linear-gradient(135deg, #1C1917 0%, #292524 100%); 
+            color: #fff; 
+            text-align: center; 
+        }
+        .email-capture-section h2 { 
+            font-size: 2rem; 
+            margin-bottom: 15px; 
+            color: #fff;
+        }
+        .email-capture-section .subtitle { 
+            max-width: 600px; 
+            margin: 0 auto 30px; 
+            opacity: 0.9; 
+            font-size: 1.1rem;
+        }
+        .email-capture-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.05);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .benefits-list {
+            text-align: left;
+            margin: 20px 0 30px 0;
+            padding: 20px;
+            background: rgba(249,115,22,0.2);
+            border-radius: 12px;
+            border-left: 4px solid #F97316;
+        }
+        .benefits-list h4 {
+            color: #F97316;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        .benefits-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        .benefits-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #e0e0e0;
+        }
+        .benefits-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #F97316;
+            font-weight: bold;
+        }
+
+        /* Brevo Form Customization */
+        #sib-container {
+            background: transparent !important;
+            border: none !important;
+            max-width: 100% !important;
+        }
+        #sib-form {
+            text-align: left;
+        }
+        .sib-form-block {
+            padding: 0 !important;
+        }
+        .entry__label {
+            color: #fff !important;
+            font-family: 'Inter', sans-serif !important;
+            font-weight: 600 !important;
+            margin-bottom: 10px !important;
+            display: block;
+        }
+        .entry__field {
+            background: rgba(255,255,255,0.1) !important;
+            border: 1px solid rgba(255,255,255,0.2) !important;
+            border-radius: 8px !important;
+            padding: 5px !important;
+        }
+        .entry__field input {
+            background: transparent !important;
+            border: none !important;
+            color: #fff !important;
+            font-family: 'Inter', sans-serif !important;
+            font-size: 16px !important;
+            padding: 12px !important;
+            width: 100% !important;
+        }
+        .entry__field input::placeholder {
+            color: rgba(255,255,255,0.5) !important;
+        }
+        .sib-form-block__button {
+            background: #F97316 !important;
+            color: #fff !important;
+            border: none !important;
+            padding: 15px 40px !important;
+            font-family: 'Inter', sans-serif !important;
+            font-weight: 600 !important;
+            font-size: 1.1rem !important;
+            border-radius: 50px !important;
+            cursor: pointer !important;
+            width: 100% !important;
+            margin-top: 20px !important;
+            transition: all 0.3s !important;
+        }
+        .sib-form-block__button:hover {
+            background: #EA580C !important;
+            transform: translateY(-2px) !important;
+        }
+        .sib-form-message-panel {
+            border-radius: 8px !important;
+            margin-bottom: 20px !important;
+        }
+        #success-message {
+            background: rgba(19, 206, 102, 0.2) !important;
+            border-color: #13ce66 !important;
+        }
+        #success-message .sib-form-message-panel__inner-text {
+            color: #13ce66 !important;
+        }
+        #error-message {
+            background: rgba(255, 73, 73, 0.2) !important;
+            border-color: #ff4949 !important;
+        }
+        #error-message .sib-form-message-panel__inner-text {
+            color: #ff6b6b !important;
+        }
+        .entry__error--primary {
+            background: rgba(255, 73, 73, 0.1) !important;
+            color: #ff6b6b !important;
+            border-radius: 6px !important;
+            padding: 10px !important;
+            margin-top: 10px !important;
+        }
+        .entry__specification {
+            color: rgba(255,255,255,0.6) !important;
+            font-size: 0.85rem !important;
+            margin-top: 8px !important;
+        }
+        .privacy-note {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.6);
+            margin-top: 20px;
+            text-align: center;
+        }
+        .privacy-note a {
+            color: #F97316;
+            text-decoration: underline;
+        }
+        .sib-optin {
+            margin: 15px 0 !important;
+        }
+        .sib-optin label {
+            color: rgba(255,255,255,0.8) !important;
+            font-size: 14px !important;
+        }
+        .sib-form__declaration {
+            background: rgba(255,255,255,0.05) !important;
+            padding: 15px !important;
+            border-radius: 8px !important;
+            margin-top: 15px !important;
+        }
+        .sib-form__declaration p {
+            color: rgba(255,255,255,0.7) !important;
+            font-size: 12px !important;
+        }
+        .sib-form__declaration a {
+            color: #F97316 !important;
+        }
+
+        .cta-section { padding: 50px 0; background: #f8f9fa; color: #333; text-align: center; }
+        .cta-section h2 { font-size: 1.8rem; margin-bottom: 15px; color: #1C1917; }
+        .cta-section p { max-width: 600px; margin: 0 auto 25px; color: #666; }
+        .btn-main { display: inline-block; padding: 15px 40px; background: #F97316; color: #fff; text-decoration: none; border-radius: 50px; font-weight: 600; transition: all 0.3s; }
+        .btn-main:hover { background: #EA580C; transform: translateY(-2px); }
+        .disclaimer { padding: 30px 0; background: #f3f4f6; }
+        .disclaimer-box { background: #fff; padding: 25px; border-radius: 8px; border: 1px solid #e5e7eb; font-size: 0.85rem; color: #6b7280; }
+        .disclaimer-box strong { color: #374151; display: block; margin-bottom: 10px; }
+        footer { background: #1C1917; color: #9CA3AF; padding: 40px 0 20px; font-size: 0.9rem; }
+        .footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; }
+        .footer-links a { display: block; color: #9CA3AF; text-decoration: none; margin-bottom: 8px; }
+        .footer-links a:hover { color: #fff; }
+        .footer-bottom { border-top: 1px solid #374151; margin-top: 30px; padding-top: 20px; text-align: center; font-size: 0.8rem; }
+        @media (max-width: 768px) {
+            .ing-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 1.8rem; }
+            .email-capture-container { padding: 25px; }
+        }
+    </style>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+</head>
+<body>
+
+<nav>
+    <div class="container nav-content">
+        <a href="index.html" class="logo">Java Burn™</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="systems.html">Systems</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="#faq">FAQ</a>
+            <a href="my-weight-loss-journey.html">My Story</a>
+        </div>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="container">
+        <h1>Love Your Coffee… But Wish <span>It Helped With Weight Loss?</span></h1>
+        <p class="hero-subtitle">Java Burn is designed to blend into your daily coffee routine while supporting healthy metabolism and energy levels. If you're already drinking coffee every morning, you don't need another complicated routine. Sometimes small daily habits can be upgraded instead of replaced. Java Burn is made to fit into what you're already doing.</p>
+    </div>
+</section>
+
+<section class="integration">
+    <div class="container">
+        <h2>How It Fits Into Your Daily Routine</h2>
+        <div class="coffee-routine">
+            <h3>☕ Your Morning Ritual, Enhanced</h3>
+            <ol>
+                <li><strong>Brew your coffee</strong> as you normally would—any type, any brand</li>
+                <li><strong>Add Java Burn powder</strong>—it's tasteless and dissolves quickly</li>
+                <li><strong>Stir and enjoy</strong> your coffee as usual, now with added nutritional support</li>
+                <li><strong>Proceed with your day</strong> knowing you've supported your metabolic health</li>
+            </ol>
+            <p style="margin-top: 15px; font-style: italic;">Works with hot or iced coffee, espresso, latte, or black coffee. No change to taste or texture.</p>
+        </div>
+    </div>
+</section>
+
+<section class="ingredients">
+    <div class="container">
+        <h2>Natural Ingredients</h2>
+        <div class="ing-grid">
+            <div class="ing-card">
+                <h3>🍃 Green Tea Extract</h3>
+                <p>Contains catechins and EGCG, compounds studied for their potential role in supporting metabolism and providing antioxidant benefits.</p>
+            </div>
+            <div class="ing-card">
+                <h3>⚡ L-Carnitine</h3>
+                <p>An amino acid that plays a role in energy production by transporting fatty acids into your cells' mitochondria.</p>
+            </div>
+            <div class="ing-card">
+                <h3>🌿 L-Theanine</h3>
+                <p>An amino acid found in tea leaves that may promote relaxation without drowsiness and support cognitive function.</p>
+            </div>
+            <div class="ing-card">
+                <h3>🔬 Chromium</h3>
+                <p>An essential trace mineral that may help support healthy blood sugar levels and carbohydrate metabolism.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="who-not">
+    <div class="container">
+        <h2>Who Should NOT Use Java Burn</h2>
+        <div class="warning-box">
+            <h3>⚠️ Important Contraindications</h3>
+            <ul>
+                <li><strong>Pregnant or nursing women:</strong> Should avoid caffeine-containing supplements unless approved by their healthcare provider</li>
+                <li><strong>Children under 18:</strong> Not formulated for or intended for use by minors</li>
+                <li><strong>Caffeine-sensitive individuals:</strong> Those who experience jitters, anxiety, or sleep disturbances from caffeine should consult a doctor first</li>
+                <li><strong>People with medical conditions:</strong> Those with heart conditions, high blood pressure, or anxiety disorders should seek medical advice</li>
+                <li><strong>Those taking medications:</strong> May interact with certain medications—consult your healthcare provider</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="faq" id="faq">
+    <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <div class="faq-question">Does Java Burn change the taste of my coffee?</div>
+            <div class="faq-answer">No. Java Burn is specifically formulated to be tasteless and odorless. It dissolves quickly in hot or cold beverages without altering the flavor, aroma, or texture of your coffee.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">When is the best time to take it?</div>
+            <div class="faq-answer">Morning is ideal as it's designed to work with your coffee. The natural ingredients may help support energy levels throughout the day. Avoid taking late in the afternoon if you're sensitive to caffeine.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">How long should I use it to see results?</div>
+            <div class="faq-answer">Individual results vary significantly. Some people report feeling more energetic within days, while metabolic changes typically require consistent use over 8-12 weeks combined with diet and exercise. There is no guaranteed timeline for results.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Can I use it with other beverages?</div>
+            <div class="faq-answer">While formulated for coffee, the powder can technically be added to other beverages. However, the ingredients are specifically selected to work synergistically with coffee's natural compounds for optimal potential benefit.</div>
+        </div>
+    </div>
+</section>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E486X8NQSZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-E486X8NQSZ');
+</script>
+
+<!-- EMAIL CAPTURE SECTION WITH BREVO FORM -->
+<section class="email-capture-section" id="get-access">
+    <div class="container">
+        <h2>🔒 Get Exclusive Access to Java Burn</h2>
+        <p class="subtitle">Enter your email below to unlock the special offer and learn more about how Java Burn can enhance your morning coffee routine.</p>
+
+        <div class="email-capture-container">
+            <div class="benefits-list">
+                <h4>What You'll Get:</h4>
+                <ul>
+                    <li>Exclusive pricing not available elsewhere</li>
+                    <li>Free shipping on select packages</li>
+                    <li>60-day money-back guarantee information</li>
+                    <li>Bonus coffee recipe guide</li>
+                    <li>Access to morning routine optimization tips</li>
+                </ul>
+            </div>
+
+            <!-- Brevo Form Integration -->
+            <div class="sib-form" style="text-align: center;">
+                <div id="sib-form-container" class="sib-form-container">
+
+                    <!-- Error Message -->
+                    <div id="error-message" class="sib-form-message-panel" style="font-size:16px; text-align:left; font-family:'Inter', sans-serif; color:#ff6b6b; background-color:rgba(255, 73, 73, 0.1); border-radius:8px; border-color:#ff4949; max-width:100%; display: none;">
+                        <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+                            <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px;">
+                                <path fill="currentColor" d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z" />
+                            </svg>
+                            <span class="sib-form-message-panel__inner-text">
+                                Your subscription could not be saved. Please try again.
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Success Message -->
+                    <div id="success-message" class="sib-form-message-panel" style="font-size:16px; text-align:left; font-family:'Inter', sans-serif; color:#13ce66; background-color:rgba(19, 206, 102, 0.1); border-radius:8px; border-color:#13ce66; max-width:100%; display: none;">
+                        <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+                            <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px;">
+                                <path fill="currentColor" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" />
+                            </svg>
+                            <span class="sib-form-message-panel__inner-text">
+                                Success! Redirecting you to the exclusive offer...
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Form -->
+                    <div id="sib-container" class="sib-container--large sib-container--vertical" style="text-align:center; background-color:transparent; max-width:100%; border-radius:8px; border-width:0; direction:ltr">
+                        <form id="sib-form" method="POST" action="https://b03ef3a2.sibforms.com/serve/MUIFAI_zfea6RlhCt2Y4WsW1K4UX1wVgWxc88SZiJxngIZBZrWu5SdY7SuybqVi4Vyg3tAtXBgRB0QiM94g3s0utGaEuiWqG0-eclWUYVnO6djzLNMZ3inEiz1OKrj-NpX1Qxqd6AicRKH3ppfTnBBunyC6iLz9CuOSCoJ8l_Sb91oPAlTnuI0X4gfNomFVPls8yejce_lMUg-qT8g==" data-type="subscription">
+
+                            <div style="padding: 8px 0;">
+                                <div class="sib-input sib-form-block">
+                                    <div class="form__entry entry_block">
+                                        <div class="form__label-row">
+                                            <label class="entry__label" style="font-weight: 600; text-align:left; font-size:16px; font-family:'Inter', sans-serif; color:#fff;" for="EMAIL" data-required="*">
+                                                Enter your best email address
+                                            </label>
+                                            <div class="entry__field" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 5px;">
+                                                <input class="input" type="email" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="your@email.com" data-required="true" required style="background: transparent; border: none; color: #fff; font-family: 'Inter', sans-serif; font-size: 16px; padding: 12px; width: 100%;" />
+                                            </div>
+                                        </div>
+                                        <label class="entry__error entry__error--primary" style="font-size:14px; text-align:left; font-family:'Inter', sans-serif; color:#ff6b6b; background-color:rgba(255, 73, 73, 0.1); border-radius:6px; border-color:#ff4949; padding: 10px; margin-top: 10px; display: none;">
+                                        </label>
+                                        <label class="entry__specification" style="font-size:12px; text-align:left; font-family:'Inter', sans-serif; color:rgba(255,255,255,0.6); text-align:left; display: block; margin-top: 8px;">
+                                            We respect your privacy. Unsubscribe at any time.
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Opt-in Checkbox -->
+                            <div style="padding: 8px 0;">
+                                <div class="sib-optin sib-form-block">
+                                    <div class="form__entry entry_mcq">
+                                        <div class="form__label-row">
+                                            <div class="entry__choice">
+                                                <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                                                    <input type="checkbox" class="input_replaced" value="1" id="OPT_IN" name="OPT_IN" required style="margin-top: 3px;" />
+                                                    <span style="font-size:14px; text-align:left; font-family:'Inter', sans-serif; color:rgba(255,255,255,0.8);">
+                                                        I agree to receive your newsletters and accept the data privacy statement.
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <label class="entry__error entry__error--primary" style="font-size:14px; text-align:left; font-family:'Inter', sans-serif; color:#ff6b6b; background-color:rgba(255, 73, 73, 0.1); border-radius:6px; border-color:#ff4949; padding: 10px; margin-top: 10px; display: none;">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Brevo Declaration -->
+                            <div style="padding: 8px 0;">
+                                <div class="sib-form__declaration" style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; margin-top: 10px;">
+                                    <div style="font-size:12px; text-align:left; font-family:'Inter', sans-serif; color:rgba(255,255,255,0.6);">
+                                        <p>We use Brevo as our marketing platform. By submitting this form you agree that the personal data you provided will be transferred to Brevo for processing in accordance with <a target="_blank" href="https://www.brevo.com/en/legal/privacypolicy/" style="color: #F97316; text-decoration: underline;">Brevo's Privacy Policy</a>.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="padding: 8px 0;">
+                                <div class="sib-form-block" style="text-align: center;">
+                                    <button class="sib-form-block__button sib-form-block__button-with-loader" style="font-size:18px; text-align:center; font-weight:700; font-family:'Inter', sans-serif; color:#FFFFFF; background-color:#F97316; border-radius:50px; border-width:0px; padding: 18px 40px; width: 100%; cursor: pointer; transition: all 0.3s;" form="sib-form" type="submit">
+                                        <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512" style="width: 0; height: 0; display: none;">
+                                            <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
+                                        </svg>
+                                        YES! Send Me The Exclusive Offer →
+                                    </button>
+                                </div>
+                            </div>
+
+                            <input type="text" name="email_address_check" value="" class="input--hidden" style="display: none;">
+                            <input type="hidden" name="locale" value="en">
+
+                        </form>
+                    </div>
+
+
+<div style="text-align:center; margin-top:25px;">
+    <a href="https://nutristructure.gumroad.com/l/mfmje" target="_blank"
+    style="
+        display:inline-block;
+        background:#ffcc00;
+        color:#000;
+        padding:16px 32px;
+        border-radius:12px;
+        font-size:18px;
+        font-weight:bold;
+        text-decoration:none;
+        box-shadow:0 6px 15px rgba(0,0,0,0.2);
+        transition:0.3s;
+    "
+    onmouseover="this.style.transform='scale(1.05)'"
+    onmouseout="this.style.transform='scale(1)'">
+        📘 Get Full Guide – 100% Off Today
+    </a>
+</div>
+
+                    <p class="privacy-note">
+                        🔒 Your information is secure. By entering your email, you agree to receive marketing communications. 
+                        <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms</a>
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="container">
+        <h2>Learn More About Metabolic Health</h2>
+        <p>Explore our comprehensive resources on NutriStructure and discover how small changes can lead to significant improvements in your overall wellness journey.</p>
+        <a href="systems.html" class="btn-main">Explore The 5-Pillar System</a>
+    </div>
+</section>
+
+<section class="disclaimer">
+    <div class="container">
+        <div class="disclaimer-box">
+            <strong>Medical Disclaimer & FTC Compliance</strong>
+            <p><strong>These statements have not been evaluated by the Food and Drug Administration.</strong> This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+            <p>Individual results may vary. The information provided is for educational purposes only and is not intended as medical advice. Always consult with a qualified healthcare provider before starting any supplement regimen.</p>
+            <p>This website contains affiliate links. We may receive compensation for purchases made through these links. NutriStructure is an independent affiliate and not directly associated with the product manufacturers.</p>
+            <p>Testimonials, case studies, and examples found on this page are results that have been forwarded to us by users of related products, and may not reflect the typical purchaser's experience, may not apply to the average person and are not intended to represent or guarantee that anyone will achieve the same or similar results.</p>
+            <p style="margin-top: 15px;"><a href="privacy-policy.html" style="color: #6b7280;">Privacy Policy</a> | <a href="terms-of-service.html" style="color: #6b7280;">Terms of Service</a> | <a href="affiliate-disclosure.html" style="color: #6b7280;">Affiliate Disclosure</a></p>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== PRODUCT NAVIGATION BUTTONS ===== -->
+<section style="padding: 60px 0; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
+    <div class="container" style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <h3 style="font-size: 1.5rem; color: #0f172a; margin-bottom: 30px;">Explore More Options</h3>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
+            <a href="java-burn-review.html" style="display: inline-flex; align-items: center; gap: 10px; padding: 16px 30px; border-radius: 12px; font-weight: 700; font-size: 1rem; text-decoration: none; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; box-shadow: 0 4px 15px rgba(245,158,11,0.4); transition: all 0.3s ease;">
+                <span>⭐</span> Read Full Review
+            </a>
+            <a href="index.html#siteMap" style="display: inline-flex; align-items: center; gap: 10px; padding: 16px 30px; border-radius: 12px; font-weight: 700; font-size: 1rem; text-decoration: none; background: white; color: #0f172a; border: 2px solid #e2e8f0; transition: all 0.3s ease;">
+                <span>🛍️</span> View All Products
+            </a>
+            <a href="calculator.html" style="display: inline-flex; align-items: center; gap: 10px; padding: 16px 30px; border-radius: 12px; font-weight: 700; font-size: 1rem; text-decoration: none; background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); color: white; box-shadow: 0 4px 15px rgba(59,130,246,0.4); transition: all 0.3s ease;">
+                <span>📊</span> Calculate Metabolic Age
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div>
+                <strong style="color: #fff; display: block; margin-bottom: 10px;">NutriStructure</strong>
+                <p style="max-width: 300px; font-size: 0.85rem;">A comprehensive approach to metabolic health through Nutrition, Exercise, Mindset, Sleep, and Supplementation. Our mission is to provide educational resources for sustainable wellness.</p>
+            </div>
+            <div class="footer-links">
+                <strong style="color: #fff; display: block; margin-bottom: 10px;">Quick Links</strong>
+                <a href="index.html">Home</a>
+                <a href="systems.html">Systems</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="my-weight-loss-journey.html">My Story</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+            </div>
+            <div class="footer-links">
+                <strong style="color: #fff; display: block; margin-bottom: 10px;">Product Reviews</strong>
+                <a href="citrus-burn.html">CitrusBurn</a>
+                <a href="java-burn.html">Java Burn</a>
+                <a href="mitolyn.html">Mitolyn</a>
+                <a href="kito.html">Kito Flow</a>
+                <a href="lanta-flat-belly-shake.html">Lanta Flat Belly Shake</a>
+                <a href="slim-crystal.html">Slim Crystal</a>
+            </div>
+            <div class="footer-links">
+                <strong style="color: #fff; display: block; margin-bottom: 10px;">Resources</strong>
+                <a href="index.html#pillars">The 5 Pillars</a>
+                <a href="systems.html#nutrition">Nutrition Guide</a>
+                <a href="systems.html#exercise">Exercise Tips</a>
+                <a href="systems.html#mindset">Mindset Training</a>
+                <a href="systems.html#sleep">Sleep Optimization</a>
+                <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 NutriStructure. All Rights Reserved.</p>
+            <p style="margin-top: 10px;">This content is for educational purposes only. Results vary by individual. Always consult healthcare professionals before making changes to your health regimen.</p>
+            <p style="margin-top: 10px; font-size: 0.75rem; color: #9CA3AF;">
+                IMPORTANT: The content on this website is not intended to be a substitute for professional medical advice, diagnosis, or treatment. 
+                Never disregard professional medical advice or delay in seeking it because of something you have read on this website.
+            </p>
+        </div>
+    </div>
+</footer>
+
+<!-- Brevo Form Scripts -->
+<script>
+    window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
+    window.LOCALE = 'en';
+    window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
+    window.REQUIRED_ERROR_MESSAGE = "This field cannot be left blank. ";
+    window.GENERIC_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
+
+    window.translation = {
+        common: {
+            selectedList: '{quantity} list selected',
+            selectedLists: '{quantity} lists selected',
+            selectedOption: '{quantity} selected',
+            selectedOptions: '{quantity} selected',
+        }
+    };
+
+    var AUTOHIDE = Boolean(0);
+
+    // AFFILIATE LINK - Java Burn
+    const AFFILIATE_LINK = 'https://6827cch8hx40fn2aphg89c0n2w.hop.clickbank.net';
+</script>
+
+<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+
+<!-- Redirect Script -->
+<script>
+// Redirect after form submission
+    document.getElementById('sib-form').addEventListener('submit', function() {
+        setTimeout(function() {
+            window.location.href = 'https://6827cch8hx40fn2aphg89c0n2w.hop.clickbank.net';
+        }, 2000);
+    });
+</script>
+
+<!-- Additional Tracking and Functionality -->
+<script>
+    // Track button clicks
+    document.addEventListener('DOMContentLoaded', function() {
+        // Track CTA button clicks
+        const ctaButtons = document.querySelectorAll('.btn-main');
+        ctaButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'click', {
+                        'event_category': 'cta',
+                        'event_label': button.textContent.trim()
+                    });
+                }
+            });
+        });
+
+        // Track navigation clicks
+        const navLinks = document.querySelectorAll('.nav-links a');
+        navLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'click', {
+                        'event_category': 'navigation',
+                        'event_label': link.textContent.trim()
+                    });
+                }
+            });
+        });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

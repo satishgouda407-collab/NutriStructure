@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our science-backed weight loss solutions. From natural methods to modern supplements, find the right approach for your metabolic health journey.">
+    <title>Weight Loss Solutions | NutriStructure</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="premium-upgrade.css">
+    <link rel="stylesheet" href="3d-styles.css">
+    <style>
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --accent: #f59e0b;
+            --secondary: #0f172a;
+            --success: #22c55e;
+            --gradient-primary: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            --shadow-soft: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; color: #334155; line-height: 1.6; background: #ffffff; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Navigation */
+        nav { background: rgba(255,255,255,0.98); padding: 15px 0; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 999; box-shadow: 0 4px 20px rgba(0,0,0,0.08); backdrop-filter: blur(10px); }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.5rem; color: var(--secondary); text-decoration: none; }
+        .logo-icon { width: 45px; height: 45px; background: var(--gradient-primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; }
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-links a { text-decoration: none; color: #64748b; font-weight: 600; font-size: 0.95rem; transition: all 0.3s ease; }
+        .nav-links a:hover { color: var(--primary); }
+        .btn-nav { background: var(--gradient-primary); color: white !important; padding: 12px 25px; border-radius: 50px; }
+        
+        /* Hero Section */
+        .hero { padding: 80px 0; text-align: center; background: linear-gradient(180deg, #ecfdf5 0%, #ffffff 100%); }
+        .hero h1 { font-size: 2.8rem; color: var(--secondary); margin-bottom: 20px; }
+        .hero h1 span { color: var(--primary); }
+        .hero p { font-size: 1.2rem; color: #64748b; max-width: 700px; margin: 0 auto; }
+        
+        /* Category Section */
+        .category-section { padding: 60px 0; }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 { font-size: 2.2rem; color: var(--secondary); margin-bottom: 15px; }
+        .section-header p { color: #64748b; font-size: 1.1rem; }
+        
+        .products-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+        
+        .product-card { 
+            background: white; 
+            border-radius: 20px; 
+            overflow: hidden; 
+            box-shadow: var(--shadow-soft);
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        .product-card:hover { transform: translateY(-5px); border-color: var(--primary); }
+        .product-card.featured { border-color: var(--accent); }
+        
+        .product-image { height: 200px; background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem; }
+        .product-card.featured .product-image { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); }
+        
+        .product-content { padding: 30px; }
+        .featured-badge { 
+            display: inline-block; 
+            background: var(--accent); 
+            color: white; 
+            padding: 5px 15px; 
+            border-radius: 50px; 
+            font-size: 0.75rem; 
+            font-weight: 700; 
+            margin-bottom: 15px;
+        }
+        .product-content h3 { color: var(--secondary); font-size: 1.4rem; margin-bottom: 10px; }
+        .product-content > p { color: #64748b; margin-bottom: 20px; }
+        
+        .benefits-list { list-style: none; margin-bottom: 25px; }
+        .benefits-list li { 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+            padding: 8px 0; 
+            color: #475569;
+        }
+        .benefits-list li::before { content: '✓'; color: var(--success); font-weight: 700; }
+        
+        .price-row { 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8fafc;
+            border-radius: 12px;
+        }
+        .price { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+        .price-note { font-size: 0.85rem; color: #64748b; }
+        
+        .btn-product { 
+            display: block; 
+            width: 100%; 
+            padding: 15px; 
+            background: var(--gradient-primary); 
+            color: white; 
+            text-align: center; 
+            text-decoration: none; 
+            border-radius: 12px; 
+            font-weight: 700; 
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        .btn-product:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(16,185,129,0.4); }
+        .btn-product.featured { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
+        
+        /* Order Bump Box */
+        .order-bump { 
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); 
+            border: 2px solid var(--accent); 
+            border-radius: 12px; 
+            padding: 20px; 
+            margin-top: 20px;
+        }
+        .order-bump-header { 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+            margin-bottom: 10px;
+        }
+        .order-bump-header input { width: 20px; height: 20px; accent-color: var(--accent); }
+        .order-bump-header label { font-weight: 700; color: #92400e; cursor: pointer; }
+        .order-bump p { color: #78350f; font-size: 0.9rem; margin: 0; }
+        .order-bump-price { 
+            display: inline-block; 
+            background: var(--accent); 
+            color: white; 
+            padding: 3px 10px; 
+            border-radius: 50px; 
+            font-weight: 700; 
+            font-size: 0.85rem;
+            margin-left: 10px;
+        }
+        
+        /* Comparison Section */
+        .comparison-section { padding: 60px 0; background: #f8fafc; }
+        .comparison-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
+        
+        .comparison-card { 
+            background: white; 
+            border-radius: 20px; 
+            padding: 35px; 
+            box-shadow: var(--shadow-soft);
+            text-align: center;
+            border: 2px solid #e2e8f0;
+        }
+        .comparison-card.best { border-color: var(--accent); position: relative; }
+        .best-badge { 
+            position: absolute; 
+            top: -12px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            background: var(--accent); 
+            color: white; 
+            padding: 5px 20px; 
+            border-radius: 50px; 
+            font-size: 0.8rem; 
+            font-weight: 700;
+        }
+        
+        .comparison-card h4 { color: var(--secondary); margin-bottom: 10px; }
+        .comparison-card .price { font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 5px; }
+        .comparison-card .period { color: #64748b; font-size: 0.9rem; margin-bottom: 20px; }
+        .comparison-card ul { list-style: none; text-align: left; }
+        .comparison-card li { 
+            padding: 10px 0; 
+            border-bottom: 1px solid #e2e8f0; 
+            color: #475569;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .comparison-card li::before { content: '✓'; color: var(--success); }
+        .comparison-card li:last-child { border-bottom: none; }
+        
+        /* CTA Section */
+        .cta-section { padding: 80px 0; background: linear-gradient(135deg, var(--secondary) 0%, #1e293b 100%); color: white; text-align: center; }
+        .cta-section h2 { font-size: 2.2rem; margin-bottom: 20px; }
+        .cta-section p { max-width: 600px; margin: 0 auto 30px; opacity: 0.9; }
+        .btn-main { 
+            display: inline-block; 
+            padding: 20px 50px; 
+            background: var(--accent); 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: 700; 
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        .btn-main:hover { background: #d97706; transform: translateY(-3px); }
+        
+        /* Trust Badges */
+        .trust-section { padding: 60px 0; background: white; }
+        .trust-badges { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+        .trust-badge { display: flex; align-items: center; gap: 10px; color: #64748b; font-weight: 600; }
+        
+        /* Page Navigation */
+        .page-nav { display: flex; justify-content: center; gap: 15px; margin: 40px 0; padding: 20px; background: white; border-radius: 20px; box-shadow: var(--shadow-soft); }
+        .page-btn { padding: 12px 30px; border: 2px solid #e2e8f0; background: white; color: #64748b; border-radius: 50px; font-weight: 700; cursor: pointer; transition: all 0.3s ease; font-size: 1rem; text-decoration: none; display: inline-block; }
+        .page-btn:hover { border-color: var(--primary); color: var(--primary); }
+        .page-btn.active { background: var(--gradient-primary); color: white; border-color: var(--primary); }
+        
+        /* Footer */
+        footer { background: var(--secondary); color: #94a3b8; padding: 60px 0 30px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        .footer-brand { font-size: 1.5rem; font-weight: 800; color: white; margin-bottom: 15px; }
+        .footer-desc { line-height: 1.8; max-width: 300px; }
+        .footer-links h4 { color: white; margin-bottom: 20px; font-size: 1.1rem; }
+        .footer-links a { display: block; color: #94a3b8; text-decoration: none; margin-bottom: 10px; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--primary); }
+        .footer-bottom { border-top: 1px solid #334155; padding-top: 30px; text-align: center; font-size: 0.85rem; }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .products-grid { grid-template-columns: 1fr; }
+            .comparison-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="container nav-content">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">7</div>
+            <span>NutriStructure</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="pillar-6.html">Pillar 6</a>
+            <a href="pillar-7.html">Pillar 7</a>
+            <a href="systems.html">Systems</a>
+            <a href="solutions.html" class="active">Solutions</a>
+            <a href="customer-transformations.html">Results</a>
+            <a href="calculator.html" class="btn-nav">Metabolic Age Calculator</a>
+        </div>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="container">
+        <h1>Choose Your <span>Solution</span></h1>
+        <p>Science-backed products designed to support your metabolic health journey. Each solution targets a specific aspect of NutriStructure.</p>
+    </div>
+</section>
+
+<!-- Core Products Section -->
+<section class="category-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>🔥 Core Metabolic Support</h2>
+            <p>Our most popular solutions for metabolic health and weight management</p>
+        </div>
+        
+        <div class="products-grid">
+            <!-- Citrus Burn -->
+            <div class="product-card featured">
+                <div class="product-image">🍊</div>
+                <div class="product-content">
+                    <span class="featured-badge">⭐ BEST SELLER</span>
+                    <h3>Citrus Burn</h3>
+                    <p>Advanced metabolic support with citrus bioflavonoids for natural energy and craving control.</p>
+                    
+                    <ul class="benefits-list">
+                        <li>Supports metabolic enzyme function</li>
+                        <li>Natural energy without jitters</li>
+                        <li>Helps reduce cravings</li>
+                        <li>180-day money-back guarantee</li>
+                    </ul>
+                    
+                    <div class="price-row">
+                        <div>
+                            <span class="price">$69</span>
+                            <span class="price-note">/ bottle</span>
+                        </div>
+                        <span class="price-note">Free shipping on 3+ bottles</span>
+                    </div>
+                    
+                    <a href="https://62389pqekbwzpi-xpnvm7w2d0c.hop.clickbank.net" class="btn-product featured">Get Citrus Burn →</a>
+                    
+                    <!-- Order Bump -->
+                    <div class="order-bump">
+                        <div class="order-bump-header">
+                            <input type="checkbox" id="cb-bump" checked>
+                            <label for="cb-bump">Add Metabolic Grocery List <span class="order-bump-price">+$9</span></label>
+                        </div>
+                        <p>My personally curated shopping list with the exact foods that support metabolic health</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mitolyn -->
+            <div class="product-card">
+                <div class="product-image">💎</div>
+                <div class="product-content">
+                    <h3>Mitolyn</h3>
+                    <p>Cellular energy support with powerful antioxidants for sustained vitality throughout the day.</p>
+                    
+                    <ul class="benefits-list">
+                        <li>Supports mitochondrial function</li>
+                        <li>Sustained natural energy</li>
+                        <li>Antioxidant cellular protection</li>
+                        <li>90-day money-back guarantee</li>
+                    </ul>
+                    
+                    <div class="price-row">
+                        <div>
+                            <span class="price">$59</span>
+                            <span class="price-note">/ bottle</span>
+                        </div>
+                        <span class="price-note">Free shipping on 3+ bottles</span>
+                    </div>
+                    
+                    <a href="https://4cf61jtef401oq3hwopedh6ndw.hop.clickbank.net" class="btn-product">Get Mitolyn →</a>
+                </div>
+            </div>
+            
+            <!-- Java Burn -->
+            <div class="product-card">
+                <div class="product-image">☕</div>
+                <div class="product-content">
+                    <h3>Java Burn</h3>
+                    <p>Tasteless powder that supercharges your morning coffee with metabolism-supporting ingredients.</p>
+                    
+                    <ul class="benefits-list">
+                        <li>Tasteless — won't change your coffee</li>
+                        <li>Works with caffeine synergistically</li>
+                        <li>Supports morning metabolic activity</li>
+                        <li>60-day money-back guarantee</li>
+                    </ul>
+                    
+                    <div class="price-row">
+                        <div>
+                            <span class="price">$49</span>
+                            <span class="price-note">/ pouch</span>
+                        </div>
+                        <span class="price-note">Free shipping on 3+ pouches</span>
+                    </div>
+                    
+                    <a href="https://6827cch8hx40fn2aphg89c0n2w.hop.clickbank.net" class="btn-product">Get Java Burn →</a>
+                </div>
+            </div>
+            
+            <!-- Lanta Flat Belly Shake -->
+            <div class="product-card">
+                <div class="product-image">🥤</div>
+                <div class="product-content">
+                    <h3>Lanta Flat Belly Shake</h3>
+                    <p>Complete meal replacement with plant-based protein, fiber, and essential vitamins.</p>
+                    
+                    <ul class="benefits-list">
+                        <li>25g plant-based protein per serving</li>
+                        <li>High fiber for satiety</li>
+                        <li>Complete vitamin & mineral profile</li>
+                        <li>Quick 30-second preparation</li>
+                    </ul>
+                    
+                    <div class="price-row">
+                        <div>
+                            <span class="price">$69</span>
+                            <span class="price-note">/ bag</span>
+                        </div>
+                        <span class="price-note">Free shipping on 3+ bags</span>
+                    </div>
+                    
+                    <a href="https://theflatbellyshake.com/discovery/#aff=Honeybunny4k" class="btn-product">Get Lanta Shake →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Bundle Comparison Section -->
+<section class="comparison-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>💰 Choose Your Bundle</h2>
+            <p>Save more when you commit to your transformation</p>
+        </div>
+        
+        <div class="comparison-grid">
+            <div class="comparison-card">
+                <h4>Starter</h4>
+                <div class="price">$69</div>
+                <div class="period">1 bottle / 30 days</div>
+                <ul>
+                    <li>30-day supply</li>
+                    <li>180-day guarantee</li>
+                    <li>Basic support</li>
+                </ul>
+                <a href="https://62389pqekbwzpi-xpnvm7w2d0c.hop.clickbank.net" class="btn-product" style="margin-top: 20px;">Get Started →</a>
+            </div>
+            
+            <div class="comparison-card best">
+                <span class="best-badge">MOST POPULAR</span>
+                <h4>Transformation</h4>
+                <div class="price">$177</div>
+                <div class="period">3 bottles / 90 days</div>
+                <ul>
+                    <li>90-day supply</li>
+                    <li>180-day guarantee</li>
+                    <li>Priority support</li>
+                    <li>2 FREE bonuses</li>
+                    <li>Free shipping</li>
+                </ul>
+                <a href="https://62389pqekbwzpi-xpnvm7w2d0c.hop.clickbank.net" class="btn-product featured" style="margin-top: 20px;">Get Started →</a>
+            </div>
+            
+            <div class="comparison-card">
+                <h4>Ultimate</h4>
+                <div class="price">$234</div>
+                <div class="period">6 bottles / 180 days</div>
+                <ul>
+                    <li>180-day supply</li>
+                    <li>180-day guarantee</li>
+                    <li>VIP support</li>
+                    <li>3 FREE bonuses</li>
+                    <li>Free shipping</li>
+                    <li>Best value</li>
+                </ul>
+                <a href="https://62389pqekbwzpi-xpnvm7w2d0c.hop.clickbank.net" class="btn-product" style="margin-top: 20px;">Get Started →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Trust Section -->
+<section class="trust-section">
+    <div class="container">
+        <div class="trust-badges">
+            <div class="trust-badge"><span>🛡️</span> Secure Checkout</div>
+            <div class="trust-badge"><span>✓</span> 180-Day Guarantee</div>
+            <div class="trust-badge"><span>🚚</span> Free Shipping</div>
+            <div class="trust-badge"><span>💬</span> 24/7 Support</div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="container">
+        <h2>Not Sure Which Solution Is Right For You?</h2>
+        <p>Take the 60-second metabolic quiz to get a personalized recommendation based on your specific metabolic type.</p>
+        <a href="metabolic-quiz.html" class="btn-main">Take The Metabolic Quiz →</a>
+    </div>
+</section>
+
+<div class="container">
+    <div class="page-nav">
+        <a href="index.html" class="page-btn">Home</a>
+        <a href="systems.html" class="page-btn">Systems</a>
+        <a href="solutions.html" class="page-btn active">Solutions</a>
+        <a href="customer-transformations.html" class="page-btn">Results</a>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">NutriStructure</div>
+                <p class="footer-desc">Your comprehensive educational resource for metabolic health and sustainable weight management.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="systems.html">Systems</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="customer-transformations.html">Results</a>
+            </div>
+            <div class="footer-links">
+                <h4>Resources</h4>
+                <a href="metabolic-quiz.html">Metabolic Quiz</a>
+                <a href="recommended-stack.html">My Stack</a>
+                <a href="faq.html">FAQ</a>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="disclaimer.html">Disclaimer</a>
+                <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NutriStructure. All Rights Reserved.</p>
+            <p style="margin-top: 10px;">Results may vary. Individual experiences are not typical.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Premium Effects & Gamification -->
+<script src="premium-effects.js"></script>
+<script src="badges.js"></script>
+<script src="live-results-ticker.js"></script>
+
+<!-- 3D Spatial Experience Effects -->
+<script src="3d-effects.js"></script>
+
+<!-- Section Visibility Animation -->
+<script>
+const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('section').forEach(section => sectionObserver.observe(section));
+</script>
+
+</body>
+</html>

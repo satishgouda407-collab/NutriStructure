@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Frequently asked questions about NutriStructure. Get answers about how it works, who it's for, and what results to expect.">
+    <title>FAQ | NutriStructure Questions Answered</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --accent: #f59e0b;
+            --secondary: #0f172a;
+            --gradient-primary: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            --shadow-soft: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; color: #334155; line-height: 1.6; background: #ffffff; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Navigation */
+        nav { background: rgba(255,255,255,0.98); padding: 15px 0; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 999; box-shadow: 0 4px 20px rgba(0,0,0,0.08); backdrop-filter: blur(10px); }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.5rem; color: var(--secondary); text-decoration: none; }
+        .logo-icon { width: 45px; height: 45px; background: var(--gradient-primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; }
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-links a { text-decoration: none; color: #64748b; font-weight: 600; font-size: 0.95rem; transition: all 0.3s ease; }
+        .nav-links a:hover { color: var(--primary); }
+        .btn-nav { background: var(--gradient-primary); color: white !important; padding: 12px 25px; border-radius: 50px; }
+        
+        /* Hero Section */
+        .hero { padding: 80px 0; text-align: center; background: linear-gradient(180deg, #ecfdf5 0%, #ffffff 100%); }
+        .hero h1 { font-size: 2.8rem; color: var(--secondary); margin-bottom: 20px; }
+        .hero h1 span { color: var(--primary); }
+        .hero p { font-size: 1.2rem; color: #64748b; max-width: 600px; margin: 0 auto; }
+        
+        /* FAQ Section */
+        .faq-section { padding: 60px 0; }
+        
+        .faq-category { margin-bottom: 50px; }
+        .faq-category h2 { 
+            font-size: 1.5rem; 
+            color: var(--secondary); 
+            margin-bottom: 25px; 
+            padding-bottom: 15px; 
+            border-bottom: 2px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .faq-item { 
+            background: white; 
+            border-radius: 15px; 
+            margin-bottom: 15px; 
+            box-shadow: var(--shadow-soft);
+            border: 2px solid #e2e8f0;
+            overflow: hidden;
+        }
+        .faq-question { 
+            padding: 25px 30px; 
+            cursor: pointer; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            background: white;
+            transition: all 0.3s ease;
+        }
+        .faq-question:hover { background: #f8fafc; }
+        .faq-question h3 { 
+            font-size: 1.1rem; 
+            color: var(--secondary); 
+            font-weight: 600;
+            padding-right: 20px;
+        }
+        .faq-icon { 
+            font-size: 1.5rem; 
+            color: var(--primary); 
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+        .faq-item.active .faq-icon { transform: rotate(180deg); }
+        
+        .faq-answer { 
+            max-height: 0; 
+            overflow: hidden; 
+            transition: max-height 0.3s ease;
+        }
+        .faq-item.active .faq-answer { max-height: 500px; }
+        .faq-answer-content { 
+            padding: 0 30px 25px; 
+            color: #64748b; 
+            line-height: 1.8;
+        }
+        .faq-answer-content p { margin-bottom: 15px; }
+        .faq-answer-content p:last-child { margin-bottom: 0; }
+        .faq-answer-content strong { color: var(--secondary); }
+        
+        /* Highlight Box */
+        .highlight-box { 
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); 
+            border: 2px solid var(--accent); 
+            border-radius: 15px; 
+            padding: 25px; 
+            margin: 20px 0;
+        }
+        .highlight-box p { color: #78350f; margin: 0; }
+        
+        /* CTA Section */
+        .cta-section { padding: 80px 0; background: linear-gradient(135deg, var(--secondary) 0%, #1e293b 100%); color: white; text-align: center; }
+        .cta-section h2 { font-size: 2.2rem; margin-bottom: 20px; }
+        .cta-section p { max-width: 600px; margin: 0 auto 30px; opacity: 0.9; }
+        .btn-main { 
+            display: inline-block; 
+            padding: 20px 50px; 
+            background: var(--accent); 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: 700; 
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        .btn-main:hover { background: #d97706; transform: translateY(-3px); }
+        
+        /* Footer */
+        footer { background: var(--secondary); color: #94a3b8; padding: 60px 0 30px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        .footer-brand { font-size: 1.5rem; font-weight: 800; color: white; margin-bottom: 15px; }
+        .footer-desc { line-height: 1.8; max-width: 300px; }
+        .footer-links h4 { color: white; margin-bottom: 20px; font-size: 1.1rem; }
+        .footer-links a { display: block; color: #94a3b8; text-decoration: none; margin-bottom: 10px; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--primary); }
+        .footer-bottom { border-top: 1px solid #334155; padding-top: 30px; text-align: center; font-size: 0.85rem; }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .faq-question { padding: 20px; }
+            .faq-question h3 { font-size: 1rem; }
+            .faq-answer-content { padding: 0 20px 20px; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="container nav-content">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">5</div>
+            <span>NutriStructure</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="systems.html">Systems</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="faq.html">FAQ</a>
+            <a href="metabolic-quiz.html" class="btn-nav">Take The Quiz</a>
+        </div>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="container">
+        <h1>Frequently Asked <span>Questions</span></h1>
+        <p>Get honest answers about NutriStructure, how it works, and what you can expect.</p>
+    </div>
+</section>
+
+<section class="faq-section">
+    <div class="container">
+        
+        <!-- Main Objection FAQ -->
+        <div class="faq-category">
+            <h2><span>❓</span> The Big Question</h2>
+            
+            <div class="faq-item active">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Will this work if I've failed every other diet?</h3>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p><strong>Yes — and here's why it's different:</strong></p>
+                        <p>Traditional diets fail because they work AGAINST your biology. They trigger "metabolic adaptation" — your body's survival response to calorie restriction that actually slows your metabolism and increases cravings.</p>
+                        <p>NutriStructure works WITH your biology by:</p>
+                        <ul style="margin-left: 20px; margin-bottom: 15px;">
+                            <li>Rebuilding metabolic trust through nutrient-dense foods (not restriction)</li>
+                            <li>Balancing cortisol and stress hormones</li>
+                            <li>Supporting your mitochondria (cellular energy production)</li>
+                            <li>Creating sustainable habits instead of temporary fixes</li>
+                        </ul>
+                        <div class="highlight-box">
+                            <p><strong>The difference:</strong> Traditional diets ask "How little can you eat?" NutriStructure asks "How can we support your body to function optimally?"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E486X8NQSZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-E486X8NQSZ');
+</script>
+        
+        <!-- Getting Started -->
+        <div class="faq-category">
+            <h2><span>🚀</span> Getting Started</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>How long until I see results?</h3>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Most people notice changes within the first 2-3 weeks:</p>
+                        <ul style="margin-left: 20px; margin-bottom: 15px;">
+                            <li><strong>Week 1-2:</strong> Reduced bloating, better sleep, more stable energy</li>
+                            <li><strong>Week 3-4:</strong> Fewer cravings, improved mood, clothes fitting better</li>
+                            <li><strong>Month 2+:</strong> Visible body changes, increased strength, sustainable habits formed</li>
+                        </ul>
+                        <p>Remember: This is a lifestyle change, not a quick fix. The goal is sustainable results that last.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Do I need to exercise?</h3>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p><strong>Movement is recommended, but not extreme exercise.</strong></p>
+                        <p>NutriStructure focuses on movement you ENJOY — not punishing workouts. This could be:</p>
+                        <ul style="margin-left: 20px; margin-bottom: 15px;">
+                            <li>Walking (the most underrated exercise)</li>
+                            <li>Swimming, cycling, or dancing</li>
+                            <li>Light resistance training 2-3x per week</li>
+                            <li>Yoga or stretching for stress relief</li>
+                        </ul>
+                        <p>The key is consistency, not intensity. Start where you are and build from there.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Do I need to count calories or macros?</h3>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p><strong>No calorie counting required.</strong></p>
+                        <p>We focus on nutrient density and food quality over numbers. The protocol teaches you to:</p>
+                        <ul style="margin-left: 20px; margin-bottom: 15px;">
+                            <li>Listen to your body's hunger and fullness cues</li>
+                            <li>Choose foods that support metabolic health</li>
+                            <li>Build balanced meals without measuring</li>
+                        </ul>
+                        <p>If you've been stuck in the calorie-counting cycle, this will feel like freedom.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- The Protocol -->
+        <div class="faq-category">
+            <h2><span>📋</span> About The Protocol</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>What exactly is NutriStructure?</h3>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>NutriStructure is a comprehensive approach to metabolic health built on five foundational elements:</p>
+                        <ul style="margin-left: 20px; margin-bottom: 15px;">
+                            <li><strong>Nutrition:</strong> Nutrient-dense foods that support metabolic function</li>
+                            <li><strong>Movement:</strong> Exercise that builds metabolic capacity without burnout</li>
+                            <li><strong>Mindset:</strong> Psychological tools to break the diet-binge cycle</li>
+                            <li><strong>Sleep:</strong> Optimizing rest for hormone balance and recovery</li>
+                            <li><strong>Supplementation:</strong> Targeted support for metabolic pathways</li>
+                        </ul>
+                        <p>It's not a diet — it's a complete lifestyle system designed to rebuild metabolic trust.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Is this a meal plan or a diet?</h3>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p><strong>Neither — it's better than both.</strong></p>
+                        <p>Meal plans are too rigid. Diets are too restrictive. NutriStructure gives you:</p>
+                        <ul style="margin-left: 20px; margin-bottom: 15px;">
+                            <li>Flexible guidelines, not rigid rules</li>
+                            <li>Food lists and meal ideas, not forced menus</li>
+                            <li>Principles you can apply anywhere (restaurants, travel, holidays)</li>
+                            <li>Freedom to enjoy food while supporting your goals</li>
+                        </ul>
+                        <p>You'll learn to make choices that support your body — for life.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Do I need to buy supplements?</h3>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p><strong>Supplements are optional but recommended for optimal results.</strong></p>
+                        <p>The protocol works without supplements, but targeted support can accelerate your progress. We recommend:</p>
+                        <ul style="margin-left: 20px; margin-bottom: 15px;">
+                            <li>A quality multivitamin to fill nutritional gaps</li>
+                            <li>Magnesium for sleep and stress support</li>
+                            <li>Omega-3s for inflammation</li>
+                            <li>Targeted metabolic support (see <a href="recommended-stack.html">My Recommended Stack</a>)</li>
+                        </ul>
+                        <p>Everything is explained in the protocol — you choose what fits your budget and goals.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Results & Expectations -->
+        <div class="faq-category">
+            <h2><span>📊</span> Results & Expectations</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>How much weight will I lose?</h3>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p><strong>Results vary based on many factors.</strong></p>
+                        <p>We don't promise specific numbers because every body is different. Factors include:</p>
+                        <ul style="margin-left: 20px; margin-bottom: 15px;">
+                            <li>Starting weight and body composition</li>
+                            <li>How long you've been dieting (metabolic adaptation)</li>
+                            <li>Consistency with the protocol</li>
+                            <li>Stress levels and sleep quality</li>
+                            <li>Individual metabolic differences</li>
+                        </ul>
+                        <p>What we CAN promise: You'll feel better, have more energy, and develop sustainable habits that support long-term health.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>What if I have a medical condition?</h3>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p><strong>Always consult your healthcare provider first.</strong></p>
+                        <p>NutriStructure focuses on whole foods and lifestyle changes that are generally safe, but if you have:</p>
+                        <ul style="margin-left: 20px; margin-bottom: 15px;">
+                            <li>Diabetes or blood sugar issues</li>
+                            <li>Thyroid conditions</li>
+                            <li>Heart disease</li>
+                            <li>Any other medical condition</li>
+                        </ul>
+                        <p>Please consult your doctor before starting any new health program. We're happy to work with your healthcare team.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Can I do this if I'm vegetarian/vegan?</h3>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p><strong>Absolutely!</strong></p>
+                        <p>NutriStructure is flexible and works with any dietary preference. We provide:</p>
+                        <ul style="margin-left: 20px; margin-bottom: 15px;">
+                            <li>Plant-based protein options</li>
+                            <li>Vegetarian meal ideas</li>
+                            <li>Vegan-friendly supplement recommendations</li>
+                            <li>Guidance on meeting nutritional needs</li>
+                        </ul>
+                        <p>The principles remain the same regardless of what foods you choose.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Support & Guarantee -->
+        <div class="faq-category">
+            <h2><span>🛡️</span> Support & Guarantee</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>What if it doesn't work for me?</h3>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p><strong>We offer a 30-day satisfaction guarantee.</strong></p>
+                        <p>If you don't feel more energized, less bloated, and in better control of your cravings within 30 days, we'll refund every penny. No questions asked.</p>
+                        <p>We're confident in the protocol because it's based on metabolic science, not gimmicks. But we also understand that every body is different.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h3>Do you offer support or coaching?</h3>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p><strong>Yes! You get access to our community.</strong></p>
+                        <p>When you join NutriStructure, you get:</p>
+                        <ul style="margin-left: 20px; margin-bottom: 15px;">
+                            <li>Access to our private community of 50,000+ members</li>
+                            <li>Weekly Q&A sessions</li>
+                            <li>Recipe sharing and meal ideas</li>
+                            <li>Accountability partners</li>
+                        </ul>
+                        <p>You're never doing this alone.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="container">
+        <h2>Still Have Questions?</h2>
+        <p>Take the 60-second metabolic quiz to get personalized answers based on your specific situation.</p>
+        <a href="metabolic-quiz.html" class="btn-main">Take The Metabolic Quiz →</a>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">NutriStructure</div>
+                <p class="footer-desc">Your comprehensive educational resource for metabolic health and sustainable weight management.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="systems.html">Systems</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="faq.html">FAQ</a>
+            </div>
+            <div class="footer-links">
+                <h4>Resources</h4>
+                <a href="metabolic-quiz.html">Metabolic Quiz</a>
+                <a href="recommended-stack.html">My Stack</a>
+                <a href="customer-transformations.html">Results</a>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="disclaimer.html">Disclaimer</a>
+                <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NutriStructure. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+function toggleFaq(element) {
+    const faqItem = element.parentElement;
+    const isActive = faqItem.classList.contains('active');
+    
+    // Close all FAQ items
+    document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+    });
+    
+    // Open clicked item if it wasn't already open
+    if (!isActive) {
+        faqItem.classList.add('active');
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Take our free 4-question metabolic quiz to discover if your metabolism is in 'Survival' or 'Burn' mode. Get personalized recommendations.">
+    <title>Metabolic Quiz: Is Your Body in Survival or Burn Mode?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --primary-light: #34d399;
+            --accent: #f59e0b;
+            --secondary: #0f172a;
+            --success: #22c55e;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            color: #334155; 
+            line-height: 1.6; 
+            background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%);
+            min-height: 100vh;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        
+        /* Header */
+        .quiz-header { text-align: center; margin-bottom: 40px; }
+        .quiz-header h1 { font-size: 2.2rem; color: var(--secondary); margin-bottom: 15px; }
+        .quiz-header p { color: #64748b; font-size: 1.1rem; max-width: 500px; margin: 0 auto; }
+        
+        /* Progress Bar */
+        .progress-container { margin-bottom: 40px; }
+        .progress-bar { 
+            height: 10px; 
+            background: #e2e8f0; 
+            border-radius: 10px; 
+            overflow: hidden;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .progress-fill { 
+            height: 100%; 
+            background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+            width: 25%; 
+            transition: width 0.4s ease;
+            border-radius: 10px;
+        }
+        .progress-text { 
+            text-align: center; 
+            margin-top: 12px; 
+            color: #64748b; 
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+        .progress-text span { color: var(--primary); font-weight: 700; }
+        
+        /* Quiz Card */
+        .quiz-card { 
+            background: white; 
+            border-radius: 25px; 
+            padding: 40px; 
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1); 
+            border: 2px solid #e2e8f0;
+        }
+        
+        .question { display: none; }
+        .question.active { display: block; animation: fadeIn 0.4s ease; }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .question h3 { font-size: 1.4rem; color: var(--secondary); margin-bottom: 25px; line-height: 1.4; }
+        .question-number { 
+            display: inline-block;
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            color: var(--primary);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-right: 8px;
+        }
+        
+        .options { display: flex; flex-direction: column; gap: 12px; }
+        .option { 
+            display: flex; 
+            align-items: center; 
+            gap: 15px; 
+            padding: 18px 20px; 
+            background: #f8fafc; 
+            border: 2px solid #e2e8f0; 
+            border-radius: 15px; 
+            cursor: pointer; 
+            transition: all 0.3s ease;
+        }
+        .option:hover { 
+            border-color: var(--primary); 
+            background: #f0fdf4; 
+        }
+        .option.selected {
+            border-color: var(--primary);
+            background: #f0fdf4;
+        }
+        .option input { display: none; }
+        .option-radio { 
+            width: 24px; 
+            height: 24px; 
+            border: 2px solid #cbd5e1; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+        .option.selected .option-radio { 
+            border-color: var(--primary); 
+            background: var(--primary); 
+        }
+        .option.selected .option-radio::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+        }
+        .option-text { font-size: 1rem; color: #475569; font-weight: 500; }
+        .option.selected .option-text { color: var(--primary); font-weight: 600; }
+        
+        /* Navigation Buttons */
+        .quiz-nav { 
+            display: flex; 
+            justify-content: space-between; 
+            margin-top: 30px; 
+            padding-top: 30px; 
+            border-top: 1px solid #e2e8f0; 
+        }
+        .btn { 
+            padding: 15px 35px; 
+            border-radius: 50px; 
+            font-weight: 700; 
+            font-size: 1rem; 
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+            border: none;
+        }
+        .btn-secondary { 
+            background: #f1f5f9; 
+            color: #64748b; 
+        }
+        .btn-secondary:hover { background: #e2e8f0; }
+        .btn-primary { 
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%); 
+            color: white; 
+            box-shadow: 0 4px 15px rgba(16,185,129,0.4);
+        }
+        .btn-primary:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 6px 20px rgba(16,185,129,0.6);
+        }
+        .btn:disabled { 
+            opacity: 0.5; 
+            cursor: not-allowed;
+            transform: none !important;
+        }
+        
+        /* Results Section */
+        .results { display: none; text-align: center; }
+        .results.active { display: block; animation: fadeIn 0.5s ease; }
+        
+        .result-badge { 
+            display: inline-block; 
+            padding: 15px 30px; 
+            border-radius: 50px; 
+            font-weight: 800; 
+            font-size: 1.1rem; 
+            margin-bottom: 25px;
+        }
+        .result-badge.survival { background: #fef3c7; color: #92400e; }
+        .result-badge.burn { background: #dcfce7; color: #166534; }
+        .result-badge.mixed { background: #dbeafe; color: #1e40af; }
+        
+        .result-title { font-size: 1.8rem; color: var(--secondary); margin-bottom: 20px; }
+        .result-description { color: #64748b; font-size: 1.05rem; max-width: 600px; margin: 0 auto 30px; line-height: 1.7; }
+        
+        .recommendation-box { 
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); 
+            border: 2px solid var(--primary); 
+            border-radius: 20px; 
+            padding: 30px; 
+            margin: 30px 0; 
+            text-align: left;
+        }
+        .recommendation-box h4 { color: var(--secondary); margin-bottom: 15px; font-size: 1.1rem; }
+        .recommendation-box ul { margin-left: 20px; color: #475569; }
+        .recommendation-box li { margin-bottom: 10px; }
+        
+        /* AI Coach Section in Results */
+        .ai-coach-box {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 30px 0;
+            color: white;
+            text-align: left;
+        }
+        .ai-coach-box h4 {
+            color: var(--primary-light);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        .ai-coach-box p {
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        .btn-ai-coach {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        .btn-ai-coach:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(245,158,11,0.4);
+        }
+        
+        /* Product Cards in Results */
+        .products-list {
+            margin: 30px 0;
+            text-align: left;
+        }
+        .products-list h4 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .product-rec-card {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        .product-rec-card:hover {
+            border-color: var(--primary);
+        }
+        .product-rec-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .product-rec-name {
+            font-weight: 700;
+            color: var(--secondary);
+            font-size: 1.1rem;
+        }
+        .product-rec-price {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        .product-rec-desc {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+        .btn-get-product {
+            display: inline-block;
+            padding: 12px 25px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        .btn-get-product:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        /* Download PDF Button */
+        .btn-download-pdf {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        .btn-download-pdf:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(245,158,11,0.4);
+        }
+        
+        @media (max-width: 600px) {
+            .quiz-header h1 { font-size: 1.7rem; }
+            .quiz-card { padding: 25px; }
+            .question h3 { font-size: 1.2rem; }
+            .option { padding: 15px; }
+            .btn { padding: 12px 25px; font-size: 0.95rem; }
+        }
+    </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E486X8NQSZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E486X8NQSZ');
+</script>
+
+<div class="container">
+    <div class="quiz-header">
+        <h1>The 60-Second Metabolic Quiz</h1>
+        <p>Discover if your metabolism is in "Survival Mode" or "Burn Mode" — and get personalized recommendations to optimize it.</p>
+    </div>
+    
+    <div class="progress-container">
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <p class="progress-text">Question <span id="currentQ">1</span> of 4</p>
+    </div>
+    
+    <div class="quiz-card" id="quizCard">
+        <!-- Question 1 -->
+        <div class="question active" data-q="1">
+            <h3><span class="question-number">Q1</span> How do you feel when you wake up in the morning?</h3>
+            <div class="options">
+                <label class="option" onclick="selectOption(1, 'survival', this)">
+                    <input type="radio" name="q1" value="survival">
+                    <span class="option-radio"></span>
+                    <span class="option-text">Exhausted, even after 8+ hours of sleep</span>
+                </label>
+                <label class="option" onclick="selectOption(1, 'survival', this)">
+                    <input type="radio" name="q1" value="survival">
+                    <span class="option-radio"></span>
+                    <span class="option-text">Tired and groggy — need coffee to function</span>
+                </label>
+                <label class="option" onclick="selectOption(1, 'mixed', this)">
+                    <input type="radio" name="q1" value="mixed">
+                    <span class="option-radio"></span>
+                    <span class="option-text">Okay, but energy crashes by mid-afternoon</span>
+                </label>
+                <label class="option" onclick="selectOption(1, 'burn', this)">
+                    <input type="radio" name="q1" value="burn">
+                    <span class="option-radio"></span>
+                    <span class="option-text">Refreshed and ready to start the day</span>
+                </label>
+            </div>
+        </div>
+        
+        <!-- Question 2 -->
+        <div class="question" data-q="2">
+            <h3><span class="question-number">Q2</span> What's your relationship with food cravings?</h3>
+            <div class="options">
+                <label class="option" onclick="selectOption(2, 'survival', this)">
+                    <input type="radio" name="q2" value="survival">
+                    <span class="option-radio"></span>
+                    <span class="option-text">Constant cravings for sugar and carbs</span>
+                </label>
+                <label class="option" onclick="selectOption(2, 'survival', this)">
+                    <input type="radio" name="q2" value="survival">
+                    <span class="option-radio"></span>
+                    <span class="option-text">I think about food all day long</span>
+                </label>
+                <label class="option" onclick="selectOption(2, 'mixed', this)">
+                    <input type="radio" name="q2" value="mixed">
+                    <span class="option-radio"></span>
+                    <span class="option-text">Occasional cravings, especially when stressed</span>
+                </label>
+                <label class="option" onclick="selectOption(2, 'burn', this)">
+                    <input type="radio" name="q2" value="burn">
+                    <span class="option-radio"></span>
+                    <span class="option-text">Rarely crave unhealthy foods</span>
+                </label>
+            </div>
+        </div>
+        
+        <!-- Question 3 -->
+        <div class="question" data-q="3">
+            <h3><span class="question-number">Q3</span> How does your body respond to dieting?</h3>
+            <div class="options">
+                <label class="option" onclick="selectOption(3, 'survival', this)">
+                    <input type="radio" name="q3" value="survival">
+                    <span class="option-radio"></span>
+                    <span class="option-text">I lose a few pounds, then gain back more</span>
+                </label>
+                <label class="option" onclick="selectOption(3, 'survival', this)">
+                    <input type="radio" name="q3" value="survival">
+                    <span class="option-radio"></span>
+                    <span class="option-text">Weight won't budge no matter what I try</span>
+                </label>
+                <label class="option" onclick="selectOption(3, 'mixed', this)">
+                    <input type="radio" name="q3" value="mixed">
+                    <span class="option-radio"></span>
+                    <span class="option-text">Slow progress that plateaus quickly</span>
+                </label>
+                <label class="option" onclick="selectOption(3, 'burn', this)">
+                    <input type="radio" name="q3" value="burn">
+                    <span class="option-radio"></span>
+                    <span class="option-text">I can lose weight when I focus on it</span>
+                </label>
+            </div>
+        </div>
+        
+        <!-- Question 4 -->
+        <div class="question" data-q="4">
+            <h3><span class="question-number">Q4</span> How would you describe your stress levels?</h3>
+            <div class="options">
+                <label class="option" onclick="selectOption(4, 'survival', this)">
+                    <input type="radio" name="q4" value="survival">
+                    <span class="option-radio"></span>
+                    <span class="option-text">Constantly stressed and overwhelmed</span>
+                </label>
+                <label class="option" onclick="selectOption(4, 'survival', this)">
+                    <input type="radio" name="q4" value="survival">
+                    <span class="option-radio"></span>
+                    <span class="option-text">High stress — I can't seem to relax</span>
+                </label>
+                <label class="option" onclick="selectOption(4, 'mixed', this)">
+                    <input type="radio" name="q4" value="mixed">
+                    <span class="option-radio"></span>
+                    <span class="option-text">Moderate stress, manageable most days</span>
+                </label>
+                <label class="option" onclick="selectOption(4, 'burn', this)">
+                    <input type="radio" name="q4" value="burn">
+                    <span class="option-radio"></span>
+                    <span class="option-text">Low stress — I handle it well</span>
+                </label>
+            </div>
+        </div>
+        
+        <!-- Results -->
+        <div class="results" id="results">
+            <div id="resultContent"></div>
+        </div>
+        
+        <!-- Navigation -->
+        <div class="quiz-nav" id="quizNav">
+            <button class="btn btn-secondary" id="prevBtn" onclick="prevQuestion()" disabled>← Previous</button>
+            <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()" disabled>Next Question →</button>
+        </div>
+    </div>
+</div>
+
+<script>
+let currentQuestion = 1;
+const totalQuestions = 4;
+const answers = {};
+
+function selectOption(qNum, value, element) {
+    // Store the answer
+    answers[qNum] = value;
+    
+    // Update visual selection
+    const questionDiv = document.querySelector('.question.active');
+    questionDiv.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
+    element.classList.add('selected');
+    
+    // Enable next button
+    document.getElementById('nextBtn').disabled = false;
+    
+    // Auto-advance after short delay
+    setTimeout(() => {
+        if (currentQuestion < totalQuestions) {
+            nextQuestion();
+        } else {
+            document.getElementById('nextBtn').textContent = 'See My Results →';
+        }
+    }, 500);
+}
+
+function updateProgress() {
+    const progress = (currentQuestion / totalQuestions) * 100;
+    document.getElementById('progressFill').style.width = progress + '%';
+    document.getElementById('currentQ').textContent = currentQuestion;
+}
+
+function nextQuestion() {
+    if (currentQuestion < totalQuestions) {
+        // Hide current question
+        document.querySelector('.question.active').classList.remove('active');
+        
+        // Move to next
+        currentQuestion++;
+        
+        // Show new question
+        document.querySelector('.question[data-q="' + currentQuestion + '"]').classList.add('active');
+        
+        // Update buttons
+        document.getElementById('prevBtn').disabled = false;
+        document.getElementById('nextBtn').disabled = !answers[currentQuestion];
+        
+        // Update button text for last question
+        if (currentQuestion === totalQuestions) {
+            document.getElementById('nextBtn').textContent = 'See My Results →';
+        }
+        
+        updateProgress();
+    } else {
+        showResults();
+    }
+}
+
+function prevQuestion() {
+    if (currentQuestion > 1) {
+        // Hide current question
+        document.querySelector('.question.active').classList.remove('active');
+        
+        // Move back
+        currentQuestion--;
+        
+        // Show previous question
+        document.querySelector('.question[data-q="' + currentQuestion + '"]').classList.add('active');
+        
+        // Update buttons
+        document.getElementById('prevBtn').disabled = currentQuestion === 1;
+        document.getElementById('nextBtn').disabled = false;
+        document.getElementById('nextBtn').textContent = 'Next Question →';
+        
+        updateProgress();
+    }
+}
+
+function showResults() {
+    // Hide questions and nav
+    document.querySelectorAll('.question').forEach(q => q.style.display = 'none');
+    document.getElementById('quizNav').style.display = 'none';
+    document.querySelector('.progress-container').style.display = 'none';
+
+    // Calculate result
+    const survivalCount = Object.values(answers).filter(a => a === 'survival').length;
+    const burnCount = Object.values(answers).filter(a => a === 'burn').length;
+
+    let resultType, resultTitle, resultDesc, recommendations, recommendedProducts;
+
+    // Affiliate links
+    const productLinks = {
+        citrusBurn: 'https://62389pqekbwzpi-xpnvm7w2d0c.hop.clickbank.net',
+        mitolyn: 'https://4cf61jtef401oq3hwopedh6ndw.hop.clickbank.net',
+        javaBurn: 'https://6827cch8hx40fn2aphg89c0n2w.hop.clickbank.net',
+        lantaShake: 'https://theflatbellyshake.com/discovery/#aff=Honeybunny4k',
+        slimCrystal: 'https://22c8eoo5j889hl2ks8-96sxgib.hop.clickbank.net'
+    };
+
+    if (survivalCount >= 2) {
+        resultType = 'survival';
+        resultTitle = 'Your Metabolism is in SURVIVAL MODE';
+        resultDesc = 'Your body has adapted to years of restrictive dieting by slowing down your metabolic rate. This is why traditional diets don\'t work for you anymore. The good news? This is completely reversible with the right approach.';
+        recommendations = [
+            'Focus on rebuilding metabolic trust through nutrient-dense foods',
+            'Prioritize sleep and stress management (cortisol is your enemy)',
+            'Consider targeted supplementation to support your metabolism',
+            'Avoid aggressive calorie restriction — it makes things worse'
+        ];
+        recommendedProducts = [
+            { name: 'Citrus Burn', desc: 'Supports metabolic enzyme function', price: '$69', link: productLinks.citrusBurn },
+            { name: 'Mitolyn', desc: 'Balances hormones and cortisol', price: '$59', link: productLinks.mitolyn },
+            { name: 'Java Burn', desc: 'Boosts natural energy production', price: '$49', link: productLinks.javaBurn }
+        ];
+    } else if (burnCount >= 2) {
+        resultType = 'burn';
+        resultTitle = 'Your Metabolism is in BURN MODE';
+        resultDesc = 'Great news! Your metabolism is functioning well. You respond predictably to diet and exercise changes. Focus on optimizing your routine for even better results.';
+        recommendations = [
+            'Maintain your current healthy habits',
+            'Fine-tune your nutrition for peak performance',
+            'Consider advanced protocols to break through plateaus',
+            'Focus on long-term sustainability'
+        ];
+        recommendedProducts = [
+            { name: 'Lanta Flat Belly Shake', desc: 'Complete meal replacement for appetite control', price: '$69', link: productLinks.lantaShake },
+            { name: 'Java Burn', desc: 'Enhances your morning coffee for energy', price: '$49', link: productLinks.javaBurn },
+            { name: 'Slim Crystal', desc: 'Crystal-infused hydration support', price: '$117', link: productLinks.slimCrystal }
+        ];
+    } else {
+        resultType = 'mixed';
+        resultTitle = 'Your Metabolism is in TRANSITION';
+        resultDesc = 'You show signs of both metabolic efficiency and some adaptive slowdown. With the right protocol, you can shift fully into "Burn Mode" and optimize your results.';
+        recommendations = [
+            'Address stress and sleep quality immediately',
+            'Support your metabolism with key minerals',
+            'Follow a moderate, sustainable nutrition plan',
+            'Track your progress and adjust as needed'
+        ];
+        recommendedProducts = [
+            { name: 'Mitolyn', desc: 'Hormonal balance and stress support', price: '$59', link: productLinks.mitolyn },
+            { name: 'Citrus Burn', desc: 'Metabolic enzyme support', price: '$69', link: productLinks.citrusBurn },
+            { name: 'Lanta Flat Belly Shake', desc: 'Appetite control and nutrition', price: '$69', link: productLinks.lantaShake }
+        ];
+    }
+
+    // Store for PDF generation
+    window.quizResult = { resultType, resultTitle, resultDesc, recommendations, recommendedProducts };
+
+    // Build product recommendations HTML
+    const productsHTML = recommendedProducts.map(function(product) {
+        return '<div class="product-rec-card">' +
+            '<div class="product-rec-header">' +
+                '<div class="product-rec-name">' + product.name + '</div>' +
+                '<div class="product-rec-price">' + product.price + '</div>' +
+            '</div>' +
+            '<div class="product-rec-desc">' + product.desc + '</div>' +
+            '<a href="' + product.link + '" target="_blank" class="btn-get-product">Get ' + product.name + ' &rarr;</a>' +
+        '</div>';
+    }).join('');
+
+    // Build results HTML with AI Coach
+    const resultsHTML = 
+        '<div class="result-badge ' + resultType + '">' + 
+            (resultType === 'survival' ? '⚠️ ' : resultType === 'burn' ? '✅ ' : '⚡ ') + 
+            resultType.toUpperCase() + ' MODE' +
+        '</div>' +
+        '<h2 class="result-title">' + resultTitle + '</h2>' +
+        '<p class="result-description">' + resultDesc + '</p>' +
+        '<div class="recommendation-box">' +
+            '<h4>Your Personalized Action Plan:</h4>' +
+            '<ul>' + recommendations.map(function(r) { return '<li>' + r + '</li>'; }).join('') + '</ul>' +
+        '</div>' +
+        '<div class="products-list">' +
+            '<h4>Recommended Products For Your Metabolism Type</h4>' +
+            productsHTML +
+        '</div>' +
+        '<div class="ai-coach-box">' +
+            '<h4>Want An Even More Personalized Plan?</h4>' +
+            '<p>Our AI Metabolism Coach analyzes your specific body data to create a completely customized protocol with exact product dosages and timing.</p>' +
+            '<a href="index.html#aiCoach" class="btn-ai-coach">Get My AI-Personalized Protocol</a>' +
+        '</div>' +
+        '<button onclick="generateQuizPDF()" class="btn-download-pdf">Download My Complete Protocol PDF</button>' +
+        '<p style="text-align:center;color:#64748b;font-size:0.85rem;margin-top:15px;">' +
+            'Your personalized PDF includes full analysis, product details, and your 30-day action plan.' +
+        '</p>';
+
+    document.getElementById('resultContent').innerHTML = resultsHTML;
+    document.getElementById('results').classList.add('active');
+
+    // Track completion
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'quiz_complete', {
+            'event_category': 'engagement',
+            'event_label': resultType + '_mode'
+        });
+    }
+}
+
+async function generateQuizPDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    const result = window.quizResult;
+
+    // Colors
+    const darkBlue = [15, 23, 42];
+    const green = [16, 185, 129];
+    const orange = [245, 158, 11];
+    const white = [255, 255, 255];
+    const lightGray = [248, 250, 252];
+    const textGray = [100, 116, 139];
+
+    // Page 1 - Cover
+    doc.setFillColor.apply(doc, darkBlue);
+    doc.rect(0, 0, 210, 297, 'F');
+
+    // Logo circle
+    doc.setFillColor.apply(doc, green);
+    doc.circle(105, 50, 25, 'F');
+    doc.setTextColor.apply(doc, white);
+    doc.setFontSize(28);
+    doc.setFont('helvetica', 'bold');
+    doc.text('5', 105, 58, { align: 'center' });
+
+    // Title
+    doc.setFontSize(24);
+    doc.text('YOUR METABOLIC', 105, 100, { align: 'center' });
+    doc.text('QUIZ RESULTS', 105, 118, { align: 'center' });
+
+    // Result badge
+    const badgeColor = result.resultType === 'survival' ? orange : result.resultType === 'burn' ? green : [59, 130, 246];
+    doc.setFillColor.apply(doc, badgeColor);
+    doc.roundedRect(60, 135, 90, 18, 9, 9, 'F');
+    doc.setFontSize(12);
+    doc.text(result.resultType.toUpperCase() + ' MODE', 105, 147, { align: 'center' });
+
+    // Date
+    doc.setFontSize(10);
+    doc.setTextColor(180, 180, 180);
+    doc.text('Generated: ' + new Date().toLocaleDateString(), 105, 175, { align: 'center' });
+
+    // Page 2 - Analysis
+    doc.addPage();
+    doc.setFillColor.apply(doc, lightGray);
+    doc.rect(0, 0, 210, 297, 'F');
+
+    doc.setTextColor.apply(doc, darkBlue);
+    doc.setFontSize(18);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Your Metabolism Analysis', 20, 25);
+
+    // Result box
+    doc.setFillColor.apply(doc, white);
+    doc.roundedRect(20, 35, 170, 55, 8, 8, 'F');
+    
+    // Type header
+    doc.setFillColor.apply(doc, badgeColor);
+    doc.roundedRect(25, 40, 160, 14, 7, 7, 'F');
+    doc.setFontSize(12);
+    doc.setTextColor.apply(doc, white);
+    doc.text(result.resultType.toUpperCase() + ' MODE', 105, 50, { align: 'center' });
+    
+    doc.setFontSize(10);
+    doc.setTextColor(80, 80, 80);
+    doc.setFont('helvetica', 'normal');
+    const descLines = doc.splitTextToSize(result.resultDesc, 155);
+    doc.text(descLines, 25, 65);
+
+    // Action Plan
+    doc.setFontSize(14);
+    doc.setTextColor.apply(doc, darkBlue);
+    doc.setFont('helvetica', 'bold');
+    doc.text('YOUR ACTION PLAN:', 20, 110);
+
+    let y = 125;
+    result.recommendations.forEach(function(rec, index) {
+        doc.setFillColor.apply(doc, white);
+        doc.roundedRect(20, y, 170, 20, 4, 4, 'F');
+        doc.setTextColor.apply(doc, green);
+        doc.setFont('helvetica', 'bold');
+        doc.text((index + 1) + '.', 28, y + 12);
+        doc.setTextColor(60, 60, 60);
+        doc.setFont('helvetica', 'normal');
+        const recLines = doc.splitTextToSize(rec, 145);
+        doc.text(recLines, 40, y + 12);
+        y += 26;
+    });
+
+    // Page 3 - Products
+    doc.addPage();
+    doc.setFillColor.apply(doc, white);
+    doc.rect(0, 0, 210, 297, 'F');
+
+    doc.setTextColor.apply(doc, darkBlue);
+    doc.setFontSize(18);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Your Recommended Products', 20, 25);
+
+    y = 40;
+    result.recommendedProducts.forEach(function(product, index) {
+        // Product card
+        doc.setFillColor.apply(doc, lightGray);
+        doc.roundedRect(20, y, 170, 55, 6, 6, 'F');
+
+        // Priority badge
+        doc.setFillColor.apply(doc, orange);
+        doc.roundedRect(25, y + 5, 50, 10, 5, 5, 'F');
+        doc.setFontSize(8);
+        doc.setTextColor.apply(doc, white);
+        doc.text('#' + (index + 1) + ' PRIORITY', 50, y + 11, { align: 'center' });
+
+        // Product name
+        doc.setFontSize(13);
+        doc.setTextColor.apply(doc, darkBlue);
+        doc.setFont('helvetica', 'bold');
+        doc.text(product.name, 25, y + 26);
+
+        // Description
+        doc.setFontSize(9);
+        doc.setTextColor.apply(doc, textGray);
+        doc.setFont('helvetica', 'normal');
+        const prodDesc = doc.splitTextToSize(product.desc, 155);
+        doc.text(prodDesc, 25, y + 38);
+
+        // Price
+        doc.setFontSize(13);
+        doc.setTextColor.apply(doc, green);
+        doc.setFont('helvetica', 'bold');
+        doc.text(product.price, 175, y + 26, { align: 'right' });
+
+        // Clickable link area
+        doc.setFillColor.apply(doc, green);
+        doc.roundedRect(25, y + 45, 160, 8, 4, 4, 'F');
+        doc.setFontSize(7);
+        doc.setTextColor.apply(doc, white);
+        doc.text('Click to order: ' + product.link.substring(0, 50) + '...', 105, y + 50, { align: 'center' });
+        doc.link(25, y + 45, 160, 8, { url: product.link });
+
+        y += 65;
+    });
+
+    // Footer
+    doc.setFillColor.apply(doc, darkBlue);
+    doc.rect(0, 270, 210, 27, 'F');
+    doc.setTextColor.apply(doc, white);
+    doc.setFontSize(11);
+    doc.setFont('helvetica', 'bold');
+    doc.text('NutriStructure', 105, 282, { align: 'center' });
+    doc.setFontSize(9);
+    doc.setFont('helvetica', 'normal');
+    doc.setTextColor(150, 150, 150);
+    doc.text('www.the5pillarprotocol.com', 105, 290, { align: 'center' });
+
+    // Save
+    doc.save('Metabolic-Quiz-Results-' + result.resultType.toUpperCase() + '.pdf');
+
+    // Track
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'quiz_pdf_download', {
+            'event_category': 'conversion',
+            'event_label': result.resultType + '_mode'
+        });
+    }
+}
+
+// Initialize
+updateProgress();
+</script>
+
+</body>
+</html>

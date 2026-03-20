@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the Gut-Brain Reset - The 6th Pillar of weight loss. Learn how your microbiome and leaky gut are stopping fat loss, and how to fix it.">
+    <meta name="keywords" content="gut brain connection, microbiome weight loss, leaky gut, gut health, probiotic weight loss, gut bacteria fat loss">
+    <meta name="author" content="The 5-Pillar Protocol">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="The 6th Pillar: Gut-Brain Reset | Fix Leaky Gut & Burn Fat">
+    <meta property="og:description" content="Your gut bacteria control your weight more than you think. Discover the 6th secret pillar of fat loss.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://the5pillarprotocol.com/pillar-6.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>The 6th Pillar: Gut-Brain Reset | The Secret to Effortless Fat Loss</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="canonical" href="https://the5pillarprotocol.com/pillar-6.html">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="premium-upgrade.css">
+    <style>
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --primary-light: #34d399;
+            --secondary: #0f172a;
+            --accent: #f59e0b;
+            --accent-light: #fbbf24;
+            --danger: #ef4444;
+            --success: #22c55e;
+            --gut-purple: #8b5cf6;
+            --gut-purple-light: #a78bfa;
+            --gradient-primary: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            --gradient-gut: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+            --shadow-soft: 0 10px 40px rgba(0,0,0,0.1);
+            --shadow-glow: 0 0 30px rgba(139, 92, 246, 0.3);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            color: #334155; 
+            line-height: 1.6; 
+            background: #ffffff; 
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-15px); } }
+        @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.4); } 50% { box-shadow: 0 0 40px rgba(139, 92, 246, 0.7); } }
+        @keyframes bacteria-float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(10px, -15px) scale(1.1); }
+            50% { transform: translate(-5px, -8px) scale(0.95); }
+            75% { transform: translate(-10px, -20px) scale(1.05); }
+        }
+
+        /* Navigation */
+        nav { background: rgba(255,255,255,0.98); padding: 15px 0; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 999; box-shadow: 0 4px 20px rgba(0,0,0,0.08); backdrop-filter: blur(10px); }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.5rem; color: var(--secondary); text-decoration: none; }
+        .logo-icon { width: 45px; height: 45px; background: var(--gradient-gut); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; box-shadow: 0 4px 15px rgba(139,92,246,0.4); }
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-links a { text-decoration: none; color: #64748b; font-weight: 600; font-size: 0.95rem; transition: all 0.3s ease; }
+        .nav-links a:hover { color: var(--gut-purple); }
+        .nav-links a.active { color: var(--gut-purple); }
+        .btn-nav { background: var(--gradient-gut); color: white !important; padding: 12px 25px; border-radius: 50px; box-shadow: 0 4px 15px rgba(139,92,246,0.4); }
+
+        /* Hero Section */
+        .hero { 
+            padding: 100px 0 80px; 
+            text-align: center; 
+            background: linear-gradient(180deg, #f5f3ff 0%, #ede9fe 50%, #ffffff 100%); 
+            position: relative; 
+            overflow: hidden; 
+        }
+        .hero::before { 
+            content: ''; 
+            position: absolute; 
+            top: -30%; 
+            right: -10%; 
+            width: 600px; 
+            height: 600px; 
+            background: radial-gradient(circle, rgba(139,92,246,0.2) 0%, transparent 70%); 
+            border-radius: 50%; 
+            animation: float 8s ease-in-out infinite; 
+        }
+        .hero::after { 
+            content: ''; 
+            position: absolute; 
+            bottom: -20%; 
+            left: -10%; 
+            width: 400px; 
+            height: 400px; 
+            background: radial-gradient(circle, rgba(16,185,129,0.1) 0%, transparent 70%); 
+            border-radius: 50%; 
+            animation: float 10s ease-in-out infinite reverse;
+        }
+        
+        .secret-badge { 
+            display: inline-block; 
+            background: linear-gradient(135deg, rgba(139,92,246,0.2) 0%, rgba(139,92,246,0.05) 100%); 
+            color: #7c3aed; 
+            padding: 12px 30px; 
+            border-radius: 50px; 
+            font-weight: 800; 
+            font-size: 0.9rem; 
+            margin-bottom: 25px; 
+            border: 2px solid rgba(139,92,246,0.3);
+            position: relative;
+            z-index: 1;
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+        
+        .hero h1 { 
+            font-size: 3.2rem; 
+            color: var(--secondary); 
+            line-height: 1.1; 
+            margin-bottom: 25px; 
+            font-weight: 800; 
+            max-width: 900px; 
+            margin-left: auto; 
+            margin-right: auto; 
+            position: relative;
+            z-index: 1;
+        }
+        .hero h1 span { 
+            background: linear-gradient(135deg, var(--gut-purple) 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subheadline {
+            font-size: 1.4rem;
+            color: #475569;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 40px;
+            position: relative;
+            z-index: 1;
+            flex-wrap: wrap;
+        }
+        .hero-stat {
+            text-align: center;
+        }
+        .hero-stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--gut-purple);
+            display: block;
+        }
+        .hero-stat-label {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        /* Section Styles */
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 { font-size: 2.5rem; color: var(--secondary); margin-bottom: 15px; font-weight: 800; }
+        .section-header p { color: #64748b; font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+        /* The Connection Section */
+        .connection-section { padding: 100px 0; background: white; }
+        .connection-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .connection-visual {
+            position: relative;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .brain-gut-connection {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+        .brain-icon, .gut-icon {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+        .brain-icon {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            border: 3px solid #3b82f6;
+            animation: float 4s ease-in-out infinite;
+        }
+        .gut-icon {
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+            border: 3px solid var(--gut-purple);
+            animation: float 4s ease-in-out infinite reverse;
+        }
+        .connection-line {
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            width: 4px;
+            height: 180px;
+            background: linear-gradient(to bottom, #3b82f6, var(--gut-purple));
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        .connection-pulse {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--gut-purple);
+            border-radius: 50%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            animation: connection-pulse 2s ease-in-out infinite;
+        }
+        @keyframes connection-pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+            50% { transform: translate(-50%, -50%) scale(1.5); opacity: 0.5; }
+        }
+        .connection-content h3 {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        .connection-content p {
+            color: #475569;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .connection-fact {
+            background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+            border-left: 4px solid var(--gut-purple);
+            padding: 20px;
+            border-radius: 0 12px 12px 0;
+            margin-top: 25px;
+        }
+        .connection-fact strong {
+            color: #7c3aed;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .connection-fact p {
+            margin: 0;
+            color: #5b21b6;
+        }
+
+        /* Leaky Gut Section */
+        .leaky-gut-section { padding: 100px 0; background: linear-gradient(180deg, #fef2f2 0%, #fff5f5 50%, #ffffff 100%); }
+        .leaky-gut-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .leaky-gut-content h3 {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        .leaky-gut-content > p {
+            color: #475569;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+        .symptom-list {
+            list-style: none;
+        }
+        .symptom-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border: 1px solid #fecaca;
+        }
+        .symptom-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #fecaca 0%, #fca5a5 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+        .symptom-text strong {
+            color: #dc2626;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .symptom-text span {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+        .leaky-gut-visual {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: var(--shadow-soft);
+            text-align: center;
+        }
+        .leaky-gut-visual h4 {
+            color: var(--secondary);
+            margin-bottom: 30px;
+        }
+        .gut-wall {
+            position: relative;
+            height: 200px;
+            background: linear-gradient(180deg, #fecaca 0%, #fee2e2 100%);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .gut-wall.healthy {
+            background: linear-gradient(180deg, #bbf7d0 0%, #dcfce7 100%);
+        }
+        .gut-cells {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            padding: 40px 20px;
+        }
+        .gut-cell {
+            width: 40px;
+            height: 80px;
+            background: #fca5a5;
+            border-radius: 8px;
+            position: relative;
+        }
+        .gut-cell.healthy {
+            background: #86efac;
+        }
+        .gut-cell.leaky::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 15px;
+            height: 15px;
+            background: #dc2626;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: toxin-leak 2s ease-in-out infinite;
+        }
+        @keyframes toxin-leak {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+            50% { transform: translate(-50%, 30px) scale(0.5); opacity: 0.3; }
+        }
+        .gut-label {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        /* Microbiome Section */
+        .microbiome-section { padding: 100px 0; background: white; }
+        .bacteria-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .bacteria-card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+            border: 2px solid #e2e8f0;
+            transition: all 0.4s ease;
+        }
+        .bacteria-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--gut-purple);
+            box-shadow: var(--shadow-glow);
+        }
+        .bacteria-emoji {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: bacteria-float 5s ease-in-out infinite;
+        }
+        .bacteria-card:nth-child(2) .bacteria-emoji { animation-delay: 0.5s; }
+        .bacteria-card:nth-child(3) .bacteria-emoji { animation-delay: 1s; }
+        .bacteria-card h4 {
+            color: var(--secondary);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        .bacteria-card p {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        .bacteria-type {
+            display: inline-block;
+            padding: 6px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-top: 15px;
+        }
+        .bacteria-type.good {
+            background: #dcfce7;
+            color: #166534;
+        }
+        .bacteria-type.bad {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+        .bacteria-type.balance {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        /* Reset Protocol Section */
+        .reset-protocol-section { padding: 100px 0; background: linear-gradient(180deg, #f5f3ff 0%, #ede9fe 50%, #ffffff 100%); }
+        .protocol-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .protocol-step {
+            background: white;
+            border-radius: 20px;
+            padding: 35px 25px;
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+            border: 2px solid #e2e8f0;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+        .protocol-step:hover {
+            transform: translateY(-8px);
+            border-color: var(--gut-purple);
+            box-shadow: var(--shadow-glow);
+        }
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-gut);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(139,92,246,0.4);
+        }
+        .step-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+        .protocol-step h4 {
+            color: var(--secondary);
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+        }
+        .protocol-step p {
+            color: #64748b;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Foods Section */
+        .foods-section { padding: 100px 0; background: white; }
+        .foods-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .foods-column {
+            background: white;
+            border-radius: 24px;
+            padding: 35px;
+            box-shadow: var(--shadow-soft);
+        }
+        .foods-column.eat {
+            border: 2px solid #bbf7d0;
+        }
+        .foods-column.avoid {
+            border: 2px solid #fecaca;
+        }
+        .foods-column h4 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+        }
+        .foods-column.eat h4 { color: #166534; }
+        .foods-column.avoid h4 { color: #991b1b; }
+        .food-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: #f8fafc;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .food-item span:first-child {
+            font-size: 1.5rem;
+        }
+        .food-item span:last-child {
+            color: #475569;
+            font-weight: 500;
+        }
+
+        /* CTA Section */
+        .cta-section { 
+            padding: 100px 0; 
+            background: linear-gradient(135deg, var(--gut-purple) 0%, #7c3aed 100%); 
+            text-align: center; 
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+            animation: cta-glow 10s ease-in-out infinite;
+        }
+        @keyframes cta-glow {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(180deg); }
+        }
+        .cta-section .container { position: relative; z-index: 1; }
+        .cta-section h2 { font-size: 2.5rem; margin-bottom: 20px; }
+        .cta-section p { max-width: 600px; margin: 0 auto 30px; opacity: 0.95; font-size: 1.1rem; }
+        .btn-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 50px;
+            background: white;
+            color: var(--gut-purple);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        footer { background: var(--secondary); color: #94a3b8; padding: 60px 0 30px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        .footer-brand { font-size: 1.5rem; font-weight: 800; color: white; margin-bottom: 15px; }
+        .footer-desc { line-height: 1.8; max-width: 300px; }
+        .footer-links h4 { color: white; margin-bottom: 20px; font-size: 1.1rem; }
+        .footer-links a { display: block; color: #94a3b8; text-decoration: none; margin-bottom: 10px; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--gut-purple-light); }
+        .footer-bottom { border-top: 1px solid #334155; padding-top: 30px; text-align: center; font-size: 0.85rem; }
+
+        @media (max-width: 768px) {
+            .hero { padding: 60px 0 50px; }
+            .hero h1 { font-size: 2rem; }
+            .hero-subheadline { font-size: 1.1rem; }
+            .hero-stats { gap: 30px; }
+            .connection-grid, .leaky-gut-grid { grid-template-columns: 1fr; }
+            .bacteria-grid { grid-template-columns: 1fr; }
+            .protocol-steps { grid-template-columns: 1fr 1fr; }
+            .foods-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="container nav-content">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">7</div>
+            <span>The 7-Pillar Protocol</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="pillar-6.html" class="active">Pillar 6</a>
+            <a href="pillar-7.html">Pillar 7</a>
+            <a href="systems.html">Systems</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="calculator.html" class="btn-nav">Metabolic Age Calculator</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="secret-badge">🔬 SECRET PILLAR #6</div>
+        <h1>The <span>Gut-Brain Reset</span><br>Why Your Microbiome Controls Your Weight</h1>
+        <p class="hero-subheadline">Scientists have discovered that your gut bacteria send signals to your brain that control hunger, cravings, and fat storage. Fix your gut, fix your weight.</p>
+        
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <span class="hero-stat-number">100T</span>
+                <span class="hero-stat-label">Gut Bacteria</span>
+            </div>
+            <div class="hero-stat">
+                <span class="hero-stat-number">90%</span>
+                <span class="hero-stat-label">Serotonin in Gut</span>
+            </div>
+            <div class="hero-stat">
+                <span class="hero-stat-number">70%</span>
+                <span class="hero-stat-label">Immune System</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- The Connection Section -->
+<section class="connection-section">
+    <div class="container">
+        <div class="connection-grid">
+            <div class="connection-visual scroll-reveal">
+                <div class="brain-gut-connection">
+                    <div class="brain-icon">🧠</div>
+                    <div class="connection-line"></div>
+                    <div class="connection-pulse"></div>
+                    <div class="gut-icon">🦠</div>
+                </div>
+            </div>
+            <div class="connection-content scroll-reveal-right">
+                <h3>The Hidden Connection</h3>
+                <p>Your gut and brain are constantly talking to each other through the vagus nerve — a superhighway of communication that controls your appetite, mood, and metabolism.</p>
+                <p>When your gut bacteria are out of balance (a condition called dysbiosis), they send "hunger signals" to your brain even when you've eaten enough. This creates uncontrollable cravings and makes weight loss nearly impossible.</p>
+                <div class="connection-fact">
+                    <strong>🧬 Did You Know?</strong>
+                    <p>Your gut contains over 100 trillion bacteria — that's 10 times more bacterial cells than human cells in your entire body. These bacteria produce hormones that directly influence your weight.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Leaky Gut Section -->
+<section class="leaky-gut-section">
+    <div class="container">
+        <div class="leaky-gut-grid">
+            <div class="leaky-gut-content scroll-reveal-left">
+                <h3>"Leaky Gut" Is Making You Fat</h3>
+                <p>When the lining of your intestines becomes damaged (from processed foods, stress, antibiotics, and environmental toxins), it develops tiny holes. This is called "leaky gut syndrome."</p>
+                <p>These holes allow undigested food particles, toxins, and bacteria to leak into your bloodstream, triggering inflammation throughout your body — and inflammation is the #1 cause of stubborn fat storage.</p>
+                
+                <ul class="symptom-list">
+                    <li>
+                        <div class="symptom-icon">🍔</div>
+                        <div class="symptom-text">
+                            <strong>Constant Cravings</strong>
+                            <span>Bad bacteria make you crave sugar and processed carbs</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="symptom-icon">😴</div>
+                        <div class="symptom-text">
+                            <strong>Chronic Fatigue</strong>
+                            <span>Your body spends energy fighting inflammation</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="symptom-icon">🤰</div>
+                        <div class="symptom-text">
+                            <strong>Bloating & Gas</strong>
+                            <span>Signs of bacterial imbalance and poor digestion</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="symptom-icon">😔</div>
+                        <div class="symptom-text">
+                            <strong>Mood Swings</strong>
+                            <span>90% of serotonin is produced in your gut</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="leaky-gut-visual scroll-reveal">
+                <h4>Leaky Gut vs. Healthy Gut</h4>
+                <div class="gut-wall">
+                    <div class="gut-cells">
+                        <div class="gut-cell leaky"></div>
+                        <div class="gut-cell leaky"></div>
+                        <div class="gut-cell leaky"></div>
+                        <div class="gut-cell leaky"></div>
+                        <div class="gut-cell leaky"></div>
+                    </div>
+                </div>
+                <p class="gut-label">❌ Leaky Gut — Toxins escape into bloodstream</p>
+                
+                <div class="gut-wall healthy">
+                    <div class="gut-cells">
+                        <div class="gut-cell healthy"></div>
+                        <div class="gut-cell healthy"></div>
+                        <div class="gut-cell healthy"></div>
+                        <div class="gut-cell healthy"></div>
+                        <div class="gut-cell healthy"></div>
+                    </div>
+                </div>
+                <p class="gut-label">✅ Healthy Gut — Tight junctions keep toxins out</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Microbiome Section -->
+<section class="microbiome-section">
+    <div class="container">
+        <div class="section-header scroll-reveal">
+            <h2>Your Gut Bacteria: The Good, The Bad & The Balance</h2>
+            <p>Not all bacteria are created equal. The key to effortless weight loss is having the RIGHT balance of gut bacteria.</p>
+        </div>
+        
+        <div class="bacteria-grid">
+            <div class="bacteria-card scroll-reveal">
+                <div class="bacteria-emoji">🦠</div>
+                <h4>Firmicutes</h4>
+                <p>These bacteria extract MORE calories from food and promote fat storage. People who are overweight have higher levels of Firmicutes.</p>
+                <span class="bacteria-type bad">The "Fat" Bacteria</span>
+            </div>
+            
+            <div class="bacteria-card scroll-reveal">
+                <div class="bacteria-emoji">🌱</div>
+                <h4>Bacteroidetes</h4>
+                <p>These bacteria help regulate metabolism and reduce inflammation. Lean people have more Bacteroidetes than overweight people.</p>
+                <span class="bacteria-type good">The "Lean" Bacteria</span>
+            </div>
+            
+            <div class="bacteria-card scroll-reveal">
+                <div class="bacteria-emoji">⚖️</div>
+                <h4>The Ratio Matters</h4>
+                <p>The F/B ratio (Firmicutes to Bacteroidetes) predicts weight gain better than calories. Fix this ratio and weight loss becomes automatic.</p>
+                <span class="bacteria-type balance">Key to Success</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Reset Protocol Section -->
+<section class="reset-protocol-section">
+    <div class="container">
+        <div class="section-header scroll-reveal">
+            <h2>The 4-Step Gut-Brain Reset Protocol</h2>
+            <p>Follow these steps in order to heal your gut, balance your bacteria, and unlock effortless fat loss.</p>
+        </div>
+        
+        <div class="protocol-steps">
+            <div class="protocol-step scroll-reveal">
+                <div class="step-number">1</div>
+                <div class="step-icon">🚫</div>
+                <h4>Remove</h4>
+                <p>Eliminate inflammatory foods: sugar, processed foods, gluten, and artificial sweeteners that damage your gut lining.</p>
+            </div>
+            
+            <div class="protocol-step scroll-reveal">
+                <div class="step-number">2</div>
+                <div class="step-icon">🔄</div>
+                <h4>Replace</h4>
+                <p>Add digestive enzymes and stomach acid support to help break down food properly and reduce gut stress.</p>
+            </div>
+            
+            <div class="protocol-step scroll-reveal">
+                <div class="step-number">3</div>
+                <div class="step-icon">🌟</div>
+                <h4>Reinoculate</h4>
+                <p>Introduce beneficial bacteria through probiotics and fermented foods to crowd out the "fat bacteria."</p>
+            </div>
+            
+            <div class="protocol-step scroll-reveal">
+                <div class="step-number">4</div>
+                <div class="step-icon">🛡️</div>
+                <h4>Repair</h4>
+                <p>Heal your gut lining with L-glutamine, zinc, and collagen to seal the tight junctions and stop leaks.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Foods Section -->
+<section class="foods-section">
+    <div class="container">
+        <div class="section-header scroll-reveal">
+            <h2>Gut-Healing Foods: What to Eat & Avoid</h2>
+            <p>Your diet is the most powerful tool for resetting your gut-brain connection.</p>
+        </div>
+        
+        <div class="foods-grid">
+            <div class="foods-column eat scroll-reveal-left">
+                <h4>✅ Eat These Gut-Healing Foods</h4>
+                <div class="food-item"><span>🥬</span><span>Leafy greens (fiber feeds good bacteria)</span></div>
+                <div class="food-item"><span>🍖</span><span>Bone broth (collagen repairs gut lining)</span></div>
+                <div class="food-item"><span>🥒</span><span>Fermented foods (kimchi, sauerkraut, kefir)</span></div>
+                <div class="food-item"><span>🫐</span><span>Berries (polyphenols feed good bacteria)</span></div>
+                <div class="food-item"><span>🥑</span><span>Healthy fats (avocado, olive oil, coconut)</span></div>
+                <div class="food-item"><span>🧄</span><span>Garlic & onions (prebiotics)</span></div>
+                <div class="food-item"><span>🐟</span><span>Wild-caught fish (omega-3 reduces inflammation)</span></div>
+                <div class="food-item"><span>🌾</span><span>Gluten-free grains (quinoa, rice, oats)</span></div>
+            </div>
+            
+            <div class="foods-column avoid scroll-reveal-right">
+                <h4>❌ Avoid These Gut-Damaging Foods</h4>
+                <div class="food-item"><span>🍬</span><span>Refined sugar (feeds bad bacteria)</span></div>
+                <div class="food-item"><span>🍞</span><span>Gluten (damages gut lining)</span></div>
+                <div class="food-item"><span>🥛</span><span>Conventional dairy (inflammatory)</span></div>
+                <div class="food-item"><span>🍟</span><span>Processed foods (chemicals harm microbiome)</span></div>
+                <div class="food-item"><span>🥤</span><span>Artificial sweeteners (kill good bacteria)</span></div>
+                <div class="food-item"><span>🌽</span><span>Industrial seed oils (cause inflammation)</span></div>
+                <div class="food-item"><span>🍺</span><span>Excess alcohol (damages gut barrier)</span></div>
+                <div class="food-item"><span>💊</span><span>Unnecessary antibiotics (wipe out good bacteria)</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container">
+        <h2>Ready to Reset Your Gut-Brain Connection?</h2>
+        <p>Discover your metabolic age and get a personalized gut-healing protocol tailored to your body.</p>
+        <a href="calculator.html" class="btn-cta">Calculate Your Metabolic Age →</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">The 7-Pillar Protocol</div>
+                <p class="footer-desc">The most advanced weight loss system that works WITH your biology, not against it.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="pillar-6.html">Pillar 6: Gut-Brain</a>
+                <a href="pillar-7.html">Pillar 7: Biohacking</a>
+                <a href="systems.html">Systems</a>
+            </div>
+            <div class="footer-links">
+                <h4>Resources</h4>
+                <a href="calculator.html">Metabolic Age Calculator</a>
+                <a href="metabolic-quiz.html">Metabolic Quiz</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="faq.html">FAQ</a>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="disclaimer.html">Disclaimer</a>
+                <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 The 7-Pillar Weight Loss Protocol. All Rights Reserved.</p>
+            <p style="margin-top: 10px;">Results may vary. Individual experiences are not typical.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E486X8NQSZ"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-E486X8NQSZ');
+</script>
+
+<script src="premium-effects.js"></script>
+<script src="badges.js"></script>
+<script>
+    // Track Pillar 6 visit for gamification
+    if (typeof trackPillarVisit === 'function') {
+        trackPillarVisit('gut-brain');
+    }
+</script>
+
+</body>
+</html>
