@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TEMPLATE: Describe the specific weight loss problem and solution here for SEO">
+    <meta name="keywords" content="TEMPLATE, problem keywords, solution keywords, weight loss">
+    <title>Problem: [Topic] | NutriStructure</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="premium-upgrade.css">
+    <link rel="stylesheet" href="3d-styles.css">
+    
+    <style>
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --secondary: #0f172a;
+            --accent: #f59e0b;
+            --danger: #ef4444;
+            --success: #22c55e;
+            --gradient-primary: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            --shadow-soft: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; color: #334155; line-height: 1.7; background: #ffffff; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        /* Navigation */
+        nav { background: rgba(255,255,255,0.98); padding: 15px 0; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 999; box-shadow: 0 4px 20px rgba(0,0,0,0.08); backdrop-filter: blur(10px); }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.3rem; color: var(--secondary); text-decoration: none; }
+        .logo-icon { width: 40px; height: 40px; background: var(--gradient-primary); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; }
+        .nav-links { display: flex; gap: 25px; align-items: center; }
+        .nav-links a { text-decoration: none; color: #64748b; font-weight: 600; font-size: 0.9rem; transition: all 0.3s ease; }
+        .nav-links a:hover { color: var(--primary); }
+        .btn-nav { background: var(--gradient-primary); color: white !important; padding: 10px 20px; border-radius: 50px; font-size: 0.85rem; }
+
+        /* Breadcrumb */
+        .breadcrumb { padding: 15px 0; background: #f8fafc; font-size: 0.85rem; color: #64748b; }
+        .breadcrumb a { color: var(--primary); text-decoration: none; }
+        .breadcrumb span { margin: 0 8px; }
+
+        /* Problem Hero */
+        .problem-hero { padding: 60px 0 40px; background: linear-gradient(180deg, #fef2f2 0%, #ffffff 100%); }
+        .problem-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(239,68,68,0.15); color: #dc2626; padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; margin-bottom: 20px; }
+        .problem-hero h1 { font-size: 2.8rem; color: var(--secondary); line-height: 1.2; margin-bottom: 20px; font-weight: 800; }
+        .problem-hero h1 span { color: var(--danger); }
+        .problem-intro { font-size: 1.15rem; color: #475569; max-width: 800px; line-height: 1.8; }
+
+        /* Content Sections */
+        .content-section { padding: 50px 0; }
+        .content-section h2 { font-size: 2rem; color: var(--secondary); margin-bottom: 25px; font-weight: 700; }
+        .content-section h3 { font-size: 1.4rem; color: var(--secondary); margin: 30px 0 15px; font-weight: 600; }
+        .content-section p { color: #475569; margin-bottom: 20px; font-size: 1.05rem; line-height: 1.8; }
+
+        /* Problem Box */
+        .problem-box { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-left: 5px solid var(--danger); padding: 25px 30px; border-radius: 0 15px 15px 0; margin: 30px 0; }
+        .problem-box h4 { color: #dc2626; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+        .problem-box p { color: #7f1d1d; margin: 0; }
+
+        /* Solution Box */
+        .solution-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 5px solid var(--success); padding: 25px 30px; border-radius: 0 15px 15px 0; margin: 30px 0; }
+        .solution-box h4 { color: #166534; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+        .solution-box p { color: #166534; margin: 0; }
+
+        /* Steps */
+        .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin: 40px 0; }
+        .step-card { background: white; border: 2px solid #e2e8f0; border-radius: 16px; padding: 30px 20px; text-align: center; transition: all 0.3s ease; }
+        .step-card:hover { border-color: var(--primary); transform: translateY(-5px); box-shadow: var(--shadow-soft); }
+        .step-number { width: 50px; height: 50px; background: var(--gradient-primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.3rem; margin: 0 auto 15px; }
+        .step-card h4 { color: var(--secondary); margin-bottom: 10px; font-size: 1.1rem; }
+        .step-card p { color: #64748b; font-size: 0.95rem; margin: 0; }
+
+        /* CTA Box */
+        .cta-box { background: linear-gradient(135deg, var(--secondary) 0%, #1e293b 100%); border-radius: 20px; padding: 50px; text-align: center; margin: 50px 0; }
+        .cta-box h3 { color: white; font-size: 1.8rem; margin-bottom: 15px; }
+        .cta-box p { color: rgba(255,255,255,0.8); max-width: 500px; margin: 0 auto 25px; }
+        .btn-cta { display: inline-block; padding: 18px 45px; background: var(--gradient-primary); color: white; text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 1.1rem; transition: all 0.3s ease; }
+        .btn-cta:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(16,185,129,0.4); }
+
+        /* Related Links */
+        .related-section { background: #f8fafc; padding: 40px 0; }
+        .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .related-card { background: white; padding: 25px; border-radius: 12px; text-decoration: none; border: 1px solid #e2e8f0; transition: all 0.3s ease; }
+        .related-card:hover { border-color: var(--primary); transform: translateY(-3px); }
+        .related-card h4 { color: var(--secondary); margin-bottom: 8px; font-size: 1rem; }
+        .related-card span { color: var(--primary); font-size: 0.85rem; font-weight: 600; }
+
+        /* Footer */
+        footer { background: var(--secondary); color: #94a3b8; padding: 50px 0 30px; font-size: 0.9rem; }
+        .footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; margin-bottom: 30px; }
+        .footer-links a { display: block; color: #94a3b8; text-decoration: none; margin-bottom: 10px; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--primary-light); }
+        .footer-bottom { border-top: 1px solid #334155; padding-top: 20px; text-align: center; font-size: 0.8rem; }
+
+        @media (max-width: 768px) {
+            .problem-hero h1 { font-size: 2rem; }
+            .steps-grid { grid-template-columns: 1fr; }
+            .related-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+    </style>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E486X8NQSZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-E486X8NQSZ');
+    </script>
+</head>
+<body>
+
+<nav>
+    <div class="container nav-content">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">7</div>
+            <span>NutriStructure</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#content-hub">Content Hub</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="calculator.html" class="btn-nav">Calculator</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+    <div class="container">
+        <a href="index.html">Home</a> <span>→</span> <a href="index.html#content-hub">Problem Pages</a> <span>→</span> [Problem Topic]
+    </div>
+</div>
+
+<!-- Problem Hero -->
+<section class="problem-hero">
+    <div class="container">
+        <div class="problem-badge">🎯 Problem & Solution</div>
+        <h1>Struggling With <span>[Problem Name]</span>?</h1>
+        <p class="problem-intro">
+            TEMPLATE: Write a compelling introduction about the specific weight loss problem. 
+            Explain why it happens and hint at the solution. Keep it empathetic and engaging.
+        </p>
+    </div>
+</section>
+
+<!-- The Problem Section -->
+<section class="content-section">
+    <div class="container">
+        <h2>Why This Happens</h2>
+        <p>
+            TEMPLATE: Explain the science behind the problem. What causes it? Why do people struggle with it?
+            Use simple language but include scientific backing.
+        </p>
+        
+        <div class="problem-box">
+            <h4>⚠️ The Real Issue</h4>
+            <p>TEMPLATE: Summarize the core problem in one or two sentences.</p>
+        </div>
+        
+        <h3>Common Signs You Have This Problem</h3>
+        <ul style="margin-left: 20px; color: #475569; line-height: 2;">
+            <li>TEMPLATE: Sign 1 - Describe a symptom</li>
+            <li>TEMPLATE: Sign 2 - Describe another symptom</li>
+            <li>TEMPLATE: Sign 3 - Describe another symptom</li>
+            <li>TEMPLATE: Sign 4 - Describe another symptom</li>
+        </ul>
+    </div>
+</section>
+
+<!-- The Solution Section -->
+<section class="content-section" style="background: #f8fafc;">
+    <div class="container">
+        <h2>The Solution</h2>
+        <p>
+            TEMPLATE: Introduce the solution. What works? Why does it work? 
+            Build hope and excitement about the possibility of overcoming this problem.
+        </p>
+        
+        <div class="solution-box">
+            <h4>✓ The Answer</h4>
+            <p>TEMPLATE: Summarize the core solution in one or two sentences.</p>
+        </div>
+        
+        <h3>How to Fix It (Step-by-Step)</h3>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h4>Step One Title</h4>
+                <p>Description of the first step to solve the problem.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h4>Step Two Title</h4>
+                <p>Description of the second step to solve the problem.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h4>Step Three Title</h4>
+                <p>Description of the third step to solve the problem.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Recommended Products Section -->
+<section class="content-section">
+    <div class="container">
+        <h2>Recommended Solutions</h2>
+        <p>
+            TEMPLATE: Mention products that can help with this specific problem. 
+            Link to your review pages or affiliate links.
+        </p>
+        
+        <div class="cta-box">
+            <h3>Ready to Overcome [Problem]?</h3>
+            <p>Discover our top-rated solutions specifically designed to address this issue.</p>
+            <a href="solutions.html" class="btn-cta">View Recommended Solutions →</a>
+        </div>
+    </div>
+</section>
+
+<!-- Related Problem Pages -->
+<section class="related-section">
+    <div class="container">
+        <h3 style="text-align: center; margin-bottom: 30px; color: var(--secondary);">Related Problem Pages</h3>
+        <div class="related-grid">
+            <a href="cheat-sheet-metabolism.html" class="related-card">
+                <h4>Slow Metabolism</h4>
+                <span>Read More →</span>
+            </a>
+            <a href="cheat-sheet-hormones.html" class="related-card">
+                <h4>Hormonal Weight Gain</h4>
+                <span>Read More →</span>
+            </a>
+            <a href="cheat-sheet-appetite.html" class="related-card">
+                <h4>Uncontrollable Cravings</h4>
+                <span>Read More →</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div>
+                <h4 style="color: white; margin-bottom: 15px;">NutriStructure</h4>
+                <p style="max-width: 300px;">Helping you achieve sustainable weight loss through science-backed methods.</p>
+            </div>
+            <div class="footer-links">
+                <h4 style="color: white; margin-bottom: 15px;">Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="faq.html">FAQ</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NutriStructure. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

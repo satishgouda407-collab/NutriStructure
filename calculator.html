@@ -88,6 +88,11 @@
         }
         .hero p { color: #64748b; font-size: 1.1rem; max-width: 500px; margin: 0 auto; }
 
+        /* Calculator Section */
+        .calculator-section {
+            padding: 40px 0 80px;
+        }
+
         /* Calculator Card */
         .calculator-card {
             background: white;
@@ -96,6 +101,8 @@
             box-shadow: var(--shadow-soft);
             border: 2px solid #e2e8f0;
             margin-bottom: 40px;
+            display: block !important;
+            visibility: visible !important;
         }
 
         /* Form Steps */
@@ -560,9 +567,11 @@
         </a>
         <div class="nav-links">
             <a href="index.html">Home</a>
-            <a href="pillar-6.html">Pillar 6</a>
-            <a href="pillar-7.html">Pillar 7</a>
+            <a href="index.html#content-hub">Content Hub</a>
             <a href="solutions.html">Solutions</a>
+            <a href="systems.html">Systems</a>
+            <a href="customer-transformations.html">Results</a>
+            <a href="faq.html">FAQ</a>
             <a href="calculator.html" class="btn-nav">Calculator</a>
         </div>
     </div>
@@ -1173,8 +1182,17 @@
         });
     }
 
-    // Initialize
-    updateProgress();
+    // Initialize - ensure step 1 is visible on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        // Make sure step 1 is active and visible
+        document.querySelectorAll('.form-step').forEach(function(step) {
+            step.classList.remove('active');
+        });
+        document.getElementById('step1').classList.add('active');
+        document.getElementById('progressContainer').style.display = 'block';
+        currentStepNum = 1;
+        updateProgress();
+    });
 </script>
 
 </body>

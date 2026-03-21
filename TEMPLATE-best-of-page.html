@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TEMPLATE: Discover the best [category] products of [year]. Our top picks based on research and user reviews.">
+    <meta name="keywords" content="TEMPLATE, best, top rated, top picks, best of [year]">
+    <title>Best [Category] Products [Year]: Top Picks | NutriStructure</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="premium-upgrade.css">
+    <link rel="stylesheet" href="3d-styles.css">
+    
+    <style>
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --secondary: #0f172a;
+            --accent: #f59e0b;
+            --danger: #ef4444;
+            --success: #22c55e;
+            --gradient-primary: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            --shadow-soft: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; color: #334155; line-height: 1.7; background: #ffffff; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        /* Navigation */
+        nav { background: rgba(255,255,255,0.98); padding: 15px 0; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 999; box-shadow: 0 4px 20px rgba(0,0,0,0.08); backdrop-filter: blur(10px); }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.3rem; color: var(--secondary); text-decoration: none; }
+        .logo-icon { width: 40px; height: 40px; background: var(--gradient-primary); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; }
+        .nav-links { display: flex; gap: 25px; align-items: center; }
+        .nav-links a { text-decoration: none; color: #64748b; font-weight: 600; font-size: 0.9rem; transition: all 0.3s ease; }
+        .nav-links a:hover { color: var(--primary); }
+        .btn-nav { background: var(--gradient-primary); color: white !important; padding: 10px 20px; border-radius: 50px; font-size: 0.85rem; }
+
+        /* Breadcrumb */
+        .breadcrumb { padding: 15px 0; background: #f8fafc; font-size: 0.85rem; color: #64748b; }
+        .breadcrumb a { color: var(--primary); text-decoration: none; }
+        .breadcrumb span { margin: 0 8px; }
+
+        /* Best Of Hero */
+        .bestof-hero { padding: 60px 0 40px; background: linear-gradient(180deg, #fef3c7 0%, #ffffff 100%); text-align: center; }
+        .bestof-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(245,158,11,0.15); color: #d97706; padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; margin-bottom: 20px; }
+        .bestof-hero h1 { font-size: 2.8rem; color: var(--secondary); line-height: 1.2; margin-bottom: 20px; font-weight: 800; }
+        .bestof-hero h1 span { color: var(--accent); }
+        .bestof-intro { font-size: 1.15rem; color: #475569; max-width: 700px; margin: 0 auto; line-height: 1.8; }
+
+        /* Methodology Box */
+        .methodology { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border: 2px solid #bbf7d0; border-radius: 20px; padding: 30px; margin: 40px 0; }
+        .methodology h3 { color: #166534; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .methodology p { color: #475569; margin: 0; }
+
+        /* Top Pick Card */
+        .top-pick { background: linear-gradient(135deg, var(--secondary) 0%, #1e293b 100%); border-radius: 24px; padding: 40px; margin: 40px 0; color: white; position: relative; overflow: hidden; }
+        .top-pick::before { content: '🏆 #1 PICK'; position: absolute; top: 20px; right: 20px; background: var(--accent); color: white; padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; }
+        .top-pick h2 { font-size: 2rem; margin-bottom: 15px; }
+        .top-pick p { opacity: 0.9; margin-bottom: 25px; }
+        .top-pick-features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin: 25px 0; }
+        .top-pick-features li { display: flex; align-items: center; gap: 10px; }
+        .btn-top { display: inline-block; padding: 18px 45px; background: var(--gradient-primary); color: white; text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 1.1rem; transition: all 0.3s ease; }
+        .btn-top:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(16,185,129,0.4); }
+
+        /* Ranking List */
+        .ranking-section { padding: 50px 0; }
+        .ranking-section h2 { font-size: 2rem; color: var(--secondary); margin-bottom: 30px; font-weight: 700; text-align: center; }
+        
+        .ranking-item { display: flex; gap: 25px; background: white; border: 2px solid #e2e8f0; border-radius: 20px; padding: 30px; margin-bottom: 25px; transition: all 0.3s ease; }
+        .ranking-item:hover { border-color: var(--primary); transform: translateY(-3px); box-shadow: var(--shadow-soft); }
+        .ranking-number { width: 60px; height: 60px; background: var(--gradient-primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.5rem; flex-shrink: 0; }
+        .ranking-content { flex: 1; }
+        .ranking-content h3 { font-size: 1.4rem; color: var(--secondary); margin-bottom: 10px; }
+        .ranking-content p { color: #64748b; margin-bottom: 15px; }
+        .ranking-meta { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 15px; }
+        .ranking-meta span { font-size: 0.9rem; color: #94a3b8; }
+        .ranking-meta .rating { color: var(--accent); }
+        .btn-ranking { display: inline-block; padding: 12px 30px; background: var(--gradient-primary); color: white; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 0.95rem; transition: all 0.3s ease; }
+        .btn-ranking:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(16,185,129,0.4); }
+
+        /* Content Sections */
+        .content-section { padding: 50px 0; }
+        .content-section h2 { font-size: 2rem; color: var(--secondary); margin-bottom: 25px; font-weight: 700; }
+        .content-section p { color: #475569; margin-bottom: 20px; font-size: 1.05rem; line-height: 1.8; }
+
+        /* CTA Box */
+        .cta-box { background: linear-gradient(135deg, var(--secondary) 0%, #1e293b 100%); border-radius: 20px; padding: 50px; text-align: center; margin: 50px 0; }
+        .cta-box h3 { color: white; font-size: 1.8rem; margin-bottom: 15px; }
+        .cta-box p { color: rgba(255,255,255,0.8); max-width: 500px; margin: 0 auto 25px; }
+        .btn-cta { display: inline-block; padding: 18px 45px; background: var(--gradient-primary); color: white; text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 1.1rem; transition: all 0.3s ease; }
+        .btn-cta:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(16,185,129,0.4); }
+
+        /* Footer */
+        footer { background: var(--secondary); color: #94a3b8; padding: 50px 0 30px; font-size: 0.9rem; }
+        .footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; margin-bottom: 30px; }
+        .footer-links a { display: block; color: #94a3b8; text-decoration: none; margin-bottom: 10px; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--primary-light); }
+        .footer-bottom { border-top: 1px solid #334155; padding-top: 20px; text-align: center; font-size: 0.8rem; }
+
+        @media (max-width: 768px) {
+            .bestof-hero h1 { font-size: 2rem; }
+            .top-pick-features { grid-template-columns: 1fr; }
+            .ranking-item { flex-direction: column; }
+            .nav-links { display: none; }
+        }
+    </style>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E486X8NQSZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-E486X8NQSZ');
+    </script>
+</head>
+<body>
+
+<nav>
+    <div class="container nav-content">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">7</div>
+            <span>NutriStructure</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#content-hub">Content Hub</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="calculator.html" class="btn-nav">Calculator</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+    <div class="container">
+        <a href="index.html">Home</a> <span>→</span> <a href="index.html#content-hub">Best Of</a> <span>→</span> Best [Category] [Year]
+    </div>
+</div>
+
+<!-- Best Of Hero -->
+<section class="bestof-hero">
+    <div class="container">
+        <div class="bestof-badge">🏆 Best Of [Year]</div>
+        <h1>Best <span>[Category]</span> Products [Year]</h1>
+        <p class="bestof-intro">
+            TEMPLATE: Write an introduction about this category. What are you ranking? 
+            Why did you create this list? What criteria did you use?
+        </p>
+    </div>
+</section>
+
+<!-- Methodology -->
+<section class="content-section">
+    <div class="container">
+        <div class="methodology">
+            <h3>🔍 How We Chose</h3>
+            <p>TEMPLATE: Explain your selection criteria. What factors did you consider? (Ingredients, user reviews, price, guarantee, etc.)</p>
+        </div>
+    </div>
+</section>
+
+<!-- Top Pick -->
+<section class="content-section" style="background: #f8fafc;">
+    <div class="container">
+        <div class="top-pick">
+            <h2>[#1 Product Name]</h2>
+            <p>TEMPLATE: Describe why this is your #1 pick. What makes it stand out from the competition?</p>
+            <ul class="top-pick-features">
+                <li>✓ Key benefit 1</li>
+                <li>✓ Key benefit 2</li>
+                <li>✓ Key benefit 3</li>
+                <li>✓ Key benefit 4</li>
+            </ul>
+            <a href="#" class="btn-top">Get The Best Deal →</a>
+        </div>
+    </div>
+</section>
+
+<!-- Full Rankings -->
+<section class="ranking-section">
+    <div class="container">
+        <h2>Complete Rankings</h2>
+        
+        <!-- #2 -->
+        <div class="ranking-item">
+            <div class="ranking-number">2</div>
+            <div class="ranking-content">
+                <h3>[Product #2 Name]</h3>
+                <p>TEMPLATE: Brief description of this product and why it ranks #2.</p>
+                <div class="ranking-meta">
+                    <span class="rating">⭐⭐⭐⭐⭐ 4.7/5</span>
+                    <span>💰 $XX</span>
+                    <span>🛡️ XX-Day Guarantee</span>
+                </div>
+                <a href="#" class="btn-ranking">Learn More →</a>
+            </div>
+        </div>
+        
+        <!-- #3 -->
+        <div class="ranking-item">
+            <div class="ranking-number">3</div>
+            <div class="ranking-content">
+                <h3>[Product #3 Name]</h3>
+                <p>TEMPLATE: Brief description of this product and why it ranks #3.</p>
+                <div class="ranking-meta">
+                    <span class="rating">⭐⭐⭐⭐ 4.5/5</span>
+                    <span>💰 $XX</span>
+                    <span>🛡️ XX-Day Guarantee</span>
+                </div>
+                <a href="#" class="btn-ranking">Learn More →</a>
+            </div>
+        </div>
+        
+        <!-- #4 -->
+        <div class="ranking-item">
+            <div class="ranking-number">4</div>
+            <div class="ranking-content">
+                <h3>[Product #4 Name]</h3>
+                <p>TEMPLATE: Brief description of this product and why it ranks #4.</p>
+                <div class="ranking-meta">
+                    <span class="rating">⭐⭐⭐⭐ 4.3/5</span>
+                    <span>💰 $XX</span>
+                    <span>🛡️ XX-Day Guarantee</span>
+                </div>
+                <a href="#" class="btn-ranking">Learn More →</a>
+            </div>
+        </div>
+        
+        <!-- #5 -->
+        <div class="ranking-item">
+            <div class="ranking-number">5</div>
+            <div class="ranking-content">
+                <h3>[Product #5 Name]</h3>
+                <p>TEMPLATE: Brief description of this product and why it ranks #5.</p>
+                <div class="ranking-meta">
+                    <span class="rating">⭐⭐⭐⭐ 4.1/5</span>
+                    <span>💰 $XX</span>
+                    <span>🛡️ XX-Day Guarantee</span>
+                </div>
+                <a href="#" class="btn-ranking">Learn More →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA -->
+<section class="content-section" style="background: #f8fafc;">
+    <div class="container">
+        <div class="cta-box">
+            <h3>Still Not Sure?</h3>
+            <p>Take our quick quiz to find the perfect product for your specific needs.</p>
+            <a href="metabolic-quiz.html" class="btn-cta">Take The Quiz →</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div>
+                <h4 style="color: white; margin-bottom: 15px;">NutriStructure</h4>
+                <p style="max-width: 300px;">Helping you achieve sustainable weight loss through science-backed methods.</p>
+            </div>
+            <div class="footer-links">
+                <h4 style="color: white; margin-bottom: 15px;">Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="faq.html">FAQ</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NutriStructure. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

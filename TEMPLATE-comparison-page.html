@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TEMPLATE: Compare Product A vs Product B - Which is better? Read our detailed comparison.">
+    <meta name="keywords" content="TEMPLATE, comparison, vs, product comparison, which is better">
+    <title>Product A vs Product B: Which Is Better? | NutriStructure</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="premium-upgrade.css">
+    <link rel="stylesheet" href="3d-styles.css">
+    
+    <style>
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --secondary: #0f172a;
+            --accent: #f59e0b;
+            --danger: #ef4444;
+            --success: #22c55e;
+            --gradient-primary: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            --shadow-soft: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; color: #334155; line-height: 1.7; background: #ffffff; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        /* Navigation */
+        nav { background: rgba(255,255,255,0.98); padding: 15px 0; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 999; box-shadow: 0 4px 20px rgba(0,0,0,0.08); backdrop-filter: blur(10px); }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.3rem; color: var(--secondary); text-decoration: none; }
+        .logo-icon { width: 40px; height: 40px; background: var(--gradient-primary); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; }
+        .nav-links { display: flex; gap: 25px; align-items: center; }
+        .nav-links a { text-decoration: none; color: #64748b; font-weight: 600; font-size: 0.9rem; transition: all 0.3s ease; }
+        .nav-links a:hover { color: var(--primary); }
+        .btn-nav { background: var(--gradient-primary); color: white !important; padding: 10px 20px; border-radius: 50px; font-size: 0.85rem; }
+
+        /* Breadcrumb */
+        .breadcrumb { padding: 15px 0; background: #f8fafc; font-size: 0.85rem; color: #64748b; }
+        .breadcrumb a { color: var(--primary); text-decoration: none; }
+        .breadcrumb span { margin: 0 8px; }
+
+        /* Comparison Hero */
+        .comparison-hero { padding: 60px 0 40px; background: linear-gradient(180deg, #e0f2fe 0%, #ffffff 100%); text-align: center; }
+        .comparison-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(59,130,246,0.15); color: #2563eb; padding: 8px 20px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; margin-bottom: 20px; }
+        .comparison-hero h1 { font-size: 2.8rem; color: var(--secondary); line-height: 1.2; margin-bottom: 20px; font-weight: 800; }
+        .comparison-hero h1 span { color: var(--primary); }
+        .vs-divider { display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: var(--accent); color: white; border-radius: 50%; font-weight: 800; font-size: 1.2rem; margin: 0 20px; }
+        .comparison-intro { font-size: 1.15rem; color: #475569; max-width: 700px; margin: 30px auto 0; line-height: 1.8; }
+
+        /* Quick Verdict */
+        .quick-verdict { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border: 2px solid #bbf7d0; border-radius: 20px; padding: 30px; margin: 40px 0; text-align: center; }
+        .quick-verdict h3 { color: #166534; margin-bottom: 15px; }
+        .quick-verdict p { color: #475569; margin-bottom: 20px; }
+        .winner-badge { display: inline-block; background: var(--success); color: white; padding: 10px 30px; border-radius: 50px; font-weight: 700; font-size: 1.1rem; }
+
+        /* Comparison Table */
+        .comparison-table-section { padding: 50px 0; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 30px 0; }
+        .comparison-table th { background: var(--secondary); color: white; padding: 15px; text-align: left; font-weight: 600; }
+        .comparison-table td { padding: 15px; border-bottom: 1px solid #e2e8f0; }
+        .comparison-table tr:nth-child(even) { background: #f8fafc; }
+        .check { color: var(--success); font-weight: 700; }
+        .cross { color: var(--danger); font-weight: 700; }
+        .product-a-col { background: rgba(16,185,129,0.05); }
+        .product-b-col { background: rgba(59,130,246,0.05); }
+
+        /* Side by Side Cards */
+        .side-by-side { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 40px 0; }
+        .product-card { background: white; border: 2px solid #e2e8f0; border-radius: 20px; padding: 30px; }
+        .product-card.a { border-color: var(--primary); }
+        .product-card.b { border-color: #3b82f6; }
+        .product-card h3 { font-size: 1.5rem; margin-bottom: 15px; }
+        .product-card.a h3 { color: var(--primary); }
+        .product-card.b h3 { color: #3b82f6; }
+        .product-card ul { list-style: none; margin-top: 20px; }
+        .product-card li { padding: 8px 0; display: flex; align-items: flex-start; gap: 10px; }
+        .product-card li::before { content: '✓'; color: var(--success); font-weight: 700; }
+
+        /* Content Sections */
+        .content-section { padding: 50px 0; }
+        .content-section h2 { font-size: 2rem; color: var(--secondary); margin-bottom: 25px; font-weight: 700; }
+        .content-section p { color: #475569; margin-bottom: 20px; font-size: 1.05rem; line-height: 1.8; }
+
+        /* CTA Box */
+        .cta-box { background: linear-gradient(135deg, var(--secondary) 0%, #1e293b 100%); border-radius: 20px; padding: 50px; text-align: center; margin: 50px 0; }
+        .cta-box h3 { color: white; font-size: 1.8rem; margin-bottom: 15px; }
+        .cta-box p { color: rgba(255,255,255,0.8); max-width: 500px; margin: 0 auto 25px; }
+        .btn-cta { display: inline-block; padding: 18px 45px; background: var(--gradient-primary); color: white; text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 1.1rem; transition: all 0.3s ease; }
+        .btn-cta:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(16,185,129,0.4); }
+
+        /* Footer */
+        footer { background: var(--secondary); color: #94a3b8; padding: 50px 0 30px; font-size: 0.9rem; }
+        .footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; margin-bottom: 30px; }
+        .footer-links a { display: block; color: #94a3b8; text-decoration: none; margin-bottom: 10px; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--primary-light); }
+        .footer-bottom { border-top: 1px solid #334155; padding-top: 20px; text-align: center; font-size: 0.8rem; }
+
+        @media (max-width: 768px) {
+            .comparison-hero h1 { font-size: 2rem; }
+            .side-by-side { grid-template-columns: 1fr; }
+            .comparison-table { font-size: 0.9rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E486X8NQSZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-E486X8NQSZ');
+    </script>
+</head>
+<body>
+
+<nav>
+    <div class="container nav-content">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">7</div>
+            <span>NutriStructure</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#content-hub">Content Hub</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="calculator.html" class="btn-nav">Calculator</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+    <div class="container">
+        <a href="index.html">Home</a> <span>→</span> <a href="index.html#content-hub">Comparisons</a> <span>→</span> [Product A] vs [Product B]
+    </div>
+</div>
+
+<!-- Comparison Hero -->
+<section class="comparison-hero">
+    <div class="container">
+        <div class="comparison-badge">⚖️ Head-to-Head Comparison</div>
+        <h1>
+            <span style="color: var(--primary);">[Product A]</span>
+            <span class="vs-divider">VS</span>
+            <span style="color: #3b82f6;">[Product B]</span>
+        </h1>
+        <p class="comparison-intro">
+            TEMPLATE: Write a brief introduction about why you're comparing these two products. 
+            What makes them worth comparing? What will the reader learn?
+        </p>
+    </div>
+</section>
+
+<!-- Quick Verdict -->
+<section class="content-section">
+    <div class="container">
+        <div class="quick-verdict">
+            <h3>🏆 Our Verdict</h3>
+            <p>TEMPLATE: Summarize which product wins and why in 2-3 sentences.</p>
+            <span class="winner-badge">[Product Name] Wins</span>
+        </div>
+    </div>
+</section>
+
+<!-- Comparison Table -->
+<section class="comparison-table-section" style="background: #f8fafc;">
+    <div class="container">
+        <h2>Side-by-Side Comparison</h2>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th class="product-a-col">[Product A]</th>
+                    <th class="product-b-col">[Product B]</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Price</strong></td>
+                    <td class="product-a-col">$XX</td>
+                    <td class="product-b-col">$XX</td>
+                </tr>
+                <tr>
+                    <td><strong>Key Ingredients</strong></td>
+                    <td class="product-a-col">Ingredient 1, 2, 3</td>
+                    <td class="product-b-col">Ingredient A, B, C</td>
+                </tr>
+                <tr>
+                    <td><strong>Money-Back Guarantee</strong></td>
+                    <td class="product-a-col"><span class="check">✓</span> XX Days</td>
+                    <td class="product-b-col"><span class="check">✓</span> XX Days</td>
+                </tr>
+                <tr>
+                    <td><strong>Made in USA</strong></td>
+                    <td class="product-a-col"><span class="check">✓</span> Yes</td>
+                    <td class="product-b-col"><span class="cross">✗</span> No</td>
+                </tr>
+                <tr>
+                    <td><strong>User Rating</strong></td>
+                    <td class="product-a-col">⭐⭐⭐⭐⭐ (4.8/5)</td>
+                    <td class="product-b-col">⭐⭐⭐⭐ (4.2/5)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- Detailed Comparison -->
+<section class="content-section">
+    <div class="container">
+        <h2>Detailed Breakdown</h2>
+        
+        <div class="side-by-side">
+            <div class="product-card a">
+                <h3>[Product A]</h3>
+                <p>TEMPLATE: Describe this product in detail. What are its strengths?</p>
+                <ul>
+                    <li>Key benefit 1</li>
+                    <li>Key benefit 2</li>
+                    <li>Key benefit 3</li>
+                </ul>
+            </div>
+            <div class="product-card b">
+                <h3>[Product B]</h3>
+                <p>TEMPLATE: Describe this product in detail. What are its strengths?</p>
+                <ul>
+                    <li>Key benefit 1</li>
+                    <li>Key benefit 2</li>
+                    <li>Key benefit 3</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h3>Which One Should You Choose?</h3>
+        <p>
+            TEMPLATE: Provide guidance on who should choose which product. 
+            Different use cases, budgets, preferences, etc.
+        </p>
+    </div>
+</section>
+
+<!-- Final Recommendation -->
+<section class="content-section" style="background: #f8fafc;">
+    <div class="container">
+        <div class="cta-box">
+            <h3>Get The Winner</h3>
+            <p>Ready to try the winning product? Click below to get the best deal.</p>
+            <a href="#" class="btn-cta">Get [Product Name] →</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div>
+                <h4 style="color: white; margin-bottom: 15px;">NutriStructure</h4>
+                <p style="max-width: 300px;">Helping you achieve sustainable weight loss through science-backed methods.</p>
+            </div>
+            <div class="footer-links">
+                <h4 style="color: white; margin-bottom: 15px;">Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="faq.html">FAQ</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NutriStructure. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

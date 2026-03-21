@@ -528,11 +528,11 @@
         </a>
         <div class="nav-links">
             <a href="index.html" class="active">Home</a>
-            <a href="pillar-6.html">Pillar 6</a>
-            <a href="pillar-7.html">Pillar 7</a>
-            <a href="systems.html">Systems</a>
+            <a href="index.html#content-hub">Content Hub</a>
             <a href="solutions.html">Solutions</a>
+            <a href="systems.html">Systems</a>
             <a href="customer-transformations.html">Results</a>
+            <a href="faq.html">FAQ</a>
             <a href="calculator.html" class="btn-nav">Metabolic Age Calculator</a>
         </div>
     </div>
@@ -3591,6 +3591,244 @@ async function generatePDF() {
 
 <!-- AI Assistant -->
 <script src="ai-assistant.js"></script>
+
+<!-- ===== CONTENT HUB SECTION - 4 CATEGORIES ===== -->
+<section class="content-hub-section" id="content-hub">
+    <div class="container">
+        <div class="section-header">
+            <h2>📚 Content Library</h2>
+            <p>Explore our comprehensive resources organized by category. New content added daily!</p>
+        </div>
+        
+        <div class="categories-grid">
+            <!-- CATEGORY 1: Problem Pages -->
+            <div class="category-card">
+                <div class="category-header problem">
+                    <div class="category-icon">🎯</div>
+                    <h3>Problem Pages</h3>
+                    <p>Address specific weight loss challenges and find targeted solutions</p>
+                </div>
+                <div class="category-content">
+                    <ul class="page-list">
+                        <li><a href="cheat-sheet-metabolism.html">Slow Metabolism Fix</a></li>
+                        <li><a href="cheat-sheet-hormones.html">Hormonal Weight Gain</a></li>
+                        <li><a href="cheat-sheet-appetite.html">Uncontrollable Cravings</a></li>
+                        <li><a href="cheat-sheet-energy.html">Low Energy & Fatigue</a></li>
+                        <li><a href="cheat-sheet-fat-burning.html">Stubborn Belly Fat</a></li>
+                    </ul>
+                    <div class="add-new-hint">
+                        <strong>💡 To add new Problem page:</strong><br>
+                        Create file: <code>problem-[topic].html</code><br>
+                        Add link above in the list
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CATEGORY 2: Comparison Pages -->
+            <div class="category-card">
+                <div class="category-header comparison">
+                    <div class="category-icon">⚖️</div>
+                    <h3>Comparisons</h3>
+                    <p>Side-by-side product comparisons to help you choose wisely</p>
+                </div>
+                <div class="category-content">
+                    <ul class="page-list">
+                        <li><a href="recommended-stack.html">Best Supplement Stack Comparison</a></li>
+                        <li><a href="systems.html">Weight Loss Systems Compared</a></li>
+                    </ul>
+                    <div class="add-new-hint">
+                        <strong>💡 To add new Comparison:</strong><br>
+                        Create file: <code>compare-[product1]-vs-[product2].html</code><br>
+                        Add link above in the list
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CATEGORY 3: Review Pages (Already Exists) -->
+            <div class="category-card">
+                <div class="category-header review">
+                    <div class="category-icon">⭐</div>
+                    <h3>Reviews</h3>
+                    <p>Honest, in-depth reviews of popular weight loss products</p>
+                </div>
+                <div class="category-content">
+                    <ul class="page-list">
+                        <li><a href="java-burn-review.html">Java Burn Review</a></li>
+                        <li><a href="mitolyn-review.html">Mitolyn Review</a></li>
+                        <li><a href="citrus-burn-review.html">Citrus Burn Review</a></li>
+                        <li><a href="lanta-shake-review.html">Lanta Flat Belly Shake Review</a></li>
+                        <li><a href="kito-review.html">Kito Review</a></li>
+                        <li><a href="slimcrystal-review.html">SlimCrystal Review</a></li>
+                    </ul>
+                    <div class="add-new-hint">
+                        <strong>💡 To add new Review:</strong><br>
+                        Create file: <code>[product-name]-review.html</code><br>
+                        Add link above in the list
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CATEGORY 4: Best Of Pages -->
+            <div class="category-card">
+                <div class="category-header best">
+                    <div class="category-icon">🏆</div>
+                    <h3>Best Of</h3>
+                    <p>Curated lists of top-rated products by category</p>
+                </div>
+                <div class="category-content">
+                    <ul class="page-list">
+                        <li><a href="new-products.html">Best New Supplements 2026</a></li>
+                        <li><a href="solutions.html">Top Rated Solutions</a></li>
+                        <li><a href="customer-transformations.html">Best Success Stories</a></li>
+                    </ul>
+                    <div class="add-new-hint">
+                        <strong>💡 To add new Best Of page:</strong><br>
+                        Create file: <code>best-[category]-[year].html</code><br>
+                        Add link above in the list
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Content Hub Section Styles */
+.content-hub-section {
+    padding: 100px 0;
+    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.category-card {
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    border: 2px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
+.category-header {
+    padding: 30px;
+    text-align: center;
+    color: white;
+}
+
+.category-header.problem {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+.category-header.comparison {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+}
+
+.category-header.review {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+.category-header.best {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.category-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.category-header h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.category-header p {
+    opacity: 0.9;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.category-content {
+    padding: 25px 30px 30px;
+}
+
+.page-list {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.page-list li {
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.page-list li:last-child {
+    border-bottom: none;
+}
+
+.page-list a {
+    display: block;
+    padding: 12px 0;
+    color: #475569;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.page-list a:hover {
+    color: var(--primary);
+    padding-left: 8px;
+}
+
+.page-list a::before {
+    content: '→';
+    margin-right: 8px;
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+.page-list a:hover::before {
+    opacity: 1;
+}
+
+.add-new-hint {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 15px;
+    font-size: 0.85rem;
+    color: #64748b;
+    border: 1px dashed #cbd5e1;
+}
+
+.add-new-hint strong {
+    color: var(--secondary);
+}
+
+.add-new-hint code {
+    background: #e2e8f0;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
 
 <!-- Section Visibility Animation -->
 <script>
