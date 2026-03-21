@@ -1,5 +1,6 @@
 /* ============================================
    3D SPATIAL EXPERIENCE - ENHANCED STYLES
+   Fixed: Content visible by default
    ============================================ */
 
 /* Particle Canvas */
@@ -86,9 +87,10 @@ section.in-view .l2{animation:raySweep 2.5s ease-out 0.6s;}
 .pillar-card,.problem-card,.testimonial-card,.product-pillar-card{transition:all 0.4s cubic-bezier(0.4,0,0.2,1);}
 .pillar-card:hover,.problem-card:hover,.testimonial-card:hover{transform:translateY(-10px);}
 
-/* Section Transitions */
-section{opacity:0;transform:translateY(30px);transition:all 0.8s cubic-bezier(0.4,0,0.2,1);}
-section.visible{opacity:1;transform:translateY(0);}
+/* FIXED: Section Transitions - Content visible by default */
+section{opacity:1;transform:translateY(0);transition:all 0.8s cubic-bezier(0.4,0,0.2,1);}
+section.animate-on-scroll{opacity:0;transform:translateY(30px);}
+section.animate-on-scroll.visible{opacity:1;transform:translateY(0);}
 
 /* Stats Counter Animation */
 .stat-number{font-variant-numeric:tabular-nums;}
@@ -107,3 +109,81 @@ a:focus,button:focus,input:focus{outline:2px solid rgba(16,185,129,0.5);outline-
 
 /* Reduced Motion */
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;}}
+
+/* ============================================
+   ENHANCED ANIMATIONS
+   ============================================ */
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+
+/* Fade In Left/Right */
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-40px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+.fade-in-left { animation: fadeInLeft 0.8s ease-out forwards; }
+.fade-in-right { animation: fadeInRight 0.8s ease-out forwards; }
+
+/* Scale In Animation */
+@keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+.scale-in { animation: scaleIn 0.6s ease-out forwards; }
+
+/* Stagger Animation Delays */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
+
+/* Pulse Glow Animation */
+@keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 20px rgba(16, 185, 129, 0.4); }
+    50% { box-shadow: 0 0 40px rgba(16, 185, 129, 0.7); }
+}
+.pulse-glow { animation: pulseGlow 2s ease-in-out infinite; }
+
+/* Shimmer Effect */
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+.shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+.bounce { animation: bounce 2s ease-in-out infinite; }
+
+/* Rotate Animation */
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.rotate-slow { animation: rotate 20s linear infinite; }
+
+/* Gradient Border Animation */
+@keyframes gradientBorder {
+    0%, 100% { border-color: #10b981; }
+    50% { border-color: #f59e0b; }
+}
+.gradient-border { animation: gradientBorder 3s ease-in-out infinite; }

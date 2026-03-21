@@ -1192,8 +1192,15 @@
         document.getElementById('progressContainer').style.display = 'block';
         currentStepNum = 1;
         updateProgress();
+        
+        // Ensure calculator card is visible
+        document.querySelector('.calculator-card').style.display = 'block';
+        document.querySelector('.calculator-card').style.visibility = 'visible';
     });
 </script>
+
+<!-- Enhanced Effects -->
+<script src="enhanced-effects.js"></script>
 
 </body>
 </html>
