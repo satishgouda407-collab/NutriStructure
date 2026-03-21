@@ -1,19 +1,28 @@
- /project
-  index.html
-  sitemap.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<url>
-  <loc>https://nutri-structure.vercel.app/</loc>
-</url>
+  <url>
+    <loc>https://nutri-structure.vercel.app/</loc>
+  </url>
 
-<url>
-  <loc>https://nutri-structure.vercel.app/java-burn-review.html</loc>
-</url>
+  <url>
+    <loc>https://nutri-structure.vercel.app/reviews/java-burn.html</loc>
+  </url>
 
-<url>
-  <loc>https://nutri-structure.vercel.app/citrus-burn-review.html</loc>
-</url>
+  <url>
+    <loc>https://nutri-structure.vercel.app/reviews/citrus-burn.html</loc>
+  </url>
+
+  <url>
+    <loc>https://nutri-structure.vercel.app/comparisons/java-burn-vs-citrus-burn.html</loc>
+  </url>
+
+  <url>
+    <loc>https://nutri-structure.vercel.app/best/best-weight-loss-supplements.html</loc>
+  </url>
+
+  <url>
+    <loc>https://nutri-structure.vercel.app/guides/why-diets-fail.html</loc>
+  </url>
 
 </urlset>
