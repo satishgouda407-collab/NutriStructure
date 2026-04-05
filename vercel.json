@@ -1,3 +1,6 @@
 {
-  "cleanUrls": true
+  "routes": [
+    { "src": "/(.*)\\.html", "dest": "/$1" },
+    { "src": "/(.*)", "dest": "/$1.html" }
+  ]
 }
