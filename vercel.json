@@ -1,6 +1,10 @@
 {
-  "routes": [
-    { "src": "/(.*)\\.html", "dest": "/$1" },
-    { "src": "/(.*)", "dest": "/$1.html" }
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    }
   ]
 }
