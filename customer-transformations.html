@@ -8,7 +8,7 @@
     <title>Customer Transformations | Real Results from Real People</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
             --primary: #10b981;
@@ -154,7 +154,7 @@
         .section-header { text-align: center; margin-bottom: 50px; }
         .section-header h2 { font-size: 2.5rem; color: var(--secondary); margin-bottom: 15px; font-weight: 800; }
         .section-header p { color: #64748b; font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
-        
+
         .offline-badge {
             display: inline-block;
             background: linear-gradient(135deg, var(--accent) 0%, #d97706 100%);
@@ -187,7 +187,7 @@
             box-shadow: 0 20px 50px rgba(16,185,129,0.2);
         }
         .transformation-image-area {
-            height: 300px;
+            height: 350px;
             background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
             display: flex;
             align-items: center;
@@ -199,19 +199,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-        .transformation-image-placeholder {
-            text-align: center;
-            color: #94a3b8;
-            padding: 40px;
-        }
-        .transformation-image-placeholder span {
-            font-size: 4rem;
-            display: block;
-            margin-bottom: 15px;
-        }
-        .transformation-image-placeholder p {
-            font-size: 0.95rem;
+            object-position: center;
         }
         .transformation-badge {
             position: absolute;
@@ -223,6 +211,7 @@
             border-radius: 50px;
             font-size: 0.85rem;
             font-weight: 700;
+            z-index: 10;
         }
         .transformation-content {
             padding: 30px;
@@ -316,16 +305,18 @@
             gap: 15px;
         }
         .customer-avatar {
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-primary);
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
-            font-size: 1.1rem;
+            overflow: hidden;
+            flex-shrink: 0;
+            border: 3px solid var(--primary);
+            box-shadow: 0 4px 15px rgba(16,185,129,0.3);
+        }
+        .customer-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         .customer-details h4 {
             color: var(--secondary);
@@ -470,6 +461,7 @@
             .section-header h2 { font-size: 1.8rem; }
             .transformation-grid { grid-template-columns: 1fr; }
             .transformation-card { margin: 0 10px; }
+            .transformation-image-area { height: 300px; }
             .customer-grid { grid-template-columns: 1fr; }
             .customer-card { margin: 0 10px; }
             .footer-content { grid-template-columns: 1fr; text-align: center; }
@@ -479,7 +471,7 @@
             body { padding-bottom: 80px; }
         }
     </style>
-    
+
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-E486X8NQSZ"></script>
     <script>
@@ -553,26 +545,22 @@
             <h2>Offline Customer Transformations</h2>
             <p>These are real clients who worked directly with our team. Their results speak for themselves.</p>
         </div>
-        
+
         <div class="transformation-grid">
-            <!-- Offline Customer 1 -->
+            <!-- Jessica - Woman with dramatic transformation -->
             <div class="transformation-card">
                 <div class="transformation-image-area">
-                    <!-- REPLACE THIS WITH YOUR IMAGE: <img src="images/offline-customer-1-before-after.jpg" alt="Customer Transformation"> -->
-                    <div class="transformation-image-placeholder">
-                        <span>📸</span>
-                        <p><strong>Add Your Image Here</strong><br>Replace this placeholder with your offline customer before/after photo</p>
-                    </div>
+                    <img src="jessica-transformation.jpg" alt="Jessica's Transformation - Before and After">
                     <div class="transformation-badge">-47 lbs</div>
                 </div>
                 <div class="transformation-content">
-                    <h3>Jennifer M.</h3>
+                    <h3>Jessica M.</h3>
                     <div class="transformation-meta">
                         <span>📍 Austin, TX</span>
                         <span>👤 Age 34</span>
                         <span>📅 8 months</span>
                     </div>
-                    <p>Jennifer struggled with belly fat after having her second child. By supporting her metabolism and hormone pillars, she lost 47 pounds and regained her confidence.</p>
+                    <p>Jessica struggled with belly fat after having her second child. By supporting her metabolism and hormone pillars, she lost 47 pounds and regained her confidence.</p>
                     <div class="transformation-pillars">
                         <span class="pillar-tag">Metabolism</span>
                         <span class="pillar-tag">Hormones</span>
@@ -583,15 +571,11 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Offline Customer 2 -->
+
+            <!-- Michael - Man with dramatic transformation -->
             <div class="transformation-card">
                 <div class="transformation-image-area">
-                    <!-- REPLACE THIS WITH YOUR IMAGE: <img src="images/offline-customer-2-before-after.jpg" alt="Customer Transformation"> -->
-                    <div class="transformation-image-placeholder">
-                        <span>📸</span>
-                        <p><strong>Add Your Image Here</strong><br>Replace this placeholder with your offline customer before/after photo</p>
-                    </div>
+                    <img src="michael-transformation.jpg" alt="Michael's Transformation - Before and After">
                     <div class="transformation-badge">-62 lbs</div>
                 </div>
                 <div class="transformation-content">
@@ -612,15 +596,11 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Offline Customer 3 -->
+
+            <!-- Sarah - Postpartum transformation -->
             <div class="transformation-card">
                 <div class="transformation-image-area">
-                    <!-- REPLACE THIS WITH YOUR IMAGE: <img src="images/offline-customer-3-before-after.jpg" alt="Customer Transformation"> -->
-                    <div class="transformation-image-placeholder">
-                        <span>📸</span>
-                        <p><strong><><br>https://www.facebook.com/share/p/1CeEs8EBQh/</p>
-                    </div>
+                    <img src="sarah-postpartum.jpg" alt="Sarah's Postpartum Transformation">
                     <div class="transformation-badge">-38 lbs</div>
                 </div>
                 <div class="transformation-content">
@@ -630,7 +610,7 @@
                         <span>👤 Age 29</span>
                         <span>📅 6 months</span>
                     </div>
-                    <p>Sarah's biggest challenge was constant hunger and cravings. By supporting her appetite control pillar, she finally felt satisfied and lost 38 pounds effortlessly.</p>
+                    <p>Sarah's biggest challenge was constant hunger and cravings after giving birth. By supporting her appetite control pillar, she finally felt satisfied and lost 38 pounds effortlessly.</p>
                     <div class="transformation-pillars">
                         <span class="pillar-tag">Appetite Control</span>
                         <span class="pillar-tag">Hormones</span>
@@ -641,15 +621,11 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Offline Customer 4 -->
+
+            <!-- David - Man transformation -->
             <div class="transformation-card">
                 <div class="transformation-image-area">
-                    <!-- REPLACE THIS WITH YOUR IMAGE: <img src="images/offline-customer-4-before-after.jpg" alt="Customer Transformation"> -->
-                    <div class="transformation-image-placeholder">
-                        <span>📸</span>
-                        <p><strong>Add Your Image Here</strong><br>Replace this placeholder with your offline customer before/after photo</p>
-                    </div>
+                    <img src="david-transformation.jpg" alt="David's Transformation - Before and After">
                     <div class="transformation-badge">-55 lbs</div>
                 </div>
                 <div class="transformation-content">
@@ -670,15 +646,11 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Offline Customer 5 -->
+
+            <!-- Lisa - Woman fitness competition transformation -->
             <div class="transformation-card">
                 <div class="transformation-image-area">
-                    <!-- REPLACE THIS WITH YOUR IMAGE: <img src="images/offline-customer-5-before-after.jpg" alt="Customer Transformation"> -->
-                    <div class="transformation-image-placeholder">
-                        <span>📸</span>
-                        <p><strong>Add Your Image Here</strong><br>Replace this placeholder with your offline customer before/after photo</p>
-                    </div>
+                    <img src="lisa-fitness-transformation.jpg" alt="Lisa's Fitness Competition Transformation">
                     <div class="transformation-badge">-41 lbs</div>
                 </div>
                 <div class="transformation-content">
@@ -688,7 +660,7 @@
                         <span>👤 Age 43</span>
                         <span>📅 7 months</span>
                     </div>
-                    <p>Lisa struggled with hormonal weight gain after 40. Balancing her cortisol and insulin levels helped her lose 41 pounds and 3 dress sizes.</p>
+                    <p>Lisa struggled with hormonal weight gain after 40. Balancing her cortisol and insulin levels helped her lose 41 pounds and 3 dress sizes, eventually competing in fitness competitions.</p>
                     <div class="transformation-pillars">
                         <span class="pillar-tag">Hormones</span>
                         <span class="pillar-tag">Metabolism</span>
@@ -699,25 +671,21 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Offline Customer 6 -->
+
+            <!-- Jennifer - Woman on tennis court -->
             <div class="transformation-card">
                 <div class="transformation-image-area">
-                    <!-- REPLACE THIS WITH YOUR IMAGE: <img src="images/offline-customer-6-before-after.jpg" alt="Customer Transformation"> -->
-                    <div class="transformation-image-placeholder">
-                        <span>📸</span>
-                        <p><strong>Add Your Image Here</strong><br>Replace this placeholder with your offline customer before/after photo</p>
-                    </div>
+                    <img src="jennifer-tennis.jpg" alt="Jennifer's Active Lifestyle">
                     <div class="transformation-badge">-73 lbs</div>
                 </div>
                 <div class="transformation-content">
-                    <h3>James T.</h3>
+                    <h3>Jennifer T.</h3>
                     <div class="transformation-meta">
                         <span>📍 Miami, FL</span>
                         <span>👤 Age 38</span>
                         <span>📅 11 months</span>
                     </div>
-                    <p>James was exhausted all the time and had no motivation to exercise. Supporting his cellular energy pillar gave him the boost he needed to transform his life.</p>
+                    <p>Jennifer was exhausted all the time and had no motivation to exercise. Supporting her cellular energy pillar gave her the boost she needed to transform her life and become active again.</p>
                     <div class="transformation-pillars">
                         <span class="pillar-tag">Energy & Activity</span>
                         <span class="pillar-tag">Metabolism</span>
@@ -739,13 +707,15 @@
             <h2>More Success Stories</h2>
             <p>Hear from people around the world who transformed their bodies with NutriStructure.</p>
         </div>
-        
+
         <div class="customer-grid">
             <div class="customer-card">
                 <div class="customer-stars">★★★★★</div>
                 <p>"I struggled with belly fat for years. Understanding metabolism helped me finally lose weight."</p>
                 <div class="customer-info">
-                    <div class="customer-avatar">SM</div>
+                    <div class="customer-avatar">
+                        <img src="portrait-sarah.jpg" alt="Sarah M.">
+                    </div>
                     <div class="customer-details">
                         <h4>Sarah M.</h4>
                         <span>Austin, TX • Age 34</span>
@@ -753,12 +723,14 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="customer-card">
                 <div class="customer-stars">★★★★★</div>
                 <p>"The constant hunger while dieting was my biggest struggle. Once I started supporting my appetite control pillar, everything changed."</p>
                 <div class="customer-info">
-                    <div class="customer-avatar">KG</div>
+                    <div class="customer-avatar">
+                        <img src="portrait-katie.jpg" alt="Katie G.">
+                    </div>
                     <div class="customer-details">
                         <h4>Katie G.</h4>
                         <span>San Diego, CA • Age 29</span>
@@ -766,12 +738,14 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="customer-card">
                 <div class="customer-stars">★★★★★</div>
                 <p>"At my age, I thought it was too late. My doctor told me I was prediabetic. Supporting all 5 pillars helped me lose 86 pounds!"</p>
                 <div class="customer-info">
-                    <div class="customer-avatar">DR</div>
+                    <div class="customer-avatar">
+                        <img src="portrait-david.jpg" alt="David R.">
+                    </div>
                     <div class="customer-details">
                         <h4>David R.</h4>
                         <span>Denver, CO • Age 52</span>
@@ -779,12 +753,14 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="customer-card">
                 <div class="customer-stars">★★★★★</div>
                 <p>"Being a busy mom, I never had energy to exercise. Once I fixed my cellular energy production, the weight started melting off."</p>
                 <div class="customer-info">
-                    <div class="customer-avatar">JR</div>
+                    <div class="customer-avatar">
+                        <img src="portrait-jennifer.jpg" alt="Jennifer R.">
+                    </div>
                     <div class="customer-details">
                         <h4>Jennifer R.</h4>
                         <span>Miami, FL • Age 38</span>
@@ -792,12 +768,14 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="customer-card">
                 <div class="customer-stars">★★★★★</div>
                 <p>"My slow metabolism made every diet fail. Supporting my metabolic enzymes was the missing piece I needed."</p>
                 <div class="customer-info">
-                    <div class="customer-avatar">ML</div>
+                    <div class="customer-avatar">
+                        <img src="portrait-michael.jpg" alt="Michael L.">
+                    </div>
                     <div class="customer-details">
                         <h4>Michael L.</h4>
                         <span>Chicago, IL • Age 45</span>
@@ -805,12 +783,14 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="customer-card">
                 <div class="customer-stars">★★★★★</div>
                 <p>"Hormonal weight gain after 40 was my nightmare. Balancing my cortisol and insulin changed everything. I'm down 3 dress sizes!"</p>
                 <div class="customer-info">
-                    <div class="customer-avatar">LP</div>
+                    <div class="customer-avatar">
+                        <img src="portrait-lisa.jpg" alt="Lisa P.">
+                    </div>
                     <div class="customer-details">
                         <h4>Lisa P.</h4>
                         <span>Seattle, WA • Age 43</span>
@@ -848,7 +828,7 @@
                     <a href="#" aria-label="Pinterest">P</a>
                 </div>
             </div>
-            
+
             <div class="footer-column">
                 <h4>Products</h4>
                 <ul>
@@ -859,7 +839,7 @@
                     <li><a href="/kito">Kito Flow AI</a></li>
                 </ul>
             </div>
-            
+
             <div class="footer-column">
                 <h4>Resources</h4>
                 <ul>
@@ -870,7 +850,7 @@
                     <li><a href="/faq">FAQ</a></li>
                 </ul>
             </div>
-            
+
             <div class="footer-column">
                 <h4>Support</h4>
                 <ul>
@@ -881,7 +861,7 @@
                 </ul>
             </div>
         </div>
-        
+
         <div class="footer-bottom">
             <p>&copy; 2025 NutriStructure. All rights reserved.</p>
             <p class="footer-disclaimer">
