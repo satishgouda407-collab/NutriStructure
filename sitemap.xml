@@ -1,35 +1,157 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://nutri-structure.vercel.app/</loc><priority>1.0</priority></url>
-  
-  <url><loc>https://nutri-structure.vercel.app/citrus-burn</loc><priority>0.8</priority></url>
-  <url><loc>https://nutri-structure.vercel.app/mitolyn</loc><priority>0.8</priority></url>
-  <url><loc>https://nutri-structure.vercel.app/java-burn</loc><priority>0.8</priority></url>
-  <url><loc>https://nutri-structure.vercel.app/lanta-shake</loc><priority>0.8</priority></url>
-  <url><loc>https://nutri-structure.vercel.app/kito-flow-ai</loc><priority>0.8</priority></url>
-  <url><loc>https://nutri-structure.vercel.app/slim-crystal</loc><priority>0.8</priority></url>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
-  <url><loc>https://nutri-structure.vercel.app/citrus-burn-review</loc><priority>0.7</priority></url>
-  <url><loc>https://nutri-structure.vercel.app/mitolyn-review</loc><priority>0.7</priority></url>
-  <url><loc>https://nutri-structure.vercel.app/java-burn-review</loc><priority>0.7</priority></url>
-  <url><loc>https://nutri-structure.vercel.app/lanta-shake-review</loc><priority>0.7</priority></url>
-  <url><loc>https://nutri-structure.vercel.app/kito-review</loc><priority>0.7</priority></url>
-  <url><loc>https://nutri-structure.vercel.app/slim-crystal-review</loc><priority>0.7</priority></url>
 
-  <url><loc>https://nutri-structure.vercel.app/slow-metabolism-fix</loc><priority>0.7</priority></url>
-  <url><loc>https://nutri-structure.vercel.app/hormonal-weight-gain</loc><priority>0.7</priority></url>
-  <url><loc>https://nutri-structure.vercel.app/uncontrollable-cravings</loc><priority>0.7</priority></url>
-  <url><loc>https://nutri-structure.vercel.app/low-energy-fatigue</loc><priority>0.7</priority></url>
-  <url><loc>https://nutri-structure.vercel.app/stubborn-belly-fat</loc><priority>0.7</priority></url>
+<url>
+  <loc>https://nutri-structure.vercel.app/</loc>
+  <lastmod>2026-04-12T03:53:51+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://nutri-structure.vercel.app/solutions</loc>
+  <lastmod>2026-04-12T03:53:52+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nutri-structure.vercel.app/systems</loc>
+  <lastmod>2026-04-12T03:53:52+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nutri-structure.vercel.app/customer-transformations</loc>
+  <lastmod>2026-04-12T03:53:52+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nutri-structure.vercel.app/faq</loc>
+  <lastmod>2026-04-12T03:53:52+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nutri-structure.vercel.app/calculator</loc>
+  <lastmod>2026-04-12T03:53:52+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nutri-structure.vercel.app/metabolic-quiz</loc>
+  <lastmod>2026-04-12T03:53:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nutri-structure.vercel.app/citrus-burn</loc>
+  <lastmod>2026-04-12T03:53:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nutri-structure.vercel.app/mitolyn</loc>
+  <lastmod>2026-04-12T03:53:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nutri-structure.vercel.app/java-burn</loc>
+  <lastmod>2026-04-12T03:53:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nutri-structure.vercel.app/lanta-flat-belly-shake</loc>
+  <lastmod>2026-04-12T03:53:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nutri-structure.vercel.app/kito</loc>
+  <lastmod>2026-04-12T03:53:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nutri-structure.vercel.app/slim-crystal</loc>
+  <lastmod>2026-04-12T03:53:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nutri-structure.vercel.app/citrus-burn-review</loc>
+  <lastmod>2026-04-12T03:53:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nutri-structure.vercel.app/mitolyn-review</loc>
+  <lastmod>2026-04-12T03:53:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nutri-structure.vercel.app/java-burn-review</loc>
+  <lastmod>2026-04-12T03:53:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nutri-structure.vercel.app/lanta-shake-review</loc>
+  <lastmod>2026-04-12T03:53:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nutri-structure.vercel.app/kito-review</loc>
+  <lastmod>2026-04-12T03:53:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nutri-structure.vercel.app/slimcrystal-review</loc>
+  <lastmod>2026-04-12T03:53:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nutri-structure.vercel.app/cheat-sheet-metabolism</loc>
+  <lastmod>2026-04-12T03:53:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nutri-structure.vercel.app/cheat-sheet-hormones</loc>
+  <lastmod>2026-04-12T03:53:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nutri-structure.vercel.app/cheat-sheet-appetite</loc>
+  <lastmod>2026-04-12T03:53:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nutri-structure.vercel.app/cheat-sheet-energy</loc>
+  <lastmod>2026-04-12T03:53:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nutri-structure.vercel.app/cheat-sheet-fat-burning</loc>
+  <lastmod>2026-04-12T03:53:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nutri-structure.vercel.app/recommended-stack</loc>
+  <lastmod>2026-04-12T03:53:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nutri-structure.vercel.app/bridge-page</loc>
+  <lastmod>2026-04-12T03:53:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nutri-structure.vercel.app/pillar-6</loc>
+  <lastmod>2026-04-12T03:53:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nutri-structure.vercel.app/pillar-7</loc>
+  <lastmod>2026-04-12T03:53:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nutri-structure.vercel.app/new-products</loc>
+  <lastmod>2026-04-12T03:53:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
 
-  <url><loc>https://nutri-structure.vercel.app/pillar-metabolism</loc><priority>0.6</priority></url>
-  <url><loc>https://nutri-structure.vercel.app/pillar-hormones</loc><priority>0.6</priority></url>
-  <url><loc>https://nutri-structure.vercel.app/pillar-appetite</loc><priority>0.6</priority></url>
-  <url><loc>https://nutri-structure.vercel.app/pillar-energy</loc><priority>0.6</priority></url>
-  <url><loc>https://nutri-structure.vercel.app/pillar-fat-burning</loc><priority>0.6</priority></url>
 
-  <url><loc>https://nutri-structure.vercel.app/metabolic-age-calculator</loc><priority>0.5</priority></url>
-  <url><loc>https://nutri-structure.vercel.app/metabolic-type-quiz</loc><priority>0.5</priority></url>
-  <url><loc>https://nutri-structure.vercel.app/success-stories</loc><priority>0.5</priority></url>
-  <url><loc>https://nutri-structure.vercel.app/faq</loc><priority>0.4</priority></url>
 </urlset>
