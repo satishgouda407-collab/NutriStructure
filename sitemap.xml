@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Main Landing Page -->
+
   <url>
     <loc>https://nutri-structure.vercel.app/</loc>
     <lastmod>2026-04-13</lastmod>
@@ -8,7 +8,6 @@
     <priority>1.0</priority>
   </url>
   
-  <!-- Core Pages -->
   <url>
     <loc>https://nutri-structure.vercel.app/solutions</loc>
     <lastmod>2026-04-13</lastmod>
@@ -37,7 +36,6 @@
     <priority>0.7</priority>
   </url>
   
-  <!-- Tools & Calculators -->
   <url>
     <loc>https://nutri-structure.vercel.app/calculator</loc>
     <lastmod>2026-04-13</lastmod>
@@ -52,7 +50,6 @@
     <priority>0.8</priority>
   </url>
   
-  <!-- Product Pages -->
   <url>
     <loc>https://nutri-structure.vercel.app/citrus-burn</loc>
     <lastmod>2026-04-13</lastmod>
